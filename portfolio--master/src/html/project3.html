@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="boheme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infrastructure réseau – Suite – Onza</title>
+
+  <meta name="description" content="Suite du projet d'infrastructure réseau — portfolio de Nathan (BTS SIO)." />
+  <meta property="og:title" content="Infrastructure réseau – Suite – Onza" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../css/output.css" />
+</head>
+
+<body class="bg-hero relative font-sans overflow-x-clip">
+
+  <!-- NAV -->
+  <header class="fixed inset-x-0 top-5 z-0 flex justify-center px-4">
+    <nav class="glass rounded-full shadow-lg flex items-center gap-1 px-2 py-2">
+
+      <a href="../../index.html" class="btn btn-ghost btn-circle tooltip tooltip-bottom" data-tip="Accueil" aria-label="Accueil">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+        </svg>
+      </a>
+
+    </nav>
+  </header>
+
+  <!-- BACK LINK -->
+  <section class="px-8 pt-24 pb-12 max-w-5xl mx-auto relative z-10">
+    <a href="project2.html" class="link link-hover text-lg">← Retour à la page précédente</a>
+  </section>
+
+  <!-- STEPS NAVIGATION -->
+  <section class="px-8 pb-6 max-w-5xl mx-auto relative z-10">
+    <div class="glass rounded-box px-4 py-4">
+      <ul class="steps steps-vertical sm:steps-horizontal w-full">
+        <li class="step step-primary"><a href="project.html" class="link link-hover px-2">Vue d’ensemble</a></li>
+        <li class="step step-primary"><a href="project2.html" class="link link-hover px-2">WinSCP</a></li>
+        <li class="step step-primary"><a href="project3.html" class="link link-hover px-2 font-semibold">Site Web &amp; Discord</a></li>
+        <li class="step"><a href="project4.html" class="link link-hover px-2">Conclusion</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PAGE TITLE -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+        <h2 class="text-5xl font-light leading-tight mb-8">
+          Développement du Site Web (et Discord)
+        </h2>
+        <p class="text-lg leading-relaxed">
+          Dans le cadre de la gestion d’un serveur Rust moddé, j’ai participé à la conception et au
+          développement d’un dashboard web permettant de centraliser la gestion des joueurs, des
+          avantages VIP et des interactions communautaires.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO DE DEMONSTRATION -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-6">
+        <figure class="aspect-video overflow-hidden rounded-xl bg-[#2b2b2b]">
+          <video controls class="w-full h-full object-cover">
+            <source src="../img/rustian-life.mp4" type="video/mp4" />
+            Votre navigateur ne prend pas en charge la lecture vidéo.
+          </video>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD & BACKEND -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <p class="text-lg leading-relaxed mb-4">
+          L’application repose sur un backend développé en <strong class="font-semibold">Node.js</strong>,
+          reposant sur Prisma ORM, permettant le stockage structuré des informations utilisateurs
+          (identifiants Discord et Steam, statut VIP, historique d’activité, récompenses, etc.).
+        </p>
+
+        <p class="text-lg leading-relaxed mb-10">
+          Un système d’authentification sécurisé via <strong class="font-semibold">OAuth2 (Discord API)</strong>
+          a été implémenté afin de permettre aux utilisateurs de se connecter avec leur compte Discord et
+          d’associer automatiquement leur identité Steam, créant ainsi une liaison multi-comptes synchronisée
+          avec le serveur de jeu.
+        </p>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Le Dashboard intègre plusieurs logiques
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• Suivi automatisé du <em>play streak</em> journalier avec réinitialisation conditionnelle en cas d’inactivité.</li>
+          <li>• Gestion dynamique du statut VIP (durée, fidélité, récompenses progressives).</li>
+          <li>• Attribution automatisée d’avantages en jeu (priorité dans la file d’attente, bonus, permissions spécifiques).</li>
+          <li>• Synchronisation avec le serveur Rust pour appliquer les permissions et paramètres en temps réel.</li>
+          <li>• Interaction avec l’API Discord pour l’attribution de rôles et avantages communautaires sur le serveur Discord.</li>
+        </ul>
+
+        <p class="text-lg leading-relaxed">
+          L’architecture combine gestion base de données relationnelle, logique algorithmique côté
+          serveur (Node.js), automatisation de récompenses conditionnelles et communication
+          inter-systèmes (serveur Rust ↔ base de données ↔ Discord API).
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTS DISCORD -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <p class="text-lg leading-relaxed mb-10">
+          Pour le côté plus technique mais important à mentionner, deux bots distincts ont été conçus
+          avec des responsabilités séparées pour permettre le fonctionnement du Dashboard comme convenu.
+        </p>
+
+        <p class="text-lg leading-relaxed mb-4">
+          Le <strong class="font-semibold">bot Purple</strong> gère le système de vote dynamique des
+          maps (qui sont votées par les joueurs à chaque fois que la partie repart à zéro sur le
+          serveur du jeu) via des interactions Discord (boutons API).
+        </p>
+
+        <p class="text-lg leading-relaxed mb-4">
+          Chaque vote est pondéré en fonction de plusieurs critères stockés en base de données :
+          statut VIP du joueur (avec bonus progressif selon le nombre de mois cumulés que la personne
+          est abonnée à l’offre) et interactions passées.
+        </p>
+
+        <p class="text-lg leading-relaxed mb-10">
+          La logique calcule dynamiquement un poids de vote basé sur ces paramètres, puis met à jour
+          ou crée l’enregistrement correspondant via des opérations upsert Prisma afin de garantir
+          l’idempotence et permettre la modification des votes sans duplication.
+        </p>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Il intègre également
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2">
+          <li>• Un système de prévention de duplication via lock file pour éviter les instances concurrentes.</li>
+          <li>• Une gestion mémoire temporaire des messages traités pour éviter le double traitement.</li>
+          <li>• Des requêtes agrégées (groupBy) pour recalculer en temps réel les résultats pondérés.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOT MASTER -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <p class="text-lg leading-relaxed mb-10">
+          Contrairement au bot Purple, orienté interaction utilisateur, le <strong class="font-semibold">Bot Master</strong>
+          fonctionne principalement en arrière-plan via des tâches planifiées, garantissant la
+          synchronisation continue des statuts VIP, des streaks et des rôles Discord.
+        </p>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Un processus planifié s’exécute toutes les 15 minutes afin de
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• Identifier les utilisateurs éligibles à des privilèges (VIP global, VIP serveur, streak ≥ 7 jours, Nitro Boost).</li>
+          <li>• Effectuer une requête relationnelle incluant une sous-requête sur les VIP serveur.</li>
+          <li>• Réunir les utilisateurs actifs devant posséder un rôle.</li>
+          <li>• Déclencher un service dédié (<code class="font-mono text-base">RoleSyncService</code>) chargé d’appliquer les rôles Discord correspondants.</li>
+        </ul>
+
+        <div class="collapse collapse-arrow bg-base-100/40 rounded-box text-left mb-10">
+          <input type="checkbox" aria-label="Afficher le code du Sentinel de synchronisation des rôles" />
+          <div class="collapse-title text-sm font-mono uppercase tracking-wider opacity-70">
+            💻 Voir le code — Sentinel de synchronisation des rôles
+          </div>
+          <div class="collapse-content">
+            <div class="mockup-code text-sm overflow-x-auto">
+              <pre data-prefix="1"><code>import cron from 'node-cron';</code></pre>
+              <pre data-prefix="2"><code>import { PrismaClient } from '@prisma/client';</code></pre>
+              <pre data-prefix="3"><code>import { RoleSyncService } from '../services/RoleSyncService';</code></pre>
+              <pre data-prefix="4"><code></code></pre>
+              <pre data-prefix="5"><code>const prisma = new PrismaClient();</code></pre>
+              <pre data-prefix="6"><code></code></pre>
+              <pre data-prefix="7"><code>export function scheduleRoleSync(roleSync: RoleSyncService) {</code></pre>
+              <pre data-prefix="8"><code>    cron.schedule('*/15 * * * *', async () =&gt; {</code></pre>
+              <pre data-prefix="9"><code>        console.log('[Cron] Sentinel: Starting periodic role sync...');</code></pre>
+              <pre data-prefix="10"><code></code></pre>
+              <pre data-prefix="11"><code>        const serverVipUsers = await prisma.serverStats.findMany({</code></pre>
+              <pre data-prefix="12"><code>            where: { isVip: true },</code></pre>
+              <pre data-prefix="13"><code>            select: { userId: true }</code></pre>
+              <pre data-prefix="14"><code>        });</code></pre>
+              <pre data-prefix="15"><code></code></pre>
+              <pre data-prefix="16"><code>        const serverVipIds = serverVipUsers.map(s =&gt; s.userId);</code></pre>
+              <pre data-prefix="17"><code></code></pre>
+              <pre data-prefix="18"><code>        const activeUsers = await prisma.user.findMany({</code></pre>
+              <pre data-prefix="19"><code>            where: {</code></pre>
+              <pre data-prefix="20"><code>                OR: [</code></pre>
+              <pre data-prefix="21"><code>                    { isGlobalVip: true },</code></pre>
+              <pre data-prefix="22"><code>                    { globalStreak: { gte: 7 } },</code></pre>
+              <pre data-prefix="23"><code>                    { isNitroBoosting: true },</code></pre>
+              <pre data-prefix="24"><code>                    { discordId: { in: serverVipIds } }</code></pre>
+              <pre data-prefix="25"><code>                ]</code></pre>
+              <pre data-prefix="26"><code>            }</code></pre>
+              <pre data-prefix="27"><code>        });</code></pre>
+              <pre data-prefix="28"><code></code></pre>
+              <pre data-prefix="29"><code>        console.log(`[Cron] Sentinel: Syncing ${activeUsers.length} active users...`);</code></pre>
+              <pre data-prefix="30"><code></code></pre>
+              <pre data-prefix="31"><code>        for (const user of activeUsers) {</code></pre>
+              <pre data-prefix="32"><code>            await roleSync.syncUser(user.discordId);</code></pre>
+              <pre data-prefix="33"><code>            await new Promise(r =&gt; setTimeout(r, 1000));</code></pre>
+              <pre data-prefix="34"><code>        }</code></pre>
+              <pre data-prefix="35"><code></code></pre>
+              <pre data-prefix="36"><code>        console.log('[Cron] Sentinel: Sync complete.');</code></pre>
+              <pre data-prefix="37"><code>    });</code></pre>
+              <pre data-prefix="38"><code></code></pre>
+              <pre data-prefix="39"><code>    console.log('[Cron] Role Sync Sentinel scheduled (every 15m).');</code></pre>
+              <pre data-prefix="40"><code>}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-lg leading-relaxed mb-10">
+          Ce mécanisme agit comme un <strong class="font-semibold">système de réconciliation</strong>,
+          garantissant que les rôles Discord reflètent toujours l’état réel en base de données, même
+          en cas d’erreur, de redémarrage ou de désynchronisation temporaire.
+        </p>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Une seconde tâche planifiée s’exécute quotidiennement à minuit (timezone Europe/Paris) afin de
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• Identifier les utilisateurs dont l’abonnement VIP global est expiré.</li>
+          <li>• Mettre à jour automatiquement leur statut en base de données.</li>
+          <li>• Déclencher immédiatement une synchronisation de rôles pour retirer les privilèges associés.</li>
+        </ul>
+
+        <div class="collapse collapse-arrow bg-base-100/40 rounded-box text-left mb-10">
+          <input type="checkbox" aria-label="Afficher le code de l’expiration automatique des VIP" />
+          <div class="collapse-title text-sm font-mono uppercase tracking-wider opacity-70">
+            💻 Voir le code — Expiration automatique des VIP
+          </div>
+          <div class="collapse-content">
+            <div class="mockup-code text-sm overflow-x-auto">
+              <pre data-prefix="1"><code>import cron from 'node-cron';</code></pre>
+              <pre data-prefix="2"><code>import { PrismaClient } from '@prisma/client';</code></pre>
+              <pre data-prefix="3"><code>import { RoleSyncService } from '../services/RoleSyncService';</code></pre>
+              <pre data-prefix="4"><code></code></pre>
+              <pre data-prefix="5"><code>const prisma = new PrismaClient();</code></pre>
+              <pre data-prefix="6"><code></code></pre>
+              <pre data-prefix="7"><code>export function scheduleVipExpiration(roleSync: RoleSyncService) {</code></pre>
+              <pre data-prefix="8"><code>    cron.schedule('0 0 * * *', async () =&gt; {</code></pre>
+              <pre data-prefix="9"><code>        console.log('[Cron] Checking for expired VIPs...');</code></pre>
+              <pre data-prefix="10"><code>        const now = new Date();</code></pre>
+              <pre data-prefix="11"><code></code></pre>
+              <pre data-prefix="12"><code>        try {</code></pre>
+              <pre data-prefix="13"><code>            const expiredUsers = await prisma.user.findMany({</code></pre>
+              <pre data-prefix="14"><code>                where: {</code></pre>
+              <pre data-prefix="15"><code>                    isGlobalVip: true,</code></pre>
+              <pre data-prefix="16"><code>                    globalVipExpiresAt: {</code></pre>
+              <pre data-prefix="17"><code>                        lt: now</code></pre>
+              <pre data-prefix="18"><code>                    }</code></pre>
+              <pre data-prefix="19"><code>                }</code></pre>
+              <pre data-prefix="20"><code>            });</code></pre>
+              <pre data-prefix="21"><code></code></pre>
+              <pre data-prefix="22"><code>            if (expiredUsers.length === 0) {</code></pre>
+              <pre data-prefix="23"><code>                console.log('[Cron] No expired VIPs found.');</code></pre>
+              <pre data-prefix="24"><code>                return;</code></pre>
+              <pre data-prefix="25"><code>            }</code></pre>
+              <pre data-prefix="26"><code></code></pre>
+              <pre data-prefix="27"><code>            console.log(`[Cron] Found ${expiredUsers.length} expired VIPs. Processing...`);</code></pre>
+              <pre data-prefix="28"><code></code></pre>
+              <pre data-prefix="29"><code>            for (const user of expiredUsers) {</code></pre>
+              <pre data-prefix="30"><code>                await prisma.user.update({</code></pre>
+              <pre data-prefix="31"><code>                    where: { discordId: user.discordId },</code></pre>
+              <pre data-prefix="32"><code>                    data: {</code></pre>
+              <pre data-prefix="33"><code>                        isGlobalVip: false</code></pre>
+              <pre data-prefix="34"><code>                    }</code></pre>
+              <pre data-prefix="35"><code>                });</code></pre>
+              <pre data-prefix="36"><code></code></pre>
+              <pre data-prefix="37"><code>                console.log(`[Cron] Expired VIP for ${user.username} (${user.discordId})`);</code></pre>
+              <pre data-prefix="38"><code></code></pre>
+              <pre data-prefix="39"><code>                await roleSync.syncUser(user.discordId);</code></pre>
+              <pre data-prefix="40"><code>            }</code></pre>
+              <pre data-prefix="41"><code></code></pre>
+              <pre data-prefix="42"><code>        } catch (error) {</code></pre>
+              <pre data-prefix="43"><code>            console.error('[Cron] Error processing VIP expiration:', error);</code></pre>
+              <pre data-prefix="44"><code>        }</code></pre>
+              <pre data-prefix="45"><code>    }, {</code></pre>
+              <pre data-prefix="46"><code>        timezone: "Europe/Paris"</code></pre>
+              <pre data-prefix="47"><code>    });</code></pre>
+              <pre data-prefix="48"><code></code></pre>
+              <pre data-prefix="49"><code>    console.log('[Cron] VIP Expiration job scheduled (00:00 Paris).');</code></pre>
+              <pre data-prefix="50"><code>}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-lg leading-relaxed">
+          Ce mécanisme repose sur une comparaison temporelle
+          (<code class="font-mono text-base">globalVipExpiresAt &lt; now</code>) et permet une gestion
+          automatisée du cycle de vie des abonnements sans intervention manuelle.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGINATION -->
+  <section class="px-8 pb-24 max-w-5xl mx-auto relative z-10 flex justify-end">
+    <a href="project4.html" class="btn btn-outline btn-neutral btn-lg">
+      Page suivante →
+    </a>
+  </section>
+
+  <footer class="footer footer-center py-12 relative z-10">
+    <aside class="glass rounded-box px-6 py-3 text-base">
+      © 2026
+    </aside>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

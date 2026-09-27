@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="boheme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conclusion – Infrastructure réseau – Onza</title>
+
+  <meta name="description" content="Conclusion et prochaines étapes du projet Rust : paiement VIP, donations et lancement en beta — portfolio de Nathan (BTS SIO)." />
+  <meta property="og:title" content="Conclusion – Infrastructure réseau – Onza" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../css/output.css" />
+</head>
+
+<body class="bg-hero relative font-sans overflow-x-clip">
+
+  <!-- NAV -->
+  <header class="fixed inset-x-0 top-5 z-0 flex justify-center px-4">
+    <nav class="glass rounded-full shadow-lg flex items-center gap-1 px-2 py-2">
+
+      <a href="../../index.html" class="btn btn-ghost btn-circle tooltip tooltip-bottom" data-tip="Accueil" aria-label="Accueil">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+        </svg>
+      </a>
+
+    </nav>
+  </header>
+
+  <!-- BACK LINK -->
+  <section class="px-8 pt-24 pb-12 max-w-5xl mx-auto relative z-10">
+    <a href="project3.html" class="link link-hover text-lg">← Retour à la page précédente</a>
+  </section>
+
+  <!-- STEPS NAVIGATION -->
+  <section class="px-8 pb-6 max-w-5xl mx-auto relative z-10">
+    <div class="glass rounded-box px-4 py-4">
+      <ul class="steps steps-vertical sm:steps-horizontal w-full">
+        <li class="step step-primary"><a href="project.html" class="link link-hover px-2">Vue d’ensemble</a></li>
+        <li class="step step-primary"><a href="project2.html" class="link link-hover px-2">WinSCP</a></li>
+        <li class="step step-primary"><a href="project3.html" class="link link-hover px-2">Site Web &amp; Discord</a></li>
+        <li class="step step-primary"><a href="project4.html" class="link link-hover px-2 font-semibold">Conclusion</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <h2 class="text-5xl font-light leading-tight mb-10">
+          Pour conclure
+        </h2>
+
+        <p class="text-lg leading-relaxed mb-10">
+          Bien que l’infrastructure principale du projet soit fonctionnelle (serveur de jeu, base de
+          données, bots Discord et tableau de bord web), certaines parties sont encore en cours de
+          développement.
+        </p>
+
+        <p class="text-lg leading-relaxed mb-4">
+          L’une des prochaines étapes consiste à finaliser l’intégration du système de paiement
+          permettant l’achat des différents avantages VIP proposés sur le dashboard web (que l’on va
+          sûrement diversifier dans le futur, que ce soit le prix ou les différentes offres proposées)
+          et aussi ajouter une partie dédiée pour la donation en Monero (cryptomonnaie) pour les
+          potentielles personnes qui veulent soutenir notre projet.
+        </p>
+
+        <p class="text-lg leading-relaxed mb-4">
+          Cette étape implique la mise en place d’un payment gateway (Stripe par exemple), la gestion
+          sécurisée des transactions côté serveur ainsi que la synchronisation automatique avec la
+          base de données.
+        </p>
+
+        <p class="text-lg leading-relaxed mb-10">
+          Cela nécessite également la gestion des <strong class="font-semibold">webhooks de confirmation</strong>,
+          la vérification des transactions et la prévention des incohérences entre l’état du paiement
+          et les avantages accordés en jeu ou sur Discord.
+        </p>
+
+        <p class="text-lg leading-relaxed mb-4">
+          Il est également prévu que notre premier lancement sera une bêta.
+        </p>
+
+        <p class="text-lg leading-relaxed mb-4">
+          L’objectif est de lancer le serveur avec une première vague d’environ cinquante joueurs afin
+          d’observer le comportement réel du système : stabilité du serveur, gestion de la file
+          d’attente, mise à jour des statuts VIP, synchronisation des rôles Discord et charge sur la
+          base de données.
+        </p>
+
+        <p class="text-lg leading-relaxed">
+          Ces tests permettront d’identifier d’éventuels problèmes de performance ou de logique avant
+          un déploiement plus large et continu du serveur, et d’améliorer la robustesse générale de
+          l’infrastructure.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGINATION -->
+  <section class="px-8 pb-24 max-w-5xl mx-auto relative z-10 flex justify-end">
+    <a href="../../index.html#projects" class="btn btn-outline btn-neutral btn-lg">
+      ← Retour aux projets
+    </a>
+  </section>
+
+  <footer class="footer footer-center py-12 relative z-10">
+    <aside class="glass rounded-box px-6 py-3 text-base">
+      © 2026
+    </aside>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

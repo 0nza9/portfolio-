@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="boheme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos – Onza</title>
+
+  <meta name="description" content="À propos de Nathan, étudiant en BTS SIO (SLAM) et développeur junior front & back, disponible pour une alternance." />
+  <meta property="og:title" content="À propos – Onza" />
+  <meta property="og:type" content="profile" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@400..700&display=swap" />
+  <link rel="stylesheet" href="../css/output.css" />
+</head>
+
+<body class="bg-hero relative font-sans overflow-x-clip">
+
+  <!-- HEADER (same as the home page, "À propos" active) -->
+  <header class="px-8 pt-8 max-w-6xl mx-auto relative z-10 snap-start">
+    <div class="flex flex-wrap items-stretch gap-4">
+
+      <nav class="card glass flex-row flex-wrap items-center gap-2 px-5 py-3 grow">
+        <a href="../../index.html" class="btn btn-ghost font-normal text-base">Accueil</a>
+        <a href="about.html" class="btn btn-ghost font-normal text-base bg-base-100/30 border-b-2 border-b-primary rounded-b-none" aria-current="page">À propos</a>
+        <a href="../../index.html#skills" class="btn btn-ghost font-normal text-base">Compétences</a>
+        <a href="../../index.html#projects" class="btn btn-ghost font-normal text-base">Projets</a>
+      </nav>
+
+      <div class="card glass flex-row items-center gap-2 px-4 py-3">
+        <a href="https://github.com/0nza9?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub" class="btn btn-circle btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56 0-.28-.01-1.02-.02-2-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.21.08 1.85 1.21 1.85 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.29-5.47-1.29-5.47-5.75 0-1.27.47-2.31 1.24-3.12-.12-.29-.54-1.46.12-3.05 0 0 1.01-.31 3.3 1.19a11.5 11.5 0 0 1 6 0c2.28-1.5 3.29-1.19 3.29-1.19.66 1.59.24 2.76.12 3.05.77.81 1.24 1.85 1.24 3.12 0 4.47-2.81 5.45-5.49 5.74.43.36.81 1.08.81 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.21.68.83.56C20.57 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nathan-enguehard-275170304/" target="_blank" rel="noopener" aria-label="LinkedIn" class="btn btn-circle btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-primary text-base font-normal ml-1">Contact</a>
+      </div>
+
+    </div>
+  </header>
+
+  <section class="px-8 pt-6 pb-16 max-w-6xl mx-auto relative z-10 flex flex-col gap-6">
+
+    <!-- page title -->
+    <div class="card glass reveal">
+      <div class="card-body p-6">
+        <p class="font-mono text-xs uppercase tracking-widest text-primary">À propos</p>
+        <h1 class="text-4xl md:text-5xl font-light leading-tight">Mon tableau</h1>
+        <p class="opacity-80">
+          Qui je suis, ce que je fais et ce que j’aime.
+          <span class="hidden lg:inline font-hand text-xl text-primary">(astuce : les notes se déplacent&nbsp;!)</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- the board -->
+    <div class="board glass reveal rounded-box p-6 sm:p-10 flex flex-col gap-10 lg:block lg:px-16 lg:pt-64 lg:pb-68" data-board>
+
+      <!-- doodles (desktop only) -->
+      <svg class="doodle hidden lg:block top-24 left-[46%] w-12" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2l1.8 8.2L22 12l-8.2 1.8L12 22l-1.8-8.2L2 12l8.2-1.8z" />
+      </svg>
+      <svg class="doodle hidden lg:block top-44 left-[55%] w-6" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2l1.8 8.2L22 12l-8.2 1.8L12 22l-1.8-8.2L2 12l8.2-1.8z" />
+      </svg>
+      <svg class="doodle hidden lg:block top-[46%] left-5 w-10" viewBox="-12 -12 24 24" aria-hidden="true">
+        <g><ellipse rx="2.4" ry="5.2" cy="-6.2" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(45)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(90)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(135)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(180)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(225)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(270)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(315)" /></g>
+        <circle r="2.6" />
+      </svg>
+      <svg class="doodle hidden lg:block top-[44%] right-6 w-10" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" />
+      </svg>
+      <svg class="doodle hidden lg:block bottom-16 left-[45%] w-12" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
+      </svg>
+
+      <!-- intro: pinned polaroid + bio -->
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-8 lg:gap-10">
+        <div class="flex flex-col items-center gap-4 shrink-0">
+          <!-- guitar photos, overlapping prints -->
+          <div class="relative w-60 h-60">
+            <div class="polaroid p-2 absolute left-0 top-2 -rotate-6" data-draggable>
+              <img src="../img/guitare-salon.webp" alt="Nathan qui joue de la guitare dans un salon" loading="lazy" class="w-40 aspect-762/684 object-cover" />
+            </div>
+            <div class="polaroid p-2 absolute right-0 top-14 rotate-6" data-draggable>
+              <span class="tape" aria-hidden="true"></span>
+              <img src="../img/guitare-herbe.webp" alt="Gros plan sur une guitare électrique jouée dans l’herbe" loading="lazy" class="w-32 aspect-653/768 object-cover" />
+            </div>
+          </div>
+          <p class="font-hand text-2xl text-primary -rotate-2">ah oui, je fais de la guitare aussi</p>
+        </div>
+
+        <div class="min-w-0">
+          <h2 class="text-4xl font-light mb-4">
+            Salut, moi c’est <span class="font-hand text-5xl text-primary">Nathan&nbsp;!</span>
+          </h2>
+          <p class="text-lg leading-relaxed mb-3">
+            J’ai développé au fil de mes études et en autodidacte une base de compétences dans plusieurs
+            domaines : développement web et application, administration de serveurs, automatisation de
+            tâches et gestion réseau.
+          </p>
+          <p class="text-lg leading-relaxed mb-3">
+            Ces expériences m’ont permis d’aborder les différents aspects du métier de développeur sous
+            différents angles et de comprendre l’importance d’une approche polyvalente.
+          </p>
+          <p class="text-lg leading-relaxed">
+            Je continue aujourd’hui d’élargir mes connaissances, autant dans le cadre de ma formation qu’en
+            autodidacte, en approfondissant les notions qui me semblent essentielles pour mon avenir de
+            développeur dans un marché qui se renouvelle constamment, mais aussi celles qui stimulent ma
+            curiosité dans mes hobbies personnels et le lien que je peux faire avec ceux-là.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="badge badge-outline border-dashed">front</span>
+            <span class="badge badge-outline border-dashed">back</span>
+            <span class="badge badge-outline border-dashed">serveur</span>
+            <span class="badge badge-outline border-dashed">réseau</span>
+            <span class="badge badge-outline border-dashed">jeu vidéo</span>
+            <span class="badge badge-outline border-dashed">musique</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- sticky notes: a grid on small screens, pinned to the corners on desktop -->
+      <div class="grid sm:grid-cols-2 gap-10 justify-items-center lg:contents">
+
+        <article class="note note-mustard -rotate-3 lg:absolute lg:top-8 lg:left-8" data-draggable>
+          <span class="tape" aria-hidden="true"></span>
+          <p class="note-label">ce que je fais</p>
+          <p>Développeur junior front &amp; back, étudiant en BTS SIO option SLAM. Je code surtout en TypeScript, Svelte et Node.js.</p>
+        </article>
+
+        <article class="note note-sage rotate-3 lg:absolute lg:top-10 lg:right-10" data-draggable>
+          <span class="tape" aria-hidden="true"></span>
+          <p class="note-label">ma philosophie</p>
+          <p>Aborder chaque projet sous tous ses angles, du code jusqu’au serveur qui le fait tourner. La polyvalence avant tout&nbsp;!</p>
+        </article>
+
+        <article class="note note-terracotta rotate-2 lg:absolute lg:bottom-8 lg:left-12" data-draggable>
+          <span class="tape" aria-hidden="true"></span>
+          <p class="note-label">en dehors du code</p>
+          <p>Le jeu vidéo et la musique. Et j’anime la communauté Discord de Rustian Life, plus de 370 membres&nbsp;!</p>
+        </article>
+
+        <article class="note note-rose -rotate-2 lg:absolute lg:bottom-10 lg:right-8" data-draggable>
+          <span class="tape" aria-hidden="true"></span>
+          <p class="note-label">en ce moment</p>
+          <p>Je cherche une alternance&nbsp;! Et je prépare la bêta de notre serveur Rust avec une première vague de joueurs.</p>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- contact -->
+    <div id="contact" class="card glass reveal">
+      <div class="card-body p-8">
+        <p class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Contact</p>
+        <p class="text-lg mb-2">Une question, un projet ou une alternance ? Écrivez-moi.</p>
+        <p class="font-mono text-primary select-all mb-4">nathanenguehard@gmail.com</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="mailto:nathanenguehard@gmail.com" class="btn btn-outline btn-neutral">Me contacter</a>
+          <!-- TODO: déposez votre CV dans src/cv/CV-Nathan.pdf -->
+          <a href="../cv/CV-Nathan.pdf" download class="btn btn-primary">Télécharger mon CV</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer footer-center py-12 relative z-10">
+    <aside class="glass rounded-box px-6 py-3 text-base">
+      © 2026
+    </aside>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

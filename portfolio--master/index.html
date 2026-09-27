@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="boheme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Bohème – Onza</title>
+
+  <meta name="description" content="Portfolio de Nathan, étudiant en BTS SIO — développement front & back, administration serveur et réseau." />
+  <meta property="og:title" content="Portfolio Bohème – Onza" />
+  <meta property="og:description" content="Développeur junior front & back, admin serveur et réseau — étudiant en BTS SIO." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="src/css/output.css" />
+</head>
+
+<body class="bg-hero relative font-sans overflow-x-clip">
+
+  <!-- HEADER: wordmark + tabs on the left, socials + contact on the right -->
+  <header class="px-8 pt-8 max-w-6xl mx-auto relative z-10 snap-start">
+    <div class="flex flex-wrap items-stretch gap-4">
+
+      <nav class="card glass flex-row flex-wrap items-center gap-2 px-5 py-3 grow">
+        <a href="#about" class="btn btn-ghost font-normal text-base bg-base-100/30 border-b-2 border-b-primary rounded-b-none">Accueil</a>
+        <a href="src/html/about.html" class="btn btn-ghost font-normal text-base">À propos</a>
+        <a href="#skills" class="btn btn-ghost font-normal text-base">Compétences</a>
+        <a href="#projects" class="btn btn-ghost font-normal text-base">Projets</a>
+      </nav>
+
+      <div class="card glass flex-row items-center gap-2 px-4 py-3">
+        <a href="https://github.com/0nza9?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub" class="btn btn-circle btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56 0-.28-.01-1.02-.02-2-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.21.08 1.85 1.21 1.85 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.29-5.47-1.29-5.47-5.75 0-1.27.47-2.31 1.24-3.12-.12-.29-.54-1.46.12-3.05 0 0 1.01-.31 3.3 1.19a11.5 11.5 0 0 1 6 0c2.28-1.5 3.29-1.19 3.29-1.19.66 1.59.24 2.76.12 3.05.77.81 1.24 1.85 1.24 3.12 0 4.47-2.81 5.45-5.49 5.74.43.36.81 1.08.81 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.21.68.83.56C20.57 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nathan-enguehard-275170304/" target="_blank" rel="noopener" aria-label="LinkedIn" class="btn btn-circle btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
+          </svg>
+        </a>
+        <a href="src/html/about.html#contact" class="btn btn-primary text-base font-normal ml-1">Contact</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- DASHBOARD: everything essential above the fold -->
+  <section id="about" class="px-8 pt-6 pb-16 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-start relative z-10">
+
+    <!-- main column -->
+    <div class="lg:col-span-2 flex flex-col gap-6 min-w-0">
+
+      <!-- hero -->
+      <div class="card glass reveal">
+        <div class="card-body p-6 flex-col sm:flex-row items-center gap-8">
+          <div class="avatar shrink-0">
+            <div class="w-32 sm:w-36 rounded-full ring-4 ring-[#080500] shadow-xl">
+              <img
+                src="src/img/photo-nathan.webp"
+                alt="Photo de Nathan"
+                class="object-[31%_50%] scale-140 origin-[50%_41%]"
+              />
+            </div>
+          </div>
+          <div class="text-center sm:text-left">
+            <h1 class="text-4xl md:text-5xl font-light leading-tight mb-2">
+              Salut, moi c’est <span class="text-primary">Nathan</span>&nbsp;!
+            </h1>
+            <p class="text-lg mb-4">
+              Développeur junior front &amp; back
+            </p>
+            <div class="flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2 font-mono text-sm">
+              <a href="#projects" class="link link-hover text-primary">→ mes projets</a>
+              <a href="src/html/about.html" class="link link-hover text-primary">→ à propos de moi</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- quick intro -->
+      <div class="card glass reveal">
+        <div class="card-body p-6">
+          <p class="font-mono text-xs uppercase tracking-widest text-primary mb-1">En bref</p>
+          <p class="text-lg leading-relaxed mb-3">
+            Au fil de mes études et en autodidacte, j’ai construit une base polyvalente :
+            développement web et applicatif, administration de serveurs, automatisation et réseau.
+            Je continue d’apprendre chaque jour, en formation comme dans mes projets perso autour du jeu vidéo et de la musique.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge badge-outline">front</span>
+            <span class="badge badge-outline">back</span>
+            <span class="badge badge-outline">serveur</span>
+            <span class="badge badge-outline">réseau</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- projects: two slides (featured project, then the next one in progress) -->
+      <div id="projects" class="relative reveal overflow-hidden rounded-box" data-slider>
+        <div class="flex transition-transform duration-500 ease-out" data-slider-track>
+
+          <a href="src/html/project.html" class="card glass group sm:flex-row overflow-hidden w-full shrink-0" data-slide>
+            <figure class="sm:w-2/5 shrink-0 aspect-480/207 sm:aspect-auto bg-[#2b2b2b]">
+              <img
+                src="src/img/Rust_Logo.png"
+                alt="Logo Rust"
+                class="w-full h-full object-contain p-6 group-hover:scale-105 transition"
+              />
+            </figure>
+            <div class="card-body p-6 pb-16 sm:pb-6">
+              <p class="font-mono text-xs uppercase tracking-widest text-primary">Projet phare</p>
+              <h2 class="card-title text-2xl font-normal">Rust : serveur, site &amp; Discord</h2>
+              <p>
+                Hébergement d’un serveur de jeu moddé, dashboard web Node.js / Prisma et bots Discord
+                pour une communauté de 230+ membres.
+              </p>
+              <span class="font-mono text-sm text-primary group-hover:underline">→ voir le projet</span>
+            </div>
+          </a>
+
+          <div class="card glass border-2 border-dashed border-base-content/30 w-full shrink-0" data-slide>
+            <div class="card-body items-center justify-center text-center p-6">
+              <span class="loading loading-dots loading-lg text-primary"></span>
+              <h2 class="card-title text-2xl font-normal">Projet en cours…</h2>
+              <p class="opacity-80">Un nouveau projet est en préparation. Revenez bientôt !</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- small blurred pills to switch slides -->
+        <button type="button" data-slider-next
+          class="absolute bottom-4 right-4 rounded-full px-4 py-2 font-mono text-xs uppercase tracking-wider
+                 bg-base-100/25 backdrop-blur-md border border-white/25 shadow-lg
+                 hover:bg-base-100/40 transition cursor-pointer">
+          voir la suite →
+        </button>
+        <button type="button" data-slider-prev hidden
+          class="absolute bottom-4 left-4 rounded-full px-4 py-2 font-mono text-xs uppercase tracking-wider
+                 bg-base-100/25 backdrop-blur-md border border-white/25 shadow-lg
+                 hover:bg-base-100/40 transition cursor-pointer">
+          ← retour
+        </button>
+      </div>
+
+    </div>
+
+    <!-- sidebar -->
+    <aside class="flex flex-col gap-6 min-w-0">
+
+      <!-- status -->
+      <div class="card glass reveal">
+        <div class="card-body p-6">
+          <p class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Statut</p>
+          <p class="flex items-center gap-3 text-lg font-semibold">
+            <span class="relative flex size-3">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"></span>
+              <span class="relative inline-flex size-3 rounded-full bg-emerald-500"></span>
+            </span>
+            Disponible pour une alternance
+          </p>
+          <p class="opacity-80">Étudiant en BTS SIO · option SLAM</p>
+          <!-- TODO: déposez votre CV dans src/cv/CV-Nathan.pdf -->
+          <a href="src/cv/CV-Nathan.pdf" download class="btn btn-primary btn-sm mt-3 self-start">
+            Télécharger mon CV
+          </a>
+        </div>
+      </div>
+
+      <!-- discord community (live count filled in by main.js once data-guild-id is set) -->
+      <div class="card glass reveal" data-discord-widget data-guild-id="1427560374424703038">
+        <div class="card-body p-6">
+          <p class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Communauté Discord</p>
+          <div class="flex items-center gap-4">
+            <!-- server icon, filled in from the invite set in Discord's widget settings -->
+            <img data-discord-icon alt="Icône du serveur Discord" class="size-16 rounded-2xl shadow-md shrink-0" hidden />
+            <div>
+              <p class="text-4xl font-serif font-light"><span data-discord-members>230+</span> <span class="text-lg font-sans">membres</span></p>
+              <p class="flex items-center gap-2" data-discord-online hidden>
+                <span class="size-2 rounded-full bg-emerald-500"></span>
+                <span><strong data-discord-count class="font-mono">–</strong> en ligne</span>
+                <span class="badge badge-xs border-0 bg-emerald-600 text-white">LIVE</span>
+              </p>
+            </div>
+          </div>
+          <p class="text-sm opacity-80">Serveur du projet Rust, animé depuis le lancement.</p>
+        </div>
+      </div>
+
+      <!-- skills -->
+      <div id="skills" class="card glass reveal">
+        <div class="card-body p-6 gap-3">
+          <p class="font-mono text-xs uppercase tracking-widest text-primary">Compétences</p>
+          <div>
+            <p class="text-sm font-semibold mb-1">Front</p>
+            <div class="flex flex-wrap gap-1">
+              <span class="badge badge-xs badge-outline">HTML</span>
+              <span class="badge badge-xs badge-outline">CSS</span>
+              <span class="badge badge-xs badge-outline">JavaScript</span>
+              <span class="badge badge-xs badge-outline">TypeScript</span>
+              <span class="badge badge-xs badge-outline">Svelte</span>
+              <span class="badge badge-xs badge-outline">Tailwind</span>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm font-semibold mb-1">Back</p>
+            <div class="flex flex-wrap gap-1">
+              <span class="badge badge-xs badge-outline">Node.js</span>
+              <span class="badge badge-xs badge-outline">Python</span>
+              <span class="badge badge-xs badge-outline">Prisma</span>
+              <span class="badge badge-xs badge-outline">SQLite</span>
+              <span class="badge badge-xs badge-outline">MariaDB</span>
+              <span class="badge badge-xs badge-outline">MongoDB</span>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm font-semibold mb-1">Serveur</p>
+            <div class="flex flex-wrap gap-1">
+              <span class="badge badge-xs badge-outline">Linux</span>
+              <span class="badge badge-xs badge-outline">Services</span>
+              <span class="badge badge-xs badge-outline">Automatisation</span>
+              <span class="badge badge-xs badge-outline">WinSCP</span>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm font-semibold mb-1">Réseau</p>
+            <div class="flex flex-wrap gap-1">
+              <span class="badge badge-xs badge-outline">VLAN</span>
+              <span class="badge badge-xs badge-outline">Supervision</span>
+              <span class="badge badge-xs badge-outline">Sécurité</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </section>
+
+  <footer class="footer footer-center py-12 relative z-10">
+    <aside class="glass rounded-box px-6 py-3 text-base">
+      © 2026
+    </aside>
+  </footer>
+
+  <script src="src/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Typography: Fraunces for headings (bohème, editorial), Inter for reading,
+   JetBrains Mono for tech accents. Fonts are loaded from Google Fonts in each page's <head>. */
+@theme {
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+  --font-hand: "Caveat", "Segoe Print", "Bradley Hand", cursive; /* sticky notes (about page) */
+}
+
+/* Custom DaisyUI theme matching the bohème palette so components
+   (btn, card, navbar…) inherit the cream/brown look out of the box. */
+@plugin "daisyui/theme" {
+  name: "boheme";
+  default: true;
+  color-scheme: light;
+
+  --color-base-100: #faf7f2;
+  --color-base-200: #f1ebe1;
+  --color-base-300: #e6dccc;
+  --color-base-content: #2b1a0f;
+
+  --color-primary: #c98a3c;
+  --color-primary-content: #faf7f2;
+  --color-secondary: #b5723a;
+  --color-secondary-content: #faf7f2;
+  --color-accent: #e0a85a;
+  --color-accent-content: #2b1a0f;
+  --color-neutral: #2b1a0f;
+  --color-neutral-content: #faf7f2;
+
+  --radius-box: 1rem;
+  --radius-field: 0.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* gently "land" on sections while scrolling; proximity (not mandatory)
+       so tall sections never trap the scroll */
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 5rem; /* clear the floating nav when a section lands */
+  }
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .card-title {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto; /* Fraunces adapts its shapes to the display size */
+    letter-spacing: -0.01em;
+  }
+
+  /* tech tags read as code */
+  .badge {
+    font-family: var(--font-mono);
+    letter-spacing: 0;
+  }
+}
+
+@layer utilities {
+  /* make the glass panels a bit more transparent than the daisyUI default (30%) */
+  .glass {
+    --glass-opacity: 15%;
+  }
+
+  /* scroll-reveal zoom: hidden + scaled down until JS adds .is-visible.
+     the transition-delay is the little "dead time" before the section lands. */
+  .reveal {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: 0.12s;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* anchor the zoom to the top so centered content (project pages) keeps its
+     heading in place instead of growing out from the middle */
+  .reveal-top {
+    transform-origin: top center;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   About page "tableau": board, washi-taped sticky notes, polaroid, doodles
+   ------------------------------------------------------------------------- */
+@layer components {
+  .board {
+    position: relative;
+  }
+  /* dashed inner frame, like a pinboard edge */
+  .board::before {
+    content: "";
+    position: absolute;
+    inset: 0.75rem;
+    border: 1.5px dashed color-mix(in oklab, var(--color-base-content) 22%, transparent);
+    border-radius: calc(var(--radius-box) - 0.25rem);
+    pointer-events: none;
+  }
+
+  .note {
+    position: relative;
+    width: 15rem;
+    padding: 1.9rem 1.25rem 1.4rem;
+    font-family: var(--font-hand);
+    font-size: 1.35rem;
+    line-height: 1.2;
+    color: #3b2a12;
+    border-radius: 3px;
+    box-shadow:
+      0 14px 22px -12px rgb(0 0 0 / 0.55),
+      inset 0 -40px 40px -40px rgb(0 0 0 / 0.18); /* slight curl at the bottom */
+    transition: scale 0.2s ease, box-shadow 0.2s ease;
+    z-index: 1;
+  }
+  .note-label {
+    font-size: 1rem;
+    opacity: 0.65;
+    margin-bottom: 0.35rem;
+  }
+  .note-mustard    { background: #e9c46a; }
+  .note-sage       { background: #b5c99a; }
+  .note-terracotta { background: #e29b73; }
+  .note-rose       { background: #e4b1ab; }
+
+  /* strip of translucent washi tape holding a note / the polaroid */
+  .tape {
+    position: absolute;
+    top: -0.7rem;
+    left: 50%;
+    width: 5.5rem;
+    height: 1.5rem;
+    translate: -50% 0;
+    rotate: -3deg;
+    background: rgb(250 247 242 / 0.55);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.15);
+  }
+
+  .polaroid {
+    position: relative;
+    padding: 0.75rem 0.75rem 0.5rem;
+    background: #fbf7ef;
+    color: #3b2a12;
+    box-shadow: 0 16px 28px -14px rgb(0 0 0 / 0.6);
+    transition: scale 0.2s ease, box-shadow 0.2s ease;
+    z-index: 1;
+  }
+
+  .doodle {
+    position: absolute;
+    fill: none;
+    stroke: var(--color-base-100);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  /* dragging is desktop-only (see main.js); on touch screens the page must scroll */
+  @media (min-width: 1024px) {
+    .board [data-draggable] {
+      cursor: grab;
+      touch-action: none;
+      user-select: none;
+    }
+    .board [data-draggable]:hover {
+      scale: 1.03;
+    }
+    .board [data-draggable].is-dragging {
+      cursor: grabbing;
+      scale: 1.06;
+      box-shadow: 0 26px 36px -14px rgb(0 0 0 / 0.6);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* breathing room between consecutive sections (on top of their own py padding) */
+section + section {
+  margin-top: 3rem;
+}
+
+/* each section is a snap landing point */
+section {
+  scroll-snap-align: start;
+  /* let clicks pass through a section's empty/transparent area to the nav
+     sitting behind it; the actual cards re-enable pointer events below */
+  pointer-events: none;
+}
+section > * {
+  pointer-events: auto;
+}
+
+
+@layer utilities {
+  .bg-hero {
+    position: relative;
+  }
+
+  .bg-hero::before {
+    content: "";
+    position: fixed;        /* pin to the viewport so it always covers the full page */
+    inset: 0;
+    background-image: url('../img/1784b9a1ea1b0dce10d3191fa2a4e520-loop.gif');
+    background-size: cover;  /* always fill the whole area, however long the page is */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.80; /* adjust opacity here */
+    filter: blur(8px) brightness(0.7); /* brightness < 1 darkens the background */
+    transform: scale(1.05); /* hide blurred edges */
+    z-index: -1;
+  }
+}
+
+
+
+/* -------------------------------------------------------------------------
+   Mobile / phone screens (<= 640px)
+   The desktop layout uses very generous padding and large display type;
+   on a phone that pushes content off-screen, so we tighten it here.
+   These rules sit outside @layer, so they override the Tailwind utilities.
+   ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  /* reclaim the big vertical/horizontal section padding */
+  section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  /* tighten the navbar's horizontal padding on phones */
+  header {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* phone-friendly heading sizes */
+  h1 { font-size: 2.5rem;  line-height: 1.1; }
+  h2 { font-size: 2rem;    line-height: 1.2; }
+  h3 { font-size: 1.75rem; }
+  h4 { font-size: 1.35rem; }
+}

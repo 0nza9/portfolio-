@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="boheme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infrastructure réseau – Suite – Onza</title>
+
+  <meta name="description" content="Configuration et gestion d'un serveur Rust via WinSCP/SFTP, maintenance et sécurisation — portfolio de Nathan (BTS SIO)." />
+  <meta property="og:title" content="Infrastructure réseau – Suite – Onza" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../css/output.css" />
+</head>
+
+<body class="bg-hero relative font-sans overflow-x-clip">
+
+  <!-- NAV -->
+  <header class="fixed inset-x-0 top-5 z-0 flex justify-center px-4">
+    <nav class="glass rounded-full shadow-lg flex items-center gap-1 px-2 py-2">
+
+      <a href="../../index.html" class="btn btn-ghost btn-circle tooltip tooltip-bottom" data-tip="Accueil" aria-label="Accueil">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+        </svg>
+      </a>
+
+    </nav>
+  </header>
+
+  <!-- BACK LINK -->
+  <section class="px-8 pt-24 pb-12 max-w-5xl mx-auto relative z-10">
+    <a href="project.html" class="link link-hover text-lg">← Retour à la page précédente</a>
+  </section>
+
+  <!-- STEPS NAVIGATION -->
+  <section class="px-8 pb-6 max-w-5xl mx-auto relative z-10">
+    <div class="glass rounded-box px-4 py-4">
+      <ul class="steps steps-vertical sm:steps-horizontal w-full">
+        <li class="step step-primary"><a href="project.html" class="link link-hover px-2">Vue d’ensemble</a></li>
+        <li class="step step-primary"><a href="project2.html" class="link link-hover px-2 font-semibold">WinSCP</a></li>
+        <li class="step"><a href="project3.html" class="link link-hover px-2">Site Web &amp; Discord</a></li>
+        <li class="step"><a href="project4.html" class="link link-hover px-2">Conclusion</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COVER IMAGE -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-6">
+        <h2 class="text-3xl font-light leading-tight mb-6 text-center">
+          Configuration et gestion du serveur Rust avec WinSCP
+        </h2>
+        <figure class="aspect-1248/808 overflow-hidden rounded-xl bg-[#2b2b2b]">
+          <img
+            src="../img/winscp2.png"
+            class="w-full h-full object-cover"
+            alt="Capture d’écran WinSCP"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE TITLE -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+        <h2 class="text-5xl font-light leading-tight mb-8">
+          Détails du projet
+        </h2>
+        <p class="text-lg leading-relaxed">
+          La création et la gestion d’un serveur Rust implique la mise en place d’une infrastructure dédiée et l’administration des fichiers du serveur. Pour ce projet, la machine hébergeant le serveur a été configurée et gérée à distance à l’aide de WinSCP, un client SFTP/FTP sécurisé.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÉMARCHE -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Installation du serveur Rust
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• Téléchargement des fichiers serveur via SteamCMD (l’outil officiel de téléchargement et de gestion des serveurs Steam, dont la fonction principale est de gérer automatiquement les mises à jour d’un serveur dédié) sur la machine qui va héberger notre serveur de jeu.</li>
+          <li>• Organisation de l’arborescence des dossiers pour séparer les fichiers du serveur, les sauvegardes et les plugins (exemple : “/home/onza/newrust”, et depuis le dossier newrust, on organise et crée des fichiers pour séparer les plugins spécifiques au serveur, les logs de sauvegardes automatiques, et un dossier contenant les fichiers serveurs SteamCMD).</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Transfert et gestion des fichiers avec WinSCP
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• Connexion à la machine distante via SFTP (une session administrateur utilisant le terminal) pour un transfert sécurisé de fichiers vers la machine.</li>
+          <li>• Upload des fichiers nécessaires au fonctionnement du serveur et des contenus additionnels (plugins, configurations, mods spécifiques).</li>
+          <li>• Modification directe des fichiers de configuration (server.cfg, fichiers Oxide/Umod) pour ajuster les paramètres du serveur : nombre de joueurs, règles de jeu, ressources, permissions, mods activés, limites, etc.</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Maintenance et mises à jour
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• Mise à jour régulière du serveur et des plugins en transférant les nouveaux fichiers via WinSCP.</li>
+          <li>• Sauvegarde des fichiers critiques pour garantir la continuité du service via des backups dans un dossier de la machine (dossier : newrust).</li>
+          <li>• Vérification de la stabilité et de la compatibilité des configurations après chaque modification.</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Organisation et sécurisation
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• Structuration claire des dossiers pour faciliter l’accès et la maintenance lors de modifications rapides et efficaces.</li>
+          <li>• Gestion des droits d’accès et des permissions sur la machine pour assurer la sécurité du serveur.</li>
+          <li>• Automatisation de certaines commandes à utiliser dans le terminal une fois le serveur lancé plusieurs fois (ex. : <code class="font-mono text-base">sudo systemctl stop rust-modded-1</code> pour stopper le serveur, ou <code class="font-mono text-base">sudo systemctl start rust-modded-1</code> pour le relancer).</li>
+        </ul>
+
+        <p class="text-lg leading-relaxed">
+          Tout ce processus permet de déployer, configurer et maintenir un serveur Rust
+          opérationnel tout en garantissant la sécurité, la stabilité et la possibilité
+          d’une mise à jour rapide.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+        <h3 class="text-2xl font-semibold mb-6">
+          Compétences et outils utilisés
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-3">
+          <li>• <strong class="font-semibold">Administration serveur à distance :</strong> utilisation complète de WinSCP et du terminal intégré pour transférer, organiser et configurer les fichiers serveur Rust.</li>
+          <li>• <strong class="font-semibold">Gestion de fichiers et arborescence serveur :</strong> organisation de dossiers, configuration de plugins/mods et sauvegardes.</li>
+          <li>• <strong class="font-semibold">Maintenance et mises à jour serveur :</strong> mise à jour des fichiers via SteamCMD et vérification de la compatibilité.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGINATION -->
+  <section class="px-8 pb-24 max-w-5xl mx-auto relative z-10 flex justify-end">
+    <a href="project3.html" class="btn btn-outline btn-neutral btn-lg">
+      Page suivante →
+    </a>
+  </section>
+
+  <footer class="footer footer-center py-12 relative z-10">
+    <aside class="glass rounded-box px-6 py-3 text-base">
+      © 2026
+    </aside>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

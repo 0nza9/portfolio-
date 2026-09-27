@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="boheme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infrastructure réseau – Onza</title>
+
+  <meta name="description" content="Projet Rust : hébergement et administration d'un serveur, site web et communauté Discord — portfolio de Nathan (BTS SIO)." />
+  <meta property="og:title" content="Infrastructure réseau – Onza" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../css/output.css" />
+</head>
+
+<body class="bg-hero relative font-sans overflow-x-clip">
+
+  <!-- NAV -->
+  <header class="fixed inset-x-0 top-5 z-0 flex justify-center px-4">
+    <nav class="glass rounded-full shadow-lg flex items-center gap-1 px-2 py-2">
+
+      <a href="../../index.html" class="btn btn-ghost btn-circle tooltip tooltip-bottom" data-tip="Accueil" aria-label="Accueil">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+        </svg>
+      </a>
+
+    </nav>
+  </header>
+
+  <!-- BACK LINK -->
+  <section class="px-8 pt-24 pb-6 max-w-5xl mx-auto relative z-10">
+    <a href="../../index.html#projects" class="link link-hover text-lg">← Retour aux projets</a>
+  </section>
+
+  <!-- STEPS NAVIGATION -->
+  <section class="px-8 pb-6 max-w-5xl mx-auto relative z-10">
+    <div class="glass rounded-box px-4 py-4">
+      <ul class="steps steps-vertical sm:steps-horizontal w-full">
+        <li class="step step-primary"><a href="project.html" class="link link-hover px-2 font-semibold">Vue d’ensemble</a></li>
+        <li class="step"><a href="project2.html" class="link link-hover px-2">WinSCP</a></li>
+        <li class="step"><a href="project3.html" class="link link-hover px-2">Site Web &amp; Discord</a></li>
+        <li class="step"><a href="project4.html" class="link link-hover px-2">Conclusion</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COVER IMAGE -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <figure class="aspect-480/207 m-4 overflow-hidden rounded-xl bg-[#2b2b2b]">
+        <img
+          src="../img/Rust_Logo.png"
+          class="w-full h-full object-cover"
+          alt="Logo Rust"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <!-- VUE D'ENSEMBLE DU PROJET -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <h2 class="text-5xl font-light leading-tight mb-8">
+          Vue d’ensemble du projet
+        </h2>
+
+        <p class="text-lg leading-relaxed mb-4">
+          Ce projet est un écosystème complet autour du jeu Rust, alliant infrastructure
+          serveur, développement web et gestion communautaire.
+        </p>
+
+        <p class="text-lg leading-relaxed mb-10">
+          J’ai conçu ce projet avec mon associé pour répondre à plusieurs besoins :
+        </p>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Héberger un serveur Rust performant et stable
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• Avec la mise en place d’une machine dédiée pour l’hébergement.</li>
+          <li>• Une installation, configuration et optimisation de fichiers serveur.</li>
+          <li>• Administration à distance via WinSCP, utilisant les fonctionnalités SFTP pour un transfert sécurisé et une gestion efficace des fichiers.</li>
+          <li>• Gestion des mises à jour et maintien en conditions opérationnelles pour assurer une expérience sans interruption.</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Développer un site web
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• Présentation du serveur, de ses règles et de ses fonctionnalités.</li>
+          <li>• Mise en avant de l’identité visuelle et de l’expérience utilisateur (UX/UI).</li>
+          <li>• Intégration d’une boutique en ligne pour l’achat de contenus cosmétiques, permettant aux joueurs de personnaliser leur expérience.</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Créer et animer une communauté
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2">
+          <li>• Mise en place d’un serveur Discord structuré avec plus de 230 membres.</li>
+          <li>• Organisation des rôles et permissions pour garantir une bonne modération.</li>
+          <li>• Animation et interaction avec la communauté pour préparer le lancement officiel et encourager la fidélisation.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- PAGINATION -->
+  <section class="px-8 pb-24 max-w-5xl mx-auto relative z-10 flex justify-end">
+    <a href="project2.html" class="btn btn-outline btn-neutral btn-lg">
+      Page suivante →
+    </a>
+  </section>
+
+  <footer class="footer footer-center py-12 relative z-10">
+    <aside class="glass rounded-box px-6 py-3 text-base">
+      © 2026
+    </aside>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

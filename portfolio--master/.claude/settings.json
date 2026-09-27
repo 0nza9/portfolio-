@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find / -iname \"*rustian*\" -o -iname \"*rustain*\" 2>/dev/null | grep -v \"^find:\" )",
+      "Read(//f//**)",
+      "Bash(find /c/Users/rayen/Downloads /c/Users/rayen/Desktop /c/Users/rayen/Videos -iname \"*rust*\" 2>/dev/null)",
+      "Read(//c/Users/rayen/**)",
+      "Bash(ls -la \"/c/Users/rayen/Videos/Rustian life .mp4\")",
+      "Read(//c/Users/rayen/Videos/**)",
+      "Bash(cp \"/c/Users/rayen/Videos/Rustian life .mp4\" \"/f/portfolio/src/img/rustian-life.mp4\" && ls -la /f/portfolio/src/img/rustian-life.mp4)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\rayen\\Videos"
+    ]
+  }
+}

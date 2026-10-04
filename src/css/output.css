@@ -1415,16 +1415,17 @@
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
+  .h-24 {
+    height: calc(var(--spacing) * 24);
+  }
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
   .h-full {
     height: 100%;
-  }
-  .loading-lg {
-    @layer daisyui.l1.l2 {
-      width: calc(var(--size-selector, 0.25rem) * 7);
-    }
   }
   .w-5 {
     width: calc(var(--spacing) * 5);
@@ -1437,6 +1438,12 @@
   }
   .w-12 {
     width: calc(var(--spacing) * 12);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
+  .w-24 {
+    width: calc(var(--spacing) * 24);
   }
   .w-32 {
     width: calc(var(--spacing) * 32);
@@ -1632,10 +1639,6 @@
     border-style: var(--tw-border-style);
     border-width: 0px;
   }
-  .border-2 {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
-  }
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
@@ -1650,12 +1653,6 @@
       --badge-bg: #0000;
       background-image: none;
       border-color: currentColor;
-    }
-  }
-  .border-base-content\/30 {
-    border-color: var(--color-base-content);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-base-content) 30%, transparent);
     }
   }
   .border-white\/25 {
@@ -1701,11 +1698,6 @@
   }
   .bg-emerald-600 {
     background-color: var(--color-emerald-600);
-  }
-  .loading-dots {
-    @layer daisyui.l1.l2 {
-      mask-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='12' r='3'%3E%3Canimate attributeName='cy' values='12;6;12;12' keyTimes='0;0.286;0.571;1' dur='1.05s' repeatCount='indefinite' keySplines='.33,0,.66,.33;.33,.66,.66,1'/%3E%3C/circle%3E%3Ccircle cx='12' cy='12' r='3'%3E%3Canimate attributeName='cy' values='12;6;12;12' keyTimes='0;0.286;0.571;1' dur='1.05s' repeatCount='indefinite' keySplines='.33,0,.66,.33;.33,.66,.66,1' begin='0.1s'/%3E%3C/circle%3E%3Ccircle cx='20' cy='12' r='3'%3E%3Canimate attributeName='cy' values='12;6;12;12' keyTimes='0;0.286;0.571;1' dur='1.05s' repeatCount='indefinite' keySplines='.33,0,.66,.33;.33,.66,.66,1' begin='0.2s'/%3E%3C/circle%3E%3C/svg%3E");
-    }
   }
   .object-contain {
     object-fit: contain;
@@ -1863,6 +1855,19 @@
   .tracking-widest {
     --tw-tracking: var(--tracking-widest);
     letter-spacing: var(--tracking-widest);
+  }
+  .link-primary {
+    @layer daisyui.l1.l2 {
+      color: var(--color-primary);
+      @media (hover: hover) {
+        &:hover {
+          color: var(--color-primary);
+          @supports (color: color-mix(in lab, red, red)) {
+            color: color-mix(in oklab, var(--color-primary) 80%, #000);
+          }
+        }
+      }
+    }
   }
   .text-primary {
     color: var(--color-primary);

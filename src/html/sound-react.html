@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="boheme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sound React – Onza</title>
+
+  <meta name="description" content="Projet TouchDesigner : visuel de particules audio-réactif construit entièrement par des scripts Python — portfolio de Nathan (BTS SIO)." />
+  <meta property="og:title" content="Sound React – Onza" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../css/output.css" />
+</head>
+
+<body class="bg-hero relative font-sans overflow-x-clip">
+
+  <!-- NAV -->
+  <header class="fixed inset-x-0 top-5 z-0 flex justify-center px-4">
+    <nav class="glass rounded-full shadow-lg flex items-center gap-1 px-2 py-2">
+
+      <a href="../../index.html" class="btn btn-ghost btn-circle tooltip tooltip-bottom" data-tip="Accueil" aria-label="Accueil">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+        </svg>
+      </a>
+
+    </nav>
+  </header>
+
+  <!-- BACK LINK -->
+  <section class="px-8 pt-24 pb-6 max-w-5xl mx-auto relative z-10">
+    <a href="../../index.html#projects" class="link link-hover text-lg">← Retour aux projets</a>
+  </section>
+
+  <!-- COVER -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <figure class="aspect-480/207 m-4 overflow-hidden rounded-xl bg-[#2b2b2b] flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 9v6m3-9v12m3-8v4m3-7v10M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0Z" />
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <!-- INTRO : C'EST QUOI TOUCHDESIGNER -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10">
+
+        <p class="font-mono text-xs uppercase tracking-widest text-primary mb-2">Projet perso</p>
+        <h2 class="text-5xl font-light leading-tight mb-8">
+          Sound React — particules audio-réactives
+        </h2>
+
+        <h3 class="text-2xl font-semibold mb-4">C'est quoi, TouchDesigner ?</h3>
+        <p class="text-lg leading-relaxed mb-4">
+          TouchDesigner est un environnement de programmation visuelle par nœuds, pensé pour
+          créer des expériences multimédias en temps réel. Plutôt que d'écrire du code qui
+          s'exécute de haut en bas, on relie entre eux des « opérateurs » : chacun traite un
+          flux particulier — vidéo, audio, géométrie 3D, données — et le réseau obtenu réagit
+          en direct à ses entrées (son, capteurs, caméras, MIDI...). C'est un outil très
+          utilisé pour les visuels génératifs, les installations interactives, le VJing et les
+          scénographies live, car il s'appuie sur le GPU pour un rendu en temps réel.
+        </p>
+        <p class="text-lg leading-relaxed mb-10">
+          Les opérateurs sont classés par famille : les <strong>CHOP</strong> pour les données
+          qui varient dans le temps (son, mouvement, chiffres), les <strong>TOP</strong> pour
+          l'image en 2D, les <strong>SOP</strong> pour la géométrie 3D, les
+          <strong>DAT</strong> pour le texte, les tableaux et les scripts, et les
+          <strong>COMP</strong>, des conteneurs qui regroupent tout, y compris la logique
+          Python.
+        </p>
+
+        <h3 class="text-2xl font-semibold mb-4">Le projet</h3>
+        <p class="text-lg leading-relaxed mb-4">
+          Sound React est un visuel de particules qui réagit à la musique, créé uniquement
+          avec des scripts Python — le code source complet est disponible sur
+          <a href="https://github.com/0nza9/Sound-react-project" target="_blank" rel="noopener" class="link link-primary font-semibold">GitHub</a>.
+          Il n'y a pas de fichier <code class="font-mono text-base">.toe</code> dans le dépôt :
+          à la place, trois scripts construisent tout le réseau — l'analyse du son, les
+          particules sur GPU, le rendu et les effets. Un quatrième script fait l'inverse : il
+          relit les réglages faits à la main dans TouchDesigner et les réécrit dans le code. Le
+          visuel et ses réglages restent donc entièrement dans du Python.
+        </p>
+
+        <div class="flex flex-wrap gap-1 mb-10">
+          <span class="badge badge-xs badge-outline">TouchDesigner</span>
+          <span class="badge badge-xs badge-outline">Python</span>
+          <span class="badge badge-xs badge-outline">Analyse audio</span>
+          <span class="badge badge-xs badge-outline">Particules GPU</span>
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4">Les trois scripts</h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>
+            • <strong>audio_setup.py</strong> — lit un fichier audio et l'analyse : il crée le
+            composant d'analyse et expose neuf valeurs (low, mid, high, kick, snare, rhythm,
+            smsd, fmsd, spectralCentroid), plus un cumul de ces valeurs dans le temps pour
+            générer un mouvement qui n'est jamais répétitif.
+          </li>
+          <li>
+            • <strong>pop_setup.py</strong> — crée le visuel : le signal audio brut devient une
+            ligne de points, source d'un système de particules qui tourne en boucle sur le GPU.
+            Deux bruits et une torsion déforment le nuage, piloté par les valeurs issues de
+            l'analyse audio.
+          </li>
+          <li>
+            • <strong>save_settings.py</strong> — sauvegarde les réglages : une fois le rendu
+            ajusté à la main dans TouchDesigner, ce script relit les valeurs actuelles et les
+            réécrit dans les fichiers Python, pour repartir exactement des mêmes réglages à la
+            prochaine reconstruction.
+          </li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold mb-4">Comment le signal circule</h3>
+        <div class="mockup-code text-sm mb-2">
+          <pre data-prefix=""><code>audiofilein1 ──┬── audiodevout1          (écoute du son)</code></pre>
+          <pre data-prefix=""><code>             ├── null2 ──────────────┐  (signal audio brut)</code></pre>
+          <pre data-prefix=""><code>             └── audioAnalysis ── null1 ─┼── speed1</code></pre>
+          <pre data-prefix=""><code>                                          │</code></pre>
+          <pre data-prefix=""><code>chopto1 ◄─────────────────────────────────┘  (le son devient des points)</code></pre>
+          <pre data-prefix=""><code>  └── particle1 ── random1 ── null3 ── feedback1 ── rendu &amp; effets</code></pre>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGINATION -->
+  <section class="px-8 pb-24 max-w-5xl mx-auto relative z-10 flex justify-end">
+    <a href="sound-react-2.html" class="btn btn-outline btn-neutral btn-lg">
+      Page suivante →
+    </a>
+  </section>
+
+  <footer class="footer footer-center py-12 relative z-10">
+    <aside class="glass rounded-box px-6 py-3 text-base">
+      © 2026
+    </aside>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

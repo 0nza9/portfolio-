@@ -11,25 +11,29 @@
 }
 
 /* Custom DaisyUI theme matching the bohème palette so components
-   (btn, card, navbar…) inherit the cream/brown look out of the box. */
+   (btn, card, navbar…) inherit the cream/brown look out of the box.
+   Ember palette: Coffee Bean #220901 · Dark Garnet #621708 · Oxblood #941B0C
+                  Rusty Spice #BC3908 · Orange #F6AA1C
+   Orange is only readable on dark surfaces (≈1.8:1 on cream), so it is kept
+   for accents/decoration; text colors stay in the red range. */
 @plugin "daisyui/theme" {
   name: "boheme";
   default: true;
   color-scheme: light;
 
-  --color-base-100: #faf7f2;
-  --color-base-200: #f1ebe1;
-  --color-base-300: #e6dccc;
-  --color-base-content: #2b1a0f;
+  --color-base-100: #faf6f0;
+  --color-base-200: #f3e9dc;
+  --color-base-300: #e8d6c2;
+  --color-base-content: #220901;
 
-  --color-primary: #c98a3c;
-  --color-primary-content: #faf7f2;
-  --color-secondary: #b5723a;
-  --color-secondary-content: #faf7f2;
-  --color-accent: #e0a85a;
-  --color-accent-content: #2b1a0f;
-  --color-neutral: #2b1a0f;
-  --color-neutral-content: #faf7f2;
+  --color-primary: #bc3908;
+  --color-primary-content: #faf6f0;
+  --color-secondary: #941b0c;
+  --color-secondary-content: #faf6f0;
+  --color-accent: #f6aa1c;
+  --color-accent-content: #220901;
+  --color-neutral: #220901;
+  --color-neutral-content: #faf6f0;
 
   --radius-box: 1rem;
   --radius-field: 0.5rem;
@@ -48,6 +52,11 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-accent-content);
+  }
+
   h1, h2, h3, h4, .card-title {
     font-family: var(--font-serif);
     font-optical-sizing: auto; /* Fraunces adapts its shapes to the display size */
@@ -62,9 +71,14 @@
 }
 
 @layer utilities {
-  /* make the glass panels a bit more transparent than the daisyUI default (30%) */
+  /* glass panels: lighter blur than daisyUI's 40px so the background's shapes
+     still show through, plus a brighter rim + reflection to sell the glass.
+     the tint stays high enough to keep the dark text readable. */
   .glass {
-    --glass-opacity: 15%;
+    --glass-opacity: 20%;
+    --glass-blur: 16px;
+    --glass-border-opacity: 40%;
+    --glass-reflect-opacity: 13%;
   }
 
   /* scroll-reveal zoom: hidden + scaled down until JS adds .is-visible.
@@ -219,12 +233,18 @@ section > * {
     content: "";
     position: fixed;        /* pin to the viewport so it always covers the full page */
     inset: 0;
-    background-image: url('../img/1784b9a1ea1b0dce10d3191fa2a4e520-loop.gif');
+    /* warm garnet → coffee tint multiplied over the gif so the glass cards pick up the ember palette */
+    background-image:
+      linear-gradient(160deg, rgb(98 23 8 / 0.45), rgb(34 9 1 / 0.35)),
+      url('../img/1784b9a1ea1b0dce10d3191fa2a4e520-loop.gif');
+    background-blend-mode: multiply;
     background-size: cover;  /* always fill the whole area, however long the page is */
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0.80; /* adjust opacity here */
-    filter: blur(8px) brightness(0.7); /* brightness < 1 darkens the background */
+    /* keep the blur light: the glass cards blur it again, and they only read
+       as glass if the background behind them still has some detail */
+    filter: blur(4px) brightness(0.7); /* brightness < 1 darkens the background */
     transform: scale(1.05); /* hide blurred edges */
     z-index: -1;
   }

@@ -212,25 +212,20 @@
    ------------------------------------------------------------------------- */
 @layer components {
   .hn-marquee {
-    overflow-x: auto;
-    overflow-y: hidden;
-    overscroll-behavior-x: contain;
-    cursor: grab;
-    scrollbar-width: none; /* firefox */
+    overflow: hidden;
     mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-  }
-  .hn-marquee::-webkit-scrollbar {
-    display: none; /* chrome/safari/edge */
-  }
-  .hn-marquee.is-dragging {
-    cursor: grabbing;
-    scroll-behavior: auto;
   }
   .hn-marquee-track {
     display: flex;
     width: max-content;
     gap: 1rem;
+    animation: hn-scroll 36s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hn-marquee-track {
+      animation: none;
+    }
   }
 
   .hn-card {
@@ -286,6 +281,15 @@
     font-size: 0.65rem;
     opacity: 0.55;
     margin-top: 0.4rem;
+  }
+}
+
+@keyframes hn-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 

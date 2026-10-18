@@ -99,102 +99,16 @@
 
       widgets.forEach((w) => {
         const track = w.querySelector("[data-hn-list]");
-        const marquee = w.querySelector(".hn-marquee");
         if (!track) return;
         track.textContent = "";
-        // the strip is rendered twice back to back so the loop wraps from
-        // the end of the first set straight into an identical second set,
-        // with no visible seam (see wrap() below)
+        // rendered twice back to back: a pure CSS animation (see
+        // input.css's .hn-marquee-track) slides the track from 0 to -50%,
+        // which is exactly one full set — so it loops with no visible seam
+        // and no JS has to touch scroll position at all.
         valid.concat(valid).forEach((story) => track.appendChild(buildCard(story)));
-        if (marquee) setupMarquee(marquee, track);
       });
     })
     .catch(renderError);
-
-  // Auto-advances the strip and lets the mouse grab-drag it left/right (e.g.
-  // to catch an article that already scrolled by). No pause-on-hover: the
-  // footer sits at the bottom of the page, so the cursor is almost always
-  // already resting over it the moment someone scrolls down to look — a
-  // hover-pause there means it never visibly moves. Dragging already gives
-  // manual control, so only an active drag pauses the auto-advance.
-  // Touch devices get native overflow-x panning instead — untouched here,
-  // so there's no fight between our manual offset and the browser's own.
-  function setupMarquee(marquee, track) {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const SPEED = 36; // px/second
-
-    const wrap = () => {
-      const half = track.scrollWidth / 2;
-      if (half <= 0) return;
-      if (marquee.scrollLeft >= half) marquee.scrollLeft -= half;
-      else if (marquee.scrollLeft < 0) marquee.scrollLeft += half;
-    };
-
-    let dragging = false;
-    let dragStartX = 0;
-    let dragStartScroll = 0;
-    let dragMoved = 0;
-    let justDragged = false;
-
-    marquee.addEventListener("pointerdown", (e) => {
-      if (e.pointerType !== "mouse" || e.button !== 0) return;
-      dragging = true;
-      dragMoved = 0;
-      dragStartX = e.clientX;
-      dragStartScroll = marquee.scrollLeft;
-      marquee.classList.add("is-dragging");
-      marquee.setPointerCapture(e.pointerId);
-    });
-
-    marquee.addEventListener("pointermove", (e) => {
-      if (!dragging) return;
-      const dx = e.clientX - dragStartX;
-      dragMoved = Math.max(dragMoved, Math.abs(dx));
-      marquee.scrollLeft = dragStartScroll - dx;
-      wrap();
-    });
-
-    const endDrag = (e) => {
-      if (!dragging) return;
-      dragging = false;
-      marquee.classList.remove("is-dragging");
-      if (marquee.hasPointerCapture(e.pointerId)) marquee.releasePointerCapture(e.pointerId);
-      if (dragMoved > 5) {
-        // it was a drag, not a click: swallow the click a dragged card
-        // would otherwise fire so it doesn't navigate away
-        justDragged = true;
-        setTimeout(() => (justDragged = false), 0);
-      }
-    };
-    marquee.addEventListener("pointerup", endDrag);
-    marquee.addEventListener("pointercancel", endDrag);
-
-    track.addEventListener(
-      "click",
-      (e) => {
-        if (justDragged) {
-          e.preventDefault();
-          e.stopPropagation();
-        }
-      },
-      true
-    );
-
-    if (prefersReduced) return; // drag still works; just no automatic motion
-
-    let lastTs = null;
-    const tick = (ts) => {
-      if (lastTs == null) lastTs = ts;
-      const dt = (ts - lastTs) / 1000;
-      lastTs = ts;
-      if (!dragging) {
-        marquee.scrollLeft += SPEED * dt;
-        wrap();
-      }
-      requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }
 })();
 
 // Reveal elements tagged with `.reveal` as they scroll into view.

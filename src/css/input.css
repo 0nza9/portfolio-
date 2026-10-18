@@ -206,6 +206,89 @@
   }
 }
 
+/* -------------------------------------------------------------------------
+   Footer "Tech talk" widget: a looping horizontal parade of Hacker News
+   article cards, dressed up like little browser windows.
+   ------------------------------------------------------------------------- */
+@layer components {
+  .hn-marquee {
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    cursor: grab;
+    scrollbar-width: none; /* firefox */
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  }
+  .hn-marquee::-webkit-scrollbar {
+    display: none; /* chrome/safari/edge */
+  }
+  .hn-marquee.is-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+  }
+  .hn-marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 1rem;
+  }
+
+  .hn-card {
+    display: flex;
+    flex-direction: column;
+    width: 13rem;
+    flex: none;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    background: color-mix(in oklab, var(--color-base-100) 94%, transparent);
+    box-shadow: 0 6px 16px -10px rgb(0 0 0 / 0.5);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+  }
+  .hn-card:hover {
+    transform: translateY(-2px);
+  }
+  .hn-card-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.55rem;
+    background: color-mix(in oklab, var(--color-base-content) 8%, transparent);
+  }
+  .hn-card-favicon {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 2px;
+    flex: none;
+  }
+  .hn-card-domain {
+    font-size: 0.65rem;
+    opacity: 0.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hn-card-body {
+    padding: 0.6rem 0.65rem 0.7rem;
+    flex: 1;
+  }
+  .hn-card-title {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .hn-card-score {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    opacity: 0.55;
+    margin-top: 0.4rem;
+  }
+}
+
 
 /* breathing room between consecutive sections (on top of their own py padding) */
 section + section {

@@ -36,19 +36,23 @@
     <a href="../../index.html#projects" class="link link-hover text-lg">← Retour aux projets</a>
   </section>
 
-  <!-- COVER -->
-  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
-    <div class="card glass reveal reveal-top">
-      <figure class="aspect-480/207 m-4 overflow-hidden rounded-xl bg-linear-to-br from-[#621708] to-[#220901] flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 9v6m3-9v12m3-8v4m3-7v10M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0Z" />
-        </svg>
-      </figure>
+  <!-- LOGO : en tête de page -->
+  <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10 flex justify-center">
+    <div class="card glass reveal reveal-top inline-block">
+      <div class="card-body items-center p-8">
+        <div class="bg-white rounded-xl px-8 py-6 shadow-lg">
+          <img
+            src="../img/touchdesigner-logo.svg"
+            alt="Logo TouchDesigner"
+            class="max-w-full h-auto"
+          />
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- INTRO : C'EST QUOI TOUCHDESIGNER -->
-  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+  <!-- TITRE + INTRO : C'EST QUOI TOUCHDESIGNER -->
+  <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10">
     <div class="card glass reveal reveal-top">
       <div class="card-body p-10">
 
@@ -88,37 +92,87 @@
           visuel et ses réglages restent donc entièrement dans du Python.
         </p>
 
-        <div class="flex flex-wrap gap-1 mb-10">
+        <div class="flex flex-wrap gap-1">
           <span class="badge badge-xs badge-outline">TouchDesigner</span>
           <span class="badge badge-xs badge-outline">Python</span>
           <span class="badge badge-xs badge-outline">Analyse audio</span>
           <span class="badge badge-xs badge-outline">Particules GPU</span>
         </div>
 
-        <h3 class="text-2xl font-semibold mb-4">Les trois scripts</h3>
-        <ul class="text-lg leading-relaxed space-y-2 mb-10">
-          <li>
-            • <strong>audio_setup.py</strong> — lit un fichier audio et l'analyse : il crée le
-            composant d'analyse et expose neuf valeurs (low, mid, high, kick, snare, rhythm,
-            smsd, fmsd, spectralCentroid), plus un cumul de ces valeurs dans le temps pour
-            générer un mouvement qui n'est jamais répétitif.
-          </li>
-          <li>
-            • <strong>pop_setup.py</strong> — crée le visuel : le signal audio brut devient une
-            ligne de points, source d'un système de particules qui tourne en boucle sur le GPU.
-            Deux bruits et une torsion déforment le nuage, piloté par les valeurs issues de
-            l'analyse audio.
-          </li>
-          <li>
-            • <strong>save_settings.py</strong> — sauvegarde les réglages : une fois le rendu
-            ajusté à la main dans TouchDesigner, ce script relit les valeurs actuelles et les
-            réécrit dans les fichiers Python, pour repartir exactement des mêmes réglages à la
-            prochaine reconstruction.
-          </li>
-        </ul>
+      </div>
+    </div>
+  </section>
 
+  <!-- LES TROIS SCRIPTS : texte + extrait vidéo en alternance -->
+  <!-- audio_setup.py : vidéo à gauche, texte à droite -->
+  <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal sm:flex-row items-center gap-6 p-6">
+      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl bg-linear-to-br from-[#621708] to-[#220901]">
+        <!-- TODO: déposez l'extrait dans ../img/sound-react-clip-audio-setup.mp4 -->
+        <video controls preload="metadata" class="w-full h-full object-cover">
+          <!-- <source src="../img/sound-react-clip-audio-setup.mp4" type="video/mp4" /> -->
+          Votre navigateur ne prend pas en charge la lecture vidéo.
+        </video>
+      </figure>
+      <div class="flex-1">
+        <h3 class="text-2xl font-semibold mb-3">audio_setup.py</h3>
+        <p class="text-lg leading-relaxed">
+          Lit un fichier audio et l'analyse : il crée le composant d'analyse et expose neuf
+          valeurs (low, mid, high, kick, snare, rhythm, smsd, fmsd, spectralCentroid), plus un
+          cumul de ces valeurs dans le temps pour générer un mouvement qui n'est jamais
+          répétitif.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- pop_setup.py : texte à gauche, vidéo à droite -->
+  <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal sm:flex-row-reverse items-center gap-6 p-6">
+      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl bg-linear-to-br from-[#621708] to-[#220901]">
+        <video controls preload="metadata" class="w-full h-full object-cover">
+          <source src="../img/touchdesigner-demo.mp4" type="video/mp4" />
+          Votre navigateur ne prend pas en charge la lecture vidéo.
+        </video>
+      </figure>
+      <div class="flex-1">
+        <h3 class="text-2xl font-semibold mb-3">pop_setup.py</h3>
+        <p class="text-lg leading-relaxed">
+          Crée le visuel : le signal audio brut devient une ligne de points, source d'un
+          système de particules qui tourne en boucle sur le GPU. Deux bruits et une torsion
+          déforment le nuage, piloté par les valeurs issues de l'analyse audio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- save_settings.py : vidéo à gauche, texte à droite -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal sm:flex-row items-center gap-6 p-6">
+      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl bg-linear-to-br from-[#621708] to-[#220901]">
+        <!-- TODO: déposez l'extrait dans ../img/sound-react-clip-save-settings.mp4 -->
+        <video controls preload="metadata" class="w-full h-full object-cover">
+          <!-- <source src="../img/sound-react-clip-save-settings.mp4" type="video/mp4" /> -->
+          Votre navigateur ne prend pas en charge la lecture vidéo.
+        </video>
+      </figure>
+      <div class="flex-1">
+        <h3 class="text-2xl font-semibold mb-3">save_settings.py</h3>
+        <p class="text-lg leading-relaxed">
+          Sauvegarde les réglages : une fois le rendu ajusté à la main dans TouchDesigner, ce
+          script relit les valeurs actuelles et les réécrit dans les fichiers Python, pour
+          repartir exactement des mêmes réglages à la prochaine reconstruction.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT LE SIGNAL CIRCULE -->
+  <section class="px-8 pb-24 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10">
         <h3 class="text-2xl font-semibold mb-4">Comment le signal circule</h3>
-        <div class="mockup-code text-sm mb-2">
+        <div class="mockup-code text-sm">
           <pre data-prefix=""><code>audiofilein1 ──┬── audiodevout1          (écoute du son)</code></pre>
           <pre data-prefix=""><code>             ├── null2 ──────────────┐  (signal audio brut)</code></pre>
           <pre data-prefix=""><code>             └── audioAnalysis ── null1 ─┼── speed1</code></pre>
@@ -126,7 +180,6 @@
           <pre data-prefix=""><code>chopto1 ◄─────────────────────────────────┘  (le son devient des points)</code></pre>
           <pre data-prefix=""><code>  └── particle1 ── random1 ── null3 ── feedback1 ── rendu &amp; effets</code></pre>
         </div>
-
       </div>
     </div>
   </section>
@@ -138,10 +191,31 @@
     </a>
   </section>
 
-  <footer class="footer footer-center py-12 relative z-10">
-    <aside class="glass rounded-box px-6 py-3 text-base">
-      © 2026
-    </aside>
+  <footer class="footer footer-center py-12 relative z-10 flex flex-col items-center gap-4">
+    <div class="glass bg-base-100/20 rounded-box overflow-hidden px-5 py-4 w-full max-w-2xl" data-hn-widget>
+      <div class="flex items-center justify-between mb-3 px-1">
+        <p class="font-mono text-xs uppercase tracking-widest text-primary flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l-6 7.5 6 7.5M15.75 4.5l6 7.5-6 7.5" />
+          </svg>
+          Tech talk · Hacker News
+        </p>
+        <div class="flex items-center gap-1.5" aria-hidden="true">
+          <span class="hn-card-dot size-1.5 rounded-full bg-base-content/30"></span>
+          <span class="hn-card-dot size-1.5 rounded-full bg-base-content/30"></span>
+          <span class="hn-card-dot size-1.5 rounded-full bg-base-content/30"></span>
+        </div>
+      </div>
+      <div class="hn-marquee">
+        <div class="hn-marquee-track" data-hn-list>
+          <div class="hn-card">
+            <div class="hn-card-bar">
+              <span class="opacity-60 text-xs">Chargement…</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script src="../js/main.js"></script>

@@ -38,7 +38,12 @@
 
   <!-- LOGO : en tête de page -->
   <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10 flex justify-center">
-    <div class="card glass reveal reveal-top inline-block">
+    <div class="card glass reveal reveal-top inline-block relative overflow-hidden">
+      <!-- bandeau "en construction" en diagonale, coin haut-gauche —
+           le débordement est coupé proprement par le coin arrondi de la carte -->
+      <span class="absolute top-6 -left-14 z-20 w-48 -rotate-45 bg-primary text-primary-content text-center text-xs font-mono font-semibold uppercase tracking-wide py-1.5 shadow-md pointer-events-none" aria-hidden="true">
+        En construction
+      </span>
       <div class="card-body items-center p-8">
         <div class="bg-white rounded-xl px-8 py-6 shadow-lg">
           <img

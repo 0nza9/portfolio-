@@ -111,6 +111,43 @@
     .catch(renderError);
 })();
 
+// Video "sound warning" gate ([data-video-gate]): the poster frame shows
+// through immediately, but nothing plays until the visitor clicks through
+// the warning overlay, since the video has real audio (no autoplay, no
+// surprise sound). Once started, it also auto-pauses the moment it scrolls
+// out of view, so it can't keep playing in the background unnoticed.
+(function () {
+  const gates = document.querySelectorAll("[data-video-gate]");
+  if (!gates.length) return;
+
+  gates.forEach((gate) => {
+    const warning = gate.querySelector("[data-video-gate-warning]");
+    const startBtn = gate.querySelector("[data-video-gate-start]");
+    const video = gate.querySelector("[data-video-gate-player]");
+    if (!warning || !startBtn || !video) return;
+
+    startBtn.addEventListener("click", () => {
+      warning.remove();
+      video.play().catch(() => {
+        /* play() needs a fresh user gesture in some browsers — the native
+           controls are visible either way, visitor presses play manually */
+      });
+    });
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting && !video.paused) video.pause();
+          });
+        },
+        { threshold: 0 }
+      );
+      io.observe(gate);
+    }
+  });
+})();
+
 // Reveal elements tagged with `.reveal` as they scroll into view.
 // Respects the user's reduced-motion preference and degrades gracefully.
 (function () {

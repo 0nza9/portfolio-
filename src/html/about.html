@@ -53,29 +53,28 @@
         <h1 class="text-4xl md:text-5xl font-light leading-tight">Mon tableau</h1>
         <p class="opacity-80">
           Qui je suis, ce que je fais et ce que j’aime.
-          <span class="hidden lg:inline font-hand text-xl text-primary">(astuce : les notes se déplacent&nbsp;!)</span>
         </p>
       </div>
     </div>
 
     <!-- the board -->
-    <div class="board glass reveal rounded-box p-6 sm:p-10 flex flex-col gap-10 lg:block lg:px-16 lg:pt-64 lg:pb-68" data-board>
+    <div class="board glass reveal rounded-box p-6 sm:p-10 lg:p-16" data-board>
 
-      <!-- doodles (desktop only) -->
-      <svg class="doodle hidden lg:block top-24 left-[46%] w-12" viewBox="0 0 24 24" aria-hidden="true">
+      <!-- doodles (desktop only) — pinned to the padding gutter, outside the content -->
+      <svg class="doodle hidden lg:block top-6 left-6 w-8" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 2l1.8 8.2L22 12l-8.2 1.8L12 22l-1.8-8.2L2 12l8.2-1.8z" />
       </svg>
-      <svg class="doodle hidden lg:block top-44 left-[55%] w-6" viewBox="0 0 24 24" aria-hidden="true">
+      <svg class="doodle hidden lg:block top-6 left-1/2 -translate-x-1/2 w-5" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 2l1.8 8.2L22 12l-8.2 1.8L12 22l-1.8-8.2L2 12l8.2-1.8z" />
       </svg>
-      <svg class="doodle hidden lg:block top-[46%] left-5 w-10" viewBox="-12 -12 24 24" aria-hidden="true">
+      <svg class="doodle hidden lg:block bottom-6 left-6 w-7" viewBox="-12 -12 24 24" aria-hidden="true">
         <g><ellipse rx="2.4" ry="5.2" cy="-6.2" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(45)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(90)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(135)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(180)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(225)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(270)" /><ellipse rx="2.4" ry="5.2" cy="-6.2" transform="rotate(315)" /></g>
         <circle r="2.6" />
       </svg>
-      <svg class="doodle hidden lg:block top-[44%] right-6 w-10" viewBox="0 0 24 24" aria-hidden="true">
+      <svg class="doodle hidden lg:block top-6 right-6 w-7" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" />
       </svg>
-      <svg class="doodle hidden lg:block bottom-16 left-[45%] w-12" viewBox="0 0 24 24" aria-hidden="true">
+      <svg class="doodle hidden lg:block bottom-6 right-6 w-8" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
       </svg>
 
@@ -114,44 +113,7 @@
             développeur dans un marché qui se renouvelle constamment, mais aussi celles qui stimulent ma
             curiosité dans mes hobbies personnels et le lien que je peux faire avec ceux-là.
           </p>
-          <div class="flex flex-wrap gap-2 mt-5">
-            <span class="badge badge-outline border-dashed">front</span>
-            <span class="badge badge-outline border-dashed">back</span>
-            <span class="badge badge-outline border-dashed">serveur</span>
-            <span class="badge badge-outline border-dashed">réseau</span>
-            <span class="badge badge-outline border-dashed">jeu vidéo</span>
-            <span class="badge badge-outline border-dashed">musique</span>
-          </div>
         </div>
-      </div>
-
-      <!-- sticky notes: a grid on small screens, pinned to the corners on desktop -->
-      <div class="grid sm:grid-cols-2 gap-10 justify-items-center lg:contents">
-
-        <article class="note note-mustard -rotate-3 lg:absolute lg:top-8 lg:left-8" data-draggable>
-          <span class="tape" aria-hidden="true"></span>
-          <p class="note-label">ce que je fais</p>
-          <p>Développeur junior front &amp; back, étudiant en BTS SIO option SLAM. Je code surtout en TypeScript, Svelte et Node.js.</p>
-        </article>
-
-        <article class="note note-sage rotate-3 lg:absolute lg:top-10 lg:right-10" data-draggable>
-          <span class="tape" aria-hidden="true"></span>
-          <p class="note-label">ma philosophie</p>
-          <p>Aborder chaque projet sous tous ses angles, du code jusqu’au serveur qui le fait tourner. La polyvalence avant tout&nbsp;!</p>
-        </article>
-
-        <article class="note note-terracotta rotate-2 lg:absolute lg:bottom-8 lg:left-12" data-draggable>
-          <span class="tape" aria-hidden="true"></span>
-          <p class="note-label">en dehors du code</p>
-          <p>Le jeu vidéo et la musique. Et j’anime la communauté Discord de Rustian Life, plus de 370 membres&nbsp;!</p>
-        </article>
-
-        <article class="note note-rose -rotate-2 lg:absolute lg:bottom-10 lg:right-8" data-draggable>
-          <span class="tape" aria-hidden="true"></span>
-          <p class="note-label">en ce moment</p>
-          <p>Je cherche une alternance&nbsp;! Et je prépare la bêta de notre serveur Rust avec une première vague de joueurs.</p>
-        </article>
-
       </div>
     </div>
 

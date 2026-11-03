@@ -72,13 +72,15 @@
 
 @layer utilities {
   /* glass panels: lighter blur than daisyUI's 40px so the background's shapes
-     still show through, plus a brighter rim + reflection to sell the glass.
-     the tint stays high enough to keep the dark text readable. */
+     still show through, plus a brighter rim to sell the glass. The tint
+     stays high enough to keep the dark text readable. Reflection highlight
+     disabled (0%) — its hard-edged diagonal band showed through as a visible
+     glare, especially over light/outline content like badges. */
   .glass {
     --glass-opacity: 20%;
     --glass-blur: 16px;
     --glass-border-opacity: 40%;
-    --glass-reflect-opacity: 13%;
+    --glass-reflect-opacity: 0%;
   }
 
   /* scroll-reveal zoom: hidden + scaled down until JS adds .is-visible.

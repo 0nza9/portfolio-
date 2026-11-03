@@ -36,24 +36,31 @@
     <a href="../../index.html#projects" class="link link-hover text-lg">← Retour aux projets</a>
   </section>
 
-  <!-- LOGO : en tête de page -->
-  <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10 flex justify-center">
-    <div class="card glass reveal reveal-top inline-block relative overflow-hidden">
-      <!-- bandeau "en construction" en diagonale, coin haut-gauche —
-           le débordement est coupé proprement par le coin arrondi de la carte -->
-      <span class="absolute top-6 -left-14 z-20 w-48 -rotate-45 bg-primary text-primary-content text-center text-xs font-mono font-semibold uppercase tracking-wide py-1.5 shadow-md pointer-events-none" aria-hidden="true">
-        En construction
-      </span>
-      <div class="card-body items-center p-8">
-        <div class="bg-white rounded-xl px-8 py-6 shadow-lg">
-          <img
-            src="../img/touchdesigner-logo.svg"
-            alt="Logo TouchDesigner"
-            class="max-w-full h-auto"
-          />
-        </div>
+  <!-- DÉMONSTRATION : rendu final, guitare en direct -->
+  <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10">
+    <figure class="reveal reveal-top aspect-video overflow-hidden rounded-xl relative" data-video-gate>
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center bg-black/45" data-video-gate-warning>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25 3 12l3.75 3.75h3V8.25h-3Z" />
+        </svg>
+        <p class="text-sm text-white max-w-xs">
+          Cette vidéo contient du son (guitare jouée en direct).
+        </p>
+        <button type="button" class="btn btn-primary btn-sm" data-video-gate-start>
+          ▶ Lancer la vidéo
+        </button>
       </div>
-    </div>
+      <video
+        controls
+        preload="metadata"
+        poster="../img/sound-react-showcase-poster.jpg"
+        class="w-full h-full object-cover"
+        data-video-gate-player
+      >
+        <source src="../img/sound-react-showcase.mp4" type="video/mp4" />
+        Votre navigateur ne prend pas en charge la lecture vidéo.
+      </video>
+    </figure>
   </section>
 
   <!-- TITRE + INTRO : C'EST QUOI TOUCHDESIGNER -->
@@ -76,13 +83,24 @@
           utilisé pour les visuels génératifs, les installations interactives, le VJing et les
           scénographies live, car il s'appuie sur le GPU pour un rendu en temps réel.
         </p>
-        <p class="text-lg leading-relaxed mb-10">
+        <p class="text-lg leading-relaxed mb-4">
           Les opérateurs sont classés par famille : les <strong>CHOP</strong> pour les données
           qui varient dans le temps (son, mouvement, chiffres), les <strong>TOP</strong> pour
           l'image en 2D, les <strong>SOP</strong> pour la géométrie 3D, les
           <strong>DAT</strong> pour le texte, les tableaux et les scripts, et les
           <strong>COMP</strong>, des conteneurs qui regroupent tout, y compris la logique
           Python.
+        </p>
+        <p class="text-lg leading-relaxed mb-10">
+          Fait notable pour un développeur : chaque opérateur expose nativement sa propre
+          classe Python, avec sa documentation dédiée sur le wiki officiel (docs.derivative.ca)
+          — pas de plugin ni de wrapper tiers à installer. Lire ou écrire un paramètre, créer,
+          connecter ou supprimer un opérateur, réagir à un événement : tout passe par les mêmes
+          objets Python documentés, du premier au dernier nœud du réseau. C'est cette cohérence
+          qui rend un patch reproductible comme du vrai code plutôt que comme un fichier binaire
+          figé — et c'est exactement ce qui m'a permis de construire Sound React sans jamais
+          sauvegarder de fichier <code class="font-mono text-base">.toe</code> : le réseau
+          entier tient dans des scripts versionnés sur Git.
         </p>
 
         <h3 class="text-2xl font-semibold mb-4">Le projet</h3>
@@ -97,76 +115,103 @@
           visuel et ses réglages restent donc entièrement dans du Python.
         </p>
 
-        <div class="flex flex-wrap gap-1">
-          <span class="badge badge-xs badge-outline">TouchDesigner</span>
-          <span class="badge badge-xs badge-outline">Python</span>
-          <span class="badge badge-xs badge-outline">Analyse audio</span>
-          <span class="badge badge-xs badge-outline">Particules GPU</span>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- LES TROIS SCRIPTS : texte + extrait vidéo en alternance -->
+  <!-- TRANSITION : entrée dans le cœur du projet -->
+  <section class="px-8 pb-6 max-w-5xl mx-auto relative z-10 text-center">
+    <p class="font-mono text-xs uppercase tracking-widest text-primary mb-2">Dans le code</p>
+    <h2 class="text-3xl font-light">Les trois scripts qui font tourner Sound React</h2>
+  </section>
+
+  <!-- LES TROIS SCRIPTS : texte + icône en alternance -->
   <!-- audio_setup.py : vidéo à gauche, texte à droite -->
   <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10">
     <div class="card glass reveal sm:flex-row items-center gap-6 p-6">
-      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl bg-linear-to-br from-[#621708] to-[#220901]">
-        <!-- TODO: déposez l'extrait dans ../img/sound-react-clip-audio-setup.mp4 -->
-        <video controls preload="metadata" class="w-full h-full object-cover">
-          <!-- <source src="../img/sound-react-clip-audio-setup.mp4" type="video/mp4" /> -->
+      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl">
+        <video
+          controls
+          preload="metadata"
+          poster="../img/sound-react-audio-setup-poster.jpg"
+          class="w-full h-full object-cover"
+        >
+          <source src="../img/sound-react-audio-setup.mp4" type="video/mp4" />
           Votre navigateur ne prend pas en charge la lecture vidéo.
         </video>
       </figure>
       <div class="flex-1">
         <h3 class="text-2xl font-semibold mb-3">audio_setup.py</h3>
+        <p class="text-sm font-mono uppercase tracking-wide text-primary mb-3">
+          Démo du script qui fait démarrer tout l'écosystème audio du projet
+        </p>
         <p class="text-lg leading-relaxed">
-          Lit un fichier audio et l'analyse : il crée le composant d'analyse et expose neuf
-          valeurs (low, mid, high, kick, snare, rhythm, smsd, fmsd, spectralCentroid), plus un
-          cumul de ces valeurs dans le temps pour générer un mouvement qui n'est jamais
-          répétitif.
+          Je commence par charger le fichier audio et le brancher sur l'analyse : cela expose
+          neuf valeurs en temps réel (low, mid, high, kick, snare, rhythm, smsd, fmsd,
+          spectralCentroid), plus un cumul qui s'accumule dans le temps pour un mouvement qui
+          ne se répète jamais. C'est le script le plus important du projet : toute la
+          réactivité du visuel — tout ce qui bouge, pulse ou réagit à la musique — dépend
+          directement de ce qui sort d'ici.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- pop_setup.py : texte à gauche, vidéo à droite -->
+  <!-- pop_setup.py : texte à gauche, icône à droite -->
   <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10">
     <div class="card glass reveal sm:flex-row-reverse items-center gap-6 p-6">
-      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl bg-linear-to-br from-[#621708] to-[#220901]">
-        <video controls preload="metadata" class="w-full h-full object-cover">
-          <source src="../img/touchdesigner-demo.mp4" type="video/mp4" />
+      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl">
+        <video
+          controls
+          preload="metadata"
+          poster="../img/sound-react-pop-setup-poster.jpg"
+          class="w-full h-full object-cover"
+        >
+          <source src="../img/sound-react-pop-setup.mp4" type="video/mp4" />
           Votre navigateur ne prend pas en charge la lecture vidéo.
         </video>
       </figure>
       <div class="flex-1">
         <h3 class="text-2xl font-semibold mb-3">pop_setup.py</h3>
+        <p class="text-sm font-mono uppercase tracking-wide text-primary mb-3">
+          Démo du script qui construit le système de particules à partir de l'analyse audio
+        </p>
         <p class="text-lg leading-relaxed">
-          Crée le visuel : le signal audio brut devient une ligne de points, source d'un
-          système de particules qui tourne en boucle sur le GPU. Deux bruits et une torsion
-          déforment le nuage, piloté par les valeurs issues de l'analyse audio.
+          Ensuite, je construis le visuel : le signal audio brut devient une ligne de points,
+          qui sert de source à un système de particules tournant en boucle sur le GPU.
+          J'applique deux bruits et une torsion pour déformer le nuage, le tout piloté en
+          direct par les valeurs issues de l'analyse. C'est l'ensemble de l'écosystème visuel
+          du projet : chaque opérateur important est réglable, que ce soit pour modifier le
+          comportement des particules ou la palette de couleurs du rendu — je le détaillerai
+          prochainement.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- save_settings.py : vidéo à gauche, texte à droite -->
+  <!-- save_settings.py : icône à gauche, texte à droite -->
   <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
     <div class="card glass reveal sm:flex-row items-center gap-6 p-6">
-      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl bg-linear-to-br from-[#621708] to-[#220901]">
-        <!-- TODO: déposez l'extrait dans ../img/sound-react-clip-save-settings.mp4 -->
-        <video controls preload="metadata" class="w-full h-full object-cover">
-          <!-- <source src="../img/sound-react-clip-save-settings.mp4" type="video/mp4" /> -->
+      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl">
+        <video
+          controls
+          preload="metadata"
+          poster="../img/sound-react-save-settings-poster.jpg"
+          class="w-full h-full object-cover"
+        >
+          <source src="../img/sound-react-save-settings.mp4" type="video/mp4" />
           Votre navigateur ne prend pas en charge la lecture vidéo.
         </video>
       </figure>
       <div class="flex-1">
         <h3 class="text-2xl font-semibold mb-3">save_settings.py</h3>
+        <p class="text-sm font-mono uppercase tracking-wide text-primary mb-3">
+          Démo du script qui fige dans le code les réglages ajustés à la main
+        </p>
         <p class="text-lg leading-relaxed">
-          Sauvegarde les réglages : une fois le rendu ajusté à la main dans TouchDesigner, ce
-          script relit les valeurs actuelles et les réécrit dans les fichiers Python, pour
-          repartir exactement des mêmes réglages à la prochaine reconstruction.
+          Une fois le rendu ajusté à la main dans TouchDesigner, ce script relit mes réglages
+          actuels et les réécrit directement dans les fichiers Python. Je repars ainsi
+          exactement des mêmes réglages à la prochaine reconstruction.
         </p>
       </div>
     </div>

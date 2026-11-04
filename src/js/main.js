@@ -116,6 +116,9 @@
 // the warning overlay, since the video has real audio (no autoplay, no
 // surprise sound). Once started, it also auto-pauses the moment it scrolls
 // out of view, so it can't keep playing in the background unnoticed.
+// The player is either a local <video>, or a poster <img> carrying
+// data-video-gate-youtube: that one is swapped for a YouTube embed on click,
+// so nothing is requested from YouTube until the visitor asks for it.
 (function () {
   const gates = document.querySelectorAll("[data-video-gate]");
   if (!gates.length) return;
@@ -123,22 +126,47 @@
   gates.forEach((gate) => {
     const warning = gate.querySelector("[data-video-gate-warning]");
     const startBtn = gate.querySelector("[data-video-gate-start]");
-    const video = gate.querySelector("[data-video-gate-player]");
-    if (!warning || !startBtn || !video) return;
+    const player = gate.querySelector("[data-video-gate-player]");
+    if (!warning || !startBtn || !player) return;
+
+    const youtubeId = player.dataset.videoGateYoutube;
+    let iframe = null;
 
     startBtn.addEventListener("click", () => {
       warning.remove();
-      video.play().catch(() => {
+      if (youtubeId) {
+        iframe = document.createElement("iframe");
+        // enablejsapi lets us pause it from here via postMessage
+        iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`;
+        iframe.title = player.alt || "Vidéo YouTube";
+        iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        iframe.allowFullscreen = true;
+        iframe.className = "w-full h-full border-0";
+        player.replaceWith(iframe);
+        return;
+      }
+      player.play().catch(() => {
         /* play() needs a fresh user gesture in some browsers — the native
            controls are visible either way, visitor presses play manually */
       });
     });
 
+    function pause() {
+      if (iframe) {
+        iframe.contentWindow?.postMessage(
+          JSON.stringify({ event: "command", func: "pauseVideo", args: [] }),
+          "*"
+        );
+      } else if (!youtubeId && !player.paused) {
+        player.pause();
+      }
+    }
+
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (!entry.isIntersecting && !video.paused) video.pause();
+            if (!entry.isIntersecting) pause();
           });
         },
         { threshold: 0 }
@@ -318,7 +346,7 @@
 // Live Discord card. Needs the server widget enabled (Server Settings → Widget)
 // and the server ID in data-guild-id. If an invite channel is also picked there,
 // the invite is used (not shown) to fetch the server icon and the real member count.
-// Anything that fails just stays hidden, leaving the static "230+ membres".
+// Anything that fails just stays hidden, leaving the static "300+ membres".
 (function () {
   const card = document.querySelector("[data-discord-widget]");
   const guildId = card && card.dataset.guildId;

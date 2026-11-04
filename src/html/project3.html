@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="boheme">
+<html lang="fr" data-theme="ardoise">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Infrastructure réseau – Suite – Onza</title>
+  <title>RustianLife – Plateforme &amp; bots – Onza</title>
 
-  <meta name="description" content="Suite du projet d'infrastructure réseau — portfolio de Nathan (BTS SIO)." />
-  <meta property="og:title" content="Infrastructure réseau – Suite – Onza" />
+  <meta name="description" content="Plateforme web Fastify / EJS / Prisma, authentification Discord et Steam, file d'attente pondérée et bots Discord — portfolio de Nathan (BTS SIO)." />
+  <meta property="og:title" content="RustianLife – Plateforme &amp; bots – Onza" />
   <meta property="og:type" content="article" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>" />
+  <link rel="icon" href="data:," />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,9 +41,10 @@
     <div class="glass rounded-box px-4 py-4">
       <ul class="steps steps-vertical sm:steps-horizontal w-full">
         <li class="step step-primary"><a href="project.html" class="link link-hover px-2">Vue d’ensemble</a></li>
-        <li class="step step-primary"><a href="project2.html" class="link link-hover px-2">WinSCP</a></li>
-        <li class="step step-primary"><a href="project3.html" class="link link-hover px-2 font-semibold">Site Web &amp; Discord</a></li>
-        <li class="step"><a href="project4.html" class="link link-hover px-2">Conclusion</a></li>
+        <li class="step step-primary"><a href="project2.html" class="link link-hover px-2">Serveur &amp; infra</a></li>
+        <li class="step step-primary"><a href="project3.html" class="link link-hover px-2 font-semibold">Plateforme &amp; bots</a></li>
+        <li class="step"><a href="project4.html" class="link link-hover px-2">Wipes automatisés</a></li>
+        <li class="step"><a href="project5.html" class="link link-hover px-2">Bilan</a></li>
       </ul>
     </div>
   </section>
@@ -53,7 +54,7 @@
     <div class="card glass reveal reveal-top">
       <div class="card-body p-10 text-center">
         <h2 class="text-5xl font-light leading-tight mb-8">
-          Développement du Site Web (et Discord)
+          Plateforme web &amp; bots Discord
         </h2>
         <p class="text-lg leading-relaxed">
           Dans le cadre de la gestion d’un serveur Rust moddé, j’ai participé à la conception et au
@@ -107,8 +108,9 @@
           <li>• Gestion dynamique du statut VIP (durée, fidélité, récompenses progressives).</li>
           <li>• Attribution automatisée d’avantages en jeu (priorité dans la file d’attente, bonus, permissions spécifiques).</li>
           <li>• Synchronisation avec le serveur Rust pour appliquer les permissions et paramètres en temps réel.</li>
-          <li>• Interaction avec l’API Discord pour l’attribution de rôles et avantages communautaires sur le serveur Discord.</li>
-          <li>• Réception des paiements boutique (Tebex) via webhook, avec vérification de signature (HMAC-SHA256) côté API — l’attribution automatique des avantages achetés est la brique encore en cours de finalisation (voir la conclusion).</li>
+          <li>• Interaction avec l’API Discord pour l’attribution de rôles et avantages communautaires, et ajout automatique au serveur Discord après la première connexion.</li>
+          <li>• Profils « explorateur » temporaires : un joueur qui rejoint le serveur sans compte garde sa progression (streak) jusqu’à ce qu’il lie son compte sur le dashboard.</li>
+          <li>• Boutique Tebex : chaque paiement arrive par webhook, vérifié par signature HMAC-SHA256 et liste blanche d’adresses IP, puis enregistré dans un registre d’achats. Un webhook reçu deux fois ne donne jamais deux fois la récompense, et le VIP acheté est activé automatiquement en jeu et sur Discord.</li>
         </ul>
 
         <p class="text-lg leading-relaxed">
@@ -121,20 +123,48 @@
     </div>
   </section>
 
+  <!-- SÉCURITÉ DE L'API -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Sécuriser l’API
+        </h3>
+        <p class="text-lg leading-relaxed mb-6">
+          L’API est exposée sur Internet et reçoit à la fois des joueurs, des plugins de jeu et des
+          paiements : chaque type d’appel a donc sa propre protection.
+        </p>
+        <ul class="text-lg leading-relaxed space-y-2">
+          <li>• <strong class="font-semibold">Plugins du jeu :</strong> une clé d’API transmise dans un en-tête et comparée en temps constant, pour qu’on ne puisse pas la deviner caractère par caractère en mesurant le temps de réponse.</li>
+          <li>• <strong class="font-semibold">Pages d’administration :</strong> réservées aux comptes Discord d’une liste d’administrateurs. Un visiteur non connecté reçoit une erreur 404 au lieu de 403, ce qui rend ces pages invisibles aux scanners.</li>
+          <li>• <strong class="font-semibold">Données reçues :</strong> chaque requête est validée par un schéma (zod) et rejetée si sa forme est incorrecte.</li>
+          <li>• <strong class="font-semibold">En-têtes de sécurité :</strong> Content-Security-Policy, HSTS, protection contre l’intégration dans une iframe, via Helmet.</li>
+          <li>• <strong class="font-semibold">Routes de développement :</strong> elles ne sont tout simplement pas enregistrées en production.</li>
+          <li>• <strong class="font-semibold">Limitation de débit</strong> sur les routes publiques, et jetons OAuth chiffrés en AES-256-GCM.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
   <!-- BOTS DISCORD -->
   <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
     <div class="card glass reveal reveal-top">
       <div class="card-body p-10 text-center">
 
         <p class="text-lg leading-relaxed mb-10">
-          Pour le côté plus technique mais important à mentionner, deux bots distincts ont été conçus
-          avec des responsabilités séparées pour permettre le fonctionnement du Dashboard comme convenu.
+          Côté Discord, les bots ont des responsabilités séparées : un bot global (le
+          <strong class="font-semibold">Sentinel</strong>) pour tout ce qui concerne la communauté,
+          puis un bot par serveur de jeu (production et staging), chacun dans son propre conteneur.
         </p>
 
         <p class="text-lg leading-relaxed mb-4">
-          Le <strong class="font-semibold">bot Purple</strong> gère le système de vote dynamique des
-          maps (qui sont votées par les joueurs à chaque fois que la partie repart à zéro sur le
-          serveur du jeu) via des interactions Discord (boutons API).
+          Le <strong class="font-semibold">bot Purple</strong>, celui du serveur de production, gère
+          le système de vote dynamique des maps (qui sont votées par les joueurs à chaque fois que la
+          partie repart à zéro sur le serveur du jeu) via des interactions Discord (boutons API), avec
+          les cartes proposées récupérées depuis l’API RustMaps. C’est aussi lui qui déclenche le
+          processus de wipe (voir page suivante).
         </p>
 
         <p class="text-lg leading-relaxed mb-4">
@@ -162,6 +192,31 @@
     </div>
   </section>
 
+  <!-- FILE D'ATTENTE -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Une file d’attente par tirage pondéré
+        </h3>
+        <p class="text-lg leading-relaxed mb-6">
+          Quand le serveur est plein, les joueurs patientent dans une file d’attente. Plutôt qu’un
+          simple « premier arrivé, premier servi », le plugin maison
+          <code class="font-mono text-base">RustianQueue</code> (C#) fait un tirage au sort pondéré :
+          l’API lui fournit le poids de chaque joueur selon son statut VIP et sa streak.
+        </p>
+        <ul class="text-lg leading-relaxed space-y-2">
+          <li>• Le plugin ne touche jamais au joueur en première position (« YOU’RE NEXT »), ni à la place réservée pendant 5 minutes après un crash, gérée nativement par Rust.</li>
+          <li>• Le joueur tiré au sort est placé juste derrière, en deuxième position.</li>
+          <li>• Si le plugin n’arrive plus à lire la file interne du jeu (après une mise à jour de Rust par exemple), il passe en mode dégradé et laisse la file normale fonctionner au lieu de la bloquer.</li>
+          <li>• Chaque décision est tracée et conservée 24 h dans Redis, pour pouvoir expliquer à un joueur pourquoi il a attendu.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
   <!-- BOT MASTER -->
   <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
     <div class="card glass reveal reveal-top">
@@ -170,7 +225,15 @@
         <p class="text-lg leading-relaxed mb-10">
           Contrairement au bot Purple, orienté interaction utilisateur, le <strong class="font-semibold">Bot Master</strong>
           fonctionne principalement en arrière-plan via des tâches planifiées, garantissant la
-          synchronisation continue des statuts VIP, des streaks et des rôles Discord.
+          synchronisation continue des statuts VIP, des streaks et des rôles Discord. Il s’occupe
+          aussi du suivi de l’état des serveurs, des annonces de mises à jour officielles de Rust
+          (flux RSS de Facepunch, vérifié toutes les 30 minutes), du relevé des métriques et du
+          nettoyage des anciennes données.
+        </p>
+
+        <p class="text-lg leading-relaxed mb-10">
+          Les extraits de code ci-dessous sont la <strong class="font-semibold">première version</strong>
+          de deux de ces tâches. Elles ont été renforcées depuis (voir plus bas).
         </p>
 
         <h3 class="text-2xl font-semibold mb-4">
@@ -186,7 +249,7 @@
         <div class="collapse collapse-arrow bg-base-100/40 rounded-box text-left mb-10">
           <input type="checkbox" aria-label="Afficher le code du Sentinel de synchronisation des rôles" />
           <div class="collapse-title text-sm font-mono uppercase tracking-wider opacity-70">
-            💻 Voir le code — Sentinel de synchronisation des rôles
+            💻 Voir le code — Sentinel de synchronisation des rôles (V1)
           </div>
           <div class="collapse-content">
             <div class="mockup-code text-sm overflow-x-auto">
@@ -237,10 +300,7 @@
         <p class="text-lg leading-relaxed mb-10">
           Ce mécanisme agit comme un <strong class="font-semibold">système de réconciliation</strong>,
           garantissant que les rôles Discord reflètent toujours l’état réel en base de données, même
-          en cas d’erreur, de redémarrage ou de désynchronisation temporaire. En production, chaque
-          changement de rôle passe par une file d’attente (<strong class="font-semibold">BullMQ / Redis</strong>)
-          plutôt que d’appeler l’API Discord en direct dans la boucle ci-dessus : ça encaisse les pics,
-          respecte la limite de requêtes de Discord, et réessaie automatiquement en cas d’échec.
+          en cas d’erreur, de redémarrage ou de désynchronisation temporaire.
         </p>
 
         <h3 class="text-2xl font-semibold mb-4">
@@ -255,7 +315,7 @@
         <div class="collapse collapse-arrow bg-base-100/40 rounded-box text-left mb-10">
           <input type="checkbox" aria-label="Afficher le code de l’expiration automatique des VIP" />
           <div class="collapse-title text-sm font-mono uppercase tracking-wider opacity-70">
-            💻 Voir le code — Expiration automatique des VIP
+            💻 Voir le code — Expiration automatique des VIP (V1)
           </div>
           <div class="collapse-content">
             <div class="mockup-code text-sm overflow-x-auto">
@@ -313,11 +373,21 @@
           </div>
         </div>
 
-        <p class="text-lg leading-relaxed">
+        <p class="text-lg leading-relaxed mb-10">
           Ce mécanisme repose sur une comparaison temporelle
           (<code class="font-mono text-base">globalVipExpiresAt &lt; now</code>) et permet une gestion
           automatisée du cycle de vie des abonnements sans intervention manuelle.
         </p>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Ce qui a changé depuis cette première version
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2">
+          <li>• <strong class="font-semibold">File d’attente BullMQ / Redis :</strong> les changements de rôle ne sont plus appliqués en direct dans la boucle, ils sont mis en file. Au maximum 2 tâches en parallèle et 20 par minute, pour respecter la limite de requêtes de Discord, avec 5 nouvelles tentatives espacées de plus en plus en cas d’échec.</li>
+          <li>• <strong class="font-semibold">Verrou Redis sur les tâches planifiées :</strong> si deux instances du bot tournent, ou lors du changement d’heure, une même tâche ne peut pas s’exécuter deux fois dans la même minute.</li>
+          <li>• <strong class="font-semibold">Une seule connexion Prisma partagée</strong> par tout le code, au lieu d’en créer une par fichier.</li>
+          <li>• <strong class="font-semibold">Journalisation centralisée :</strong> plus de <code class="font-mono text-base">console.log</code>, mais un logger (Winston) qui écrit dans des fichiers en rotation, enregistre les erreurs en base pour le dashboard d’administration et transmet les alertes sur Discord sans le spammer.</li>
+        </ul>
 
       </div>
     </div>

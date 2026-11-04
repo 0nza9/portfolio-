@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="ardoise">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RustianLife – Bilan – Onza</title>
+
+  <meta name="description" content="Bilan du projet RustianLife : lancement, qualité logicielle, supervision et ce que j'en retiens — portfolio de Nathan (BTS SIO)." />
+  <meta property="og:title" content="RustianLife – Bilan – Onza" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="data:," />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../css/output.css" />
+</head>
+
+<body class="bg-hero relative font-sans overflow-x-clip">
+
+  <!-- NAV -->
+  <header class="fixed inset-x-0 top-5 z-0 flex justify-center px-4">
+    <nav class="glass rounded-full shadow-lg flex items-center gap-1 px-2 py-2">
+
+      <a href="../../index.html" class="btn btn-ghost btn-circle tooltip tooltip-bottom" data-tip="Accueil" aria-label="Accueil">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+        </svg>
+      </a>
+
+    </nav>
+  </header>
+
+  <!-- BACK LINK -->
+  <section class="px-8 pt-24 pb-12 max-w-5xl mx-auto relative z-10">
+    <a href="project4.html" class="link link-hover text-lg">← Retour à la page précédente</a>
+  </section>
+
+  <!-- STEPS NAVIGATION -->
+  <section class="px-8 pb-6 max-w-5xl mx-auto relative z-10">
+    <div class="glass rounded-box px-4 py-4">
+      <ul class="steps steps-vertical sm:steps-horizontal w-full">
+        <li class="step step-primary"><a href="project.html" class="link link-hover px-2">Vue d’ensemble</a></li>
+        <li class="step step-primary"><a href="project2.html" class="link link-hover px-2">Serveur &amp; infra</a></li>
+        <li class="step step-primary"><a href="project3.html" class="link link-hover px-2">Plateforme &amp; bots</a></li>
+        <li class="step step-primary"><a href="project4.html" class="link link-hover px-2">Wipes automatisés</a></li>
+        <li class="step step-primary"><a href="project5.html" class="link link-hover px-2 font-semibold">Bilan</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LANCEMENT -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <h2 class="text-5xl font-light leading-tight mb-10">
+          Bilan du projet
+        </h2>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Du test au lancement
+        </h3>
+        <p class="text-lg leading-relaxed mb-4">
+          Avant d’ouvrir le serveur au public, on a vérifié que la plateforme tiendrait la charge :
+          un test de charge en mai 2026 a servi de référence de capacité, et une période de test de
+          sécurité a été menée avec une surveillance dédiée des requêtes suspectes.
+        </p>
+        <p class="text-lg leading-relaxed">
+          Le serveur a été lancé en juin 2026 et a accueilli une centaine de joueurs, avec un serveur
+          de production et un serveur de test pour valider chaque changement avant de le déployer.
+          Il est aujourd’hui en maintenance, et le site avec lui, en attendant une réouverture.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITÉ -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Rigueur et processus
+        </h3>
+        <p class="text-lg leading-relaxed mb-6">
+          Au-delà des fonctionnalités, on a voulu traiter ce projet avec la même rigueur qu’un vrai
+          produit en production, avec de vrais joueurs à ne pas pénaliser.
+        </p>
+        <ul class="text-lg leading-relaxed space-y-2">
+          <li>• <strong class="font-semibold">4 contrôles automatisés</strong> (GitHub Actions) sur chaque pull request : vérification des types, lint sans aucun avertissement, audit des dépendances et 52 tests unitaires ; 12 tests d’intégration sur une vraie base PostgreSQL ; scan des secrets (gitleaks) ; build Docker complet.</li>
+          <li>• <strong class="font-semibold">Deux branches longues</strong> : <code class="font-mono text-base">release</code> (ce qui tourne en production) et <code class="font-mono text-base">development</code> (intégration), avec des commits conventionnels et chaque déploiement tagué.</li>
+          <li>• <strong class="font-semibold">Migrations de base de données</strong> versionnées avec Prisma : aucune modification du schéma n’est appliquée en production sans fichier de migration.</li>
+          <li>• <strong class="font-semibold">Retour arrière automatisé</strong> : un script remet la version précédente en ligne, reconstruit tous les conteneurs et vérifie que l’API répond. Il a été testé lors d’un exercice, tout comme la restauration de la base depuis une sauvegarde.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPERVISION -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Superviser la production
+        </h3>
+        <p class="text-lg leading-relaxed mb-6">
+          Un dashboard d’administration, réservé aux administrateurs, rassemble sur une seule page
+          tout ce qu’il faut surveiller pendant un lancement, un wipe ou un incident. Il se met à
+          jour toutes les 30 secondes, et les chiffres qui bougent vite toutes les 5 secondes.
+        </p>
+        <ul class="text-lg leading-relaxed space-y-2">
+          <li>• État de la base de données et de Redis, avec un temps de réponse coloré (vert, orange, rouge).</li>
+          <li>• État de chaque serveur de jeu : en ligne, nombre de joueurs, dernier signal reçu.</li>
+          <li>• File d’attente des rôles Discord : tâches en attente et dernières erreurs.</li>
+          <li>• Indicateur de sécurité des déploiements avant un wipe.</li>
+          <li>• Alerte si le nombre de signalements de joueurs augmente brusquement.</li>
+          <li>• Les 25 dernières erreurs de la plateforme, classées par catégorie.</li>
+          <li>• Des courbes sur 1 h, 6 h et 24 h (latence, joueurs, CPU, mémoire), relevées chaque minute et conservées 7 jours.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QUE J'EN RETIENS -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Ce que j’en retiens
+        </h3>
+        <p class="text-lg leading-relaxed mb-4">
+          Ce projet m’a fait passer d’un serveur administré à la main, fichier par fichier avec WinSCP,
+          à une plateforme mise en production et utilisée par de vrais joueurs. J’y ai appris qu’en production,
+          le plus dur n’est pas d’ajouter des fonctionnalités, mais de prévoir ce qui peut mal tourner :
+          un webhook reçu deux fois, un redémarrage au mauvais moment, une limite de requêtes atteinte,
+          une mise à jour du jeu qui casse un plugin.
+        </p>
+        <p class="text-lg leading-relaxed">
+          La suite : rouvrir le serveur, diversifier les offres VIP proposées sur la boutique, et
+          continuer à faire évoluer les événements de la communauté.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGINATION -->
+  <section class="px-8 pb-24 max-w-5xl mx-auto relative z-10 flex justify-end">
+    <a href="../../index.html#projects" class="btn btn-outline btn-neutral btn-lg">
+      ← Retour aux projets
+    </a>
+  </section>
+
+  <footer class="footer footer-center py-12 relative z-10 flex flex-col items-center gap-4">
+    <div class="glass bg-base-100/20 rounded-box overflow-hidden px-5 py-4 w-full max-w-2xl" data-hn-widget>
+      <div class="flex items-center justify-between mb-3 px-1">
+        <p class="font-mono text-xs uppercase tracking-widest text-primary flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l-6 7.5 6 7.5M15.75 4.5l6 7.5-6 7.5" />
+          </svg>
+          Tech talk · Hacker News
+        </p>
+        <div class="flex items-center gap-1.5" aria-hidden="true">
+          <span class="hn-card-dot size-1.5 rounded-full bg-base-content/30"></span>
+          <span class="hn-card-dot size-1.5 rounded-full bg-base-content/30"></span>
+          <span class="hn-card-dot size-1.5 rounded-full bg-base-content/30"></span>
+        </div>
+      </div>
+      <div class="hn-marquee">
+        <div class="hn-marquee-track" data-hn-list>
+          <div class="hn-card">
+            <div class="hn-card-bar">
+              <span class="opacity-60 text-xs">Chargement…</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

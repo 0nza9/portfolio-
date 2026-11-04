@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="boheme">
+<html lang="fr" data-theme="ardoise">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Infrastructure réseau – Suite – Onza</title>
+  <title>RustianLife – Serveur &amp; infra – Onza</title>
 
-  <meta name="description" content="Configuration et gestion d'un serveur Rust via WinSCP/SFTP, maintenance et sécurisation — portfolio de Nathan (BTS SIO)." />
-  <meta property="og:title" content="Infrastructure réseau – Suite – Onza" />
+  <meta name="description" content="Configuration et gestion d'un serveur Rust via WinSCP/SFTP, puis migration vers Pelican et Docker — portfolio de Nathan (BTS SIO)." />
+  <meta property="og:title" content="RustianLife – Serveur &amp; infra – Onza" />
   <meta property="og:type" content="article" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>" />
+  <link rel="icon" href="data:," />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,9 +41,10 @@
     <div class="glass rounded-box px-4 py-4">
       <ul class="steps steps-vertical sm:steps-horizontal w-full">
         <li class="step step-primary"><a href="project.html" class="link link-hover px-2">Vue d’ensemble</a></li>
-        <li class="step step-primary"><a href="project2.html" class="link link-hover px-2 font-semibold">WinSCP</a></li>
-        <li class="step"><a href="project3.html" class="link link-hover px-2">Site Web &amp; Discord</a></li>
-        <li class="step"><a href="project4.html" class="link link-hover px-2">Conclusion</a></li>
+        <li class="step step-primary"><a href="project2.html" class="link link-hover px-2 font-semibold">Serveur &amp; infra</a></li>
+        <li class="step"><a href="project3.html" class="link link-hover px-2">Plateforme &amp; bots</a></li>
+        <li class="step"><a href="project4.html" class="link link-hover px-2">Wipes automatisés</a></li>
+        <li class="step"><a href="project5.html" class="link link-hover px-2">Bilan</a></li>
       </ul>
     </div>
   </section>
@@ -71,10 +72,14 @@
     <div class="card glass reveal reveal-top">
       <div class="card-body p-10 text-center">
         <h2 class="text-5xl font-light leading-tight mb-8">
-          Détails du projet
+          La première version, mise en place par moi
         </h2>
-        <p class="text-lg leading-relaxed">
+        <p class="text-lg leading-relaxed mb-4">
           La création et la gestion d’un serveur Rust implique la mise en place d’une infrastructure dédiée et l’administration des fichiers du serveur. Pour ce projet, la machine hébergeant le serveur a été configurée et gérée à distance à l’aide de WinSCP, un client SFTP/FTP sécurisé.
+        </p>
+        <p class="text-lg leading-relaxed">
+          Cette partie, je l’ai réalisée moi-même : c’est sur cette base que le serveur a d’abord tourné,
+          avant que mon associé la fasse évoluer (voir en bas de page).
         </p>
       </div>
     </div>
@@ -143,6 +148,34 @@
           <li>• <strong class="font-semibold">Gestion de fichiers et arborescence serveur :</strong> organisation de dossiers, configuration de plugins/mods Carbon (C#) et sauvegardes.</li>
           <li>• <strong class="font-semibold">Maintenance et mises à jour serveur :</strong> mise à jour des fichiers via SteamCMD et vérification de la compatibilité.</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉVOLUTION -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+        <h3 class="text-2xl font-semibold mb-4">
+          Et ensuite : la migration vers Pelican et Docker
+        </h3>
+        <p class="text-lg leading-relaxed mb-6">
+          Pour le lancement, mon associé a fait évoluer cette première version vers une infrastructure
+          conteneurisée, plus simple à automatiser :
+        </p>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• Les serveurs de jeu tournent désormais dans des conteneurs gérés par le panel <strong class="font-semibold">Pelican</strong> (un fork de Pterodactyl) et son démon Wings : démarrage, arrêt, fichiers et console RCON se pilotent par API, ce qui rend les wipes automatisables.</li>
+          <li>• Un serveur de production et un serveur de test (staging) pour valider les changements avant de les déployer.</li>
+          <li>• La plateforme (API, bots Discord, PostgreSQL, Redis) est déployée avec <strong class="font-semibold">Docker Compose</strong> sur un VPS.</li>
+          <li>• <strong class="font-semibold">Nginx</strong> sert de reverse proxy HTTPS pour le site et le panel, derrière <strong class="font-semibold">Cloudflare</strong> (DNS et certificats SSL).</li>
+          <li>• La base PostgreSQL est sauvegardée automatiquement chaque nuit à 4 h, avec une procédure de restauration testée.</li>
+          <li>• Les plugins ne sont plus copiés à la main : à chaque wipe, ils sont synchronisés automatiquement sur le serveur depuis une liste versionnée dans le dépôt.</li>
+        </ul>
+        <p class="text-lg leading-relaxed">
+          Avoir d’abord tout fait à la main m’a permis de comprendre précisément ce que ces outils
+          automatisent : l’arborescence d’un serveur, les fichiers de configuration, l’ordre des
+          opérations lors d’une mise à jour.
+        </p>
       </div>
     </div>
   </section>

@@ -39,6 +39,35 @@
   --radius-field: 0.5rem;
 }
 
+/* Trial dark theme from a Coolors palette, switched on with data-theme="ardoise".
+   Slate palette: Charcoal Blue #313E50 · Twilight Indigo #3A435E · Charcoal Blue #455561
+                  Blue Slate #5C6672 · Slate Grey #6C6F7F
+   None of these is light enough for text on #313E50 (Slate Grey is ≈2.2:1), so
+   text uses a lightened grey, and the accent (primary) is a muted blue that
+   still reads on the slate (≈4.6:1). */
+@plugin "daisyui/theme" {
+  name: "ardoise";
+  default: false;
+  color-scheme: dark;
+
+  --color-base-100: #313e50;
+  --color-base-200: #3a435e;
+  --color-base-300: #455561;
+  --color-base-content: #e6e8ee;
+
+  --color-primary: #8eaae3;
+  --color-primary-content: #313e50;
+  --color-secondary: #5c6672;
+  --color-secondary-content: #e6e8ee;
+  --color-accent: #6c6f7f;
+  --color-accent-content: #e6e8ee;
+  --color-neutral: #d5d9e2;
+  --color-neutral-content: #313e50;
+
+  --radius-box: 1rem;
+  --radius-field: 0.5rem;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -61,6 +90,12 @@
     font-family: var(--font-serif);
     font-optical-sizing: auto; /* Fraunces adapts its shapes to the display size */
     letter-spacing: -0.01em;
+  }
+
+  /* ardoise theme: bold text takes the accent blue. Being in the base layer,
+     explicit color utilities still win. */
+  [data-theme="ardoise"] :is(strong, b, .font-semibold, .font-bold) {
+    color: var(--color-primary);
   }
 
   /* tech tags read as code */
@@ -323,9 +358,14 @@ section > * {
     position: fixed;        /* pin to the viewport so it always covers the full page */
     inset: 0;
     /* warm garnet → coffee tint multiplied over the gif so the glass cards pick up the ember palette */
+    /* the loop is an animated AVIF (~200 KB); the 3.3 MB GIF is only a fallback
+       for browsers that skip the image-set() declaration */
     background-image:
       linear-gradient(160deg, rgb(98 23 8 / 0.45), rgb(34 9 1 / 0.35)),
       url('../img/1784b9a1ea1b0dce10d3191fa2a4e520-loop.gif');
+    background-image:
+      linear-gradient(160deg, rgb(98 23 8 / 0.45), rgb(34 9 1 / 0.35)),
+      image-set(url('../img/bg-hero.avif') type('image/avif'), url('../img/1784b9a1ea1b0dce10d3191fa2a4e520-loop.gif') type('image/gif'));
     background-blend-mode: multiply;
     background-size: cover;  /* always fill the whole area, however long the page is */
     background-repeat: no-repeat;
@@ -336,6 +376,16 @@ section > * {
     filter: blur(4px) brightness(0.7); /* brightness < 1 darkens the background */
     transform: scale(1.05); /* hide blurred edges */
     z-index: -1;
+  }
+
+  /* ardoise theme: slate tint over the gif instead of the ember one */
+  [data-theme="ardoise"] .bg-hero::before {
+    background-image:
+      linear-gradient(160deg, rgb(58 67 94 / 0.55), rgb(49 62 80 / 0.45)),
+      url('../img/1784b9a1ea1b0dce10d3191fa2a4e520-loop.gif');
+    background-image:
+      linear-gradient(160deg, rgb(58 67 94 / 0.55), rgb(49 62 80 / 0.45)),
+      image-set(url('../img/bg-hero.avif') type('image/avif'), url('../img/1784b9a1ea1b0dce10d3191fa2a4e520-loop.gif') type('image/gif'));
   }
 }
 

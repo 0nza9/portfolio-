@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="boheme">
+<html lang="fr" data-theme="ardoise">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Bohème – Onza</title>
+  <title>Portfolio – Onza</title>
 
   <meta name="description" content="Portfolio de Nathan, étudiant en BTS SIO — développement front & back, administration serveur et réseau." />
-  <meta property="og:title" content="Portfolio Bohème – Onza" />
+  <meta property="og:title" content="Portfolio – Onza" />
   <meta property="og:description" content="Développeur junior front & back, admin serveur et réseau — étudiant en BTS SIO." />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>" />
+  <link rel="icon" href="data:," />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -85,7 +85,9 @@
           <p class="text-lg leading-relaxed mb-3">
             Au fil de mes études et en autodidacte, j’ai construit une base polyvalente :
             développement web et applicatif, administration de serveurs, automatisation et réseau.
-            Je continue d’apprendre chaque jour, en formation comme dans mes projets perso autour du jeu vidéo et de la musique.
+            Je continue d’apprendre chaque jour, en formation comme dans mes projets perso.
+            Ceux-ci partent souvent d’un sujet qui me passionne, comme la musique ou le jeu vidéo,
+            et j’apprends en chemin ce qu’il faut pour le relier au code.
           </p>
         </div>
       </div>
@@ -95,11 +97,17 @@
         <div class="flex transition-transform duration-500 ease-out" data-slider-track>
 
           <a href="src/html/project.html" class="card glass group sm:flex-row overflow-hidden w-full shrink-0" data-slide data-hover-video data-video-id="K-fvgsGB9QI">
-            <figure class="sm:w-2/5 shrink-0 aspect-480/207 sm:aspect-auto bg-linear-to-br from-[#621708] to-[#220901] relative">
+            <figure class="sm:w-2/5 shrink-0 aspect-480/207 sm:aspect-auto bg-linear-to-br from-[#3A435E] to-[#313E50] relative overflow-hidden flex items-center justify-center p-6">
+              <!-- banner + slate tint, same treatment as the TouchDesigner card;
+                   framed on the upper part so the moon and the first flowers show -->
+              <img src="src/img/rustbanner.jpg" alt="" aria-hidden="true" loading="lazy"
+                class="absolute inset-0 w-full h-full object-cover object-[50%_30%] blur-[0.5px] scale-110" />
+              <div class="absolute inset-0 bg-linear-to-br from-[#3A435E]/60 to-[#313E50]/75"></div>
+              <!-- the logo png has its own dark background, so it sits on the banner as a card -->
               <img
                 src="src/img/Rust_Logo.png"
                 alt="Logo Rust"
-                class="w-full h-full object-contain p-6 transition-opacity duration-500 group-hover:opacity-0"
+                class="relative w-full max-w-64 h-auto rounded-xl shadow-lg transition-opacity duration-500 group-hover:opacity-0"
               />
               <!-- gameplay officielle de Facepunch, chargée uniquement au survol -->
               <div class="absolute inset-0 opacity-0 transition-opacity duration-500 pointer-events-none" data-hover-video-frame></div>
@@ -109,15 +117,20 @@
               <h2 class="card-title text-2xl font-normal">Rust : serveur, site &amp; Discord</h2>
               <p>
                 Hébergement d’un serveur de jeu moddé, dashboard web Node.js / Prisma et bots Discord
-                pour une communauté de 230+ membres.
+                pour une communauté de plus de 300 membres.
               </p>
               <span class="font-mono text-sm text-primary group-hover:underline">→ voir le projet</span>
             </div>
           </a>
 
           <a href="src/html/sound-react.html" class="card glass group sm:flex-row overflow-hidden w-full shrink-0" data-slide data-hover-video data-video-src="src/img/touchdesigner-demo.mp4">
-            <figure class="sm:w-2/5 shrink-0 aspect-480/207 sm:aspect-auto bg-linear-to-br from-[#621708] to-[#220901] relative flex items-center justify-center p-6">
-              <div class="bg-white rounded-xl px-6 py-4 shadow-lg transition-opacity duration-500 group-hover:opacity-0">
+            <figure class="sm:w-2/5 shrink-0 aspect-480/207 sm:aspect-auto bg-linear-to-br from-[#3A435E] to-[#313E50] relative overflow-hidden flex items-center justify-center p-6">
+              <!-- blurred banner + slate tint, so the image reads as texture behind the logo;
+                   scaled up so the blurred edges stay outside the frame -->
+              <img src="src/img/touchdesignerbanner.jpg" alt="" aria-hidden="true" loading="lazy"
+                class="absolute inset-0 w-full h-full object-cover blur-[0.5px] scale-110" />
+              <div class="absolute inset-0 bg-linear-to-br from-[#3A435E]/60 to-[#313E50]/75"></div>
+              <div class="relative bg-white rounded-xl px-6 py-4 shadow-lg transition-opacity duration-500 group-hover:opacity-0">
                 <img
                   src="src/img/touchdesigner-logo.svg"
                   alt="Logo TouchDesigner"
@@ -187,7 +200,7 @@
             <!-- server icon, filled in from the invite set in Discord's widget settings -->
             <img data-discord-icon alt="Icône du serveur Discord" class="size-16 rounded-2xl shadow-md shrink-0" hidden />
             <div>
-              <p class="text-4xl font-serif font-light"><span data-discord-members>230+</span> <span class="text-lg font-sans">membres</span></p>
+              <p class="text-4xl font-serif font-light"><span data-discord-members>300+</span> <span class="text-lg font-sans">membres</span></p>
               <p class="flex items-center gap-2" data-discord-online hidden>
                 <span class="size-2 rounded-full bg-emerald-500"></span>
                 <span><strong data-discord-count class="font-mono">–</strong> en ligne</span>
@@ -195,53 +208,31 @@
               </p>
             </div>
           </div>
-          <p class="text-sm opacity-80">Serveur du projet Rust, animé depuis le lancement.</p>
+          <p class="text-sm">
+            <span class="badge badge-xs border-0 bg-amber-500 text-black align-middle mr-1">MAINTENANCE</span>
+            <span class="opacity-80">Le serveur de jeu est en pause, le Discord reste actif.</span>
+          </p>
         </div>
       </div>
 
       <!-- skills -->
       <div id="skills" class="card glass reveal">
         <div class="card-body p-6 gap-3">
-          <p class="font-mono text-xs uppercase tracking-widest text-primary">Compétences</p>
-          <div>
-            <p class="text-sm font-semibold mb-1">Front</p>
-            <div class="flex flex-wrap gap-1">
-              <span class="badge badge-xs badge-outline">HTML</span>
-              <span class="badge badge-xs badge-outline">CSS</span>
-              <span class="badge badge-xs badge-outline">JavaScript</span>
-              <span class="badge badge-xs badge-outline">TypeScript</span>
-              <span class="badge badge-xs badge-outline">Svelte</span>
-              <span class="badge badge-xs badge-outline">Tailwind</span>
-            </div>
-          </div>
-          <div>
-            <p class="text-sm font-semibold mb-1">Back</p>
-            <div class="flex flex-wrap gap-1">
-              <span class="badge badge-xs badge-outline">Node.js</span>
-              <span class="badge badge-xs badge-outline">Python</span>
-              <span class="badge badge-xs badge-outline">Prisma</span>
-              <span class="badge badge-xs badge-outline">SQLite</span>
-              <span class="badge badge-xs badge-outline">MariaDB</span>
-              <span class="badge badge-xs badge-outline">MongoDB</span>
-            </div>
-          </div>
-          <div>
-            <p class="text-sm font-semibold mb-1">Serveur</p>
-            <div class="flex flex-wrap gap-1">
-              <span class="badge badge-xs badge-outline">Linux</span>
-              <span class="badge badge-xs badge-outline">Services</span>
-              <span class="badge badge-xs badge-outline">Automatisation</span>
-              <span class="badge badge-xs badge-outline">WinSCP</span>
-            </div>
-          </div>
-          <div>
-            <p class="text-sm font-semibold mb-1">Réseau</p>
-            <div class="flex flex-wrap gap-1">
-              <span class="badge badge-xs badge-outline">VLAN</span>
-              <span class="badge badge-xs badge-outline">Supervision</span>
-              <span class="badge badge-xs badge-outline">Sécurité</span>
-            </div>
-          </div>
+          <p class="font-mono text-xs uppercase tracking-widest text-primary">Avec quoi je travaille principalement</p>
+          <!-- only what the projects on this site actually use -->
+          <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
+            <dt class="font-mono text-xs uppercase tracking-wider opacity-70 pt-0.5">Web</dt>
+            <dd>HTML, CSS, JavaScript, TypeScript, Tailwind</dd>
+            <dt class="font-mono text-xs uppercase tracking-wider opacity-70 pt-0.5">Back</dt>
+            <dd>Node.js, Python, PostgreSQL / Prisma</dd>
+            <dt class="font-mono text-xs uppercase tracking-wider opacity-70 pt-0.5">Serveur</dt>
+            <dd>Linux, SSH / SFTP</dd>
+            <dt class="font-mono text-xs uppercase tracking-wider opacity-70 pt-0.5">Outils</dt>
+            <dd>Git</dd>
+          </dl>
+          <p class="text-sm opacity-80 italic">
+            Pour le reste, j’apprends ce que le sujet demande : TouchDesigner pour Sound React, par exemple.
+          </p>
         </div>
       </div>
 

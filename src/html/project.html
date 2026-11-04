@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="boheme">
+<html lang="fr" data-theme="ardoise">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Infrastructure réseau – Onza</title>
+  <title>RustianLife – Vue d’ensemble – Onza</title>
 
-  <meta name="description" content="Projet Rust : hébergement et administration d'un serveur, site web et communauté Discord — portfolio de Nathan (BTS SIO)." />
-  <meta property="og:title" content="Infrastructure réseau – Onza" />
+  <meta name="description" content="RustianLife : serveur Rust moddé, plateforme web Fastify / Prisma / PostgreSQL, bots Discord et wipes automatisés — portfolio de Nathan (BTS SIO)." />
+  <meta property="og:title" content="RustianLife – Vue d’ensemble – Onza" />
   <meta property="og:type" content="article" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>" />
+  <link rel="icon" href="data:," />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,9 +41,10 @@
     <div class="glass rounded-box px-4 py-4">
       <ul class="steps steps-vertical sm:steps-horizontal w-full">
         <li class="step step-primary"><a href="project.html" class="link link-hover px-2 font-semibold">Vue d’ensemble</a></li>
-        <li class="step"><a href="project2.html" class="link link-hover px-2">WinSCP</a></li>
-        <li class="step"><a href="project3.html" class="link link-hover px-2">Site Web &amp; Discord</a></li>
-        <li class="step"><a href="project4.html" class="link link-hover px-2">Conclusion</a></li>
+        <li class="step"><a href="project2.html" class="link link-hover px-2">Serveur &amp; infra</a></li>
+        <li class="step"><a href="project3.html" class="link link-hover px-2">Plateforme &amp; bots</a></li>
+        <li class="step"><a href="project4.html" class="link link-hover px-2">Wipes automatisés</a></li>
+        <li class="step"><a href="project5.html" class="link link-hover px-2">Bilan</a></li>
       </ul>
     </div>
   </section>
@@ -67,53 +68,177 @@
       <div class="card-body p-10 text-center">
 
         <h2 class="text-5xl font-light leading-tight mb-8">
-          Vue d’ensemble du projet
+          RustianLife, vue d’ensemble
         </h2>
 
         <p class="text-lg leading-relaxed mb-4">
-          Ce projet est un écosystème complet autour du jeu Rust, alliant infrastructure
-          serveur, développement web et gestion communautaire.
+          RustianLife est une plateforme communautaire complète autour d’un serveur du jeu Rust
+          moddé : hébergement du serveur de jeu, site web avec dashboard joueur, bots Discord et
+          automatisation des « wipes » (la remise à zéro régulière de la carte).
         </p>
 
         <p class="text-lg leading-relaxed mb-10">
-          J’ai conçu ce projet avec mon associé pour répondre à plusieurs besoins :
+          Conçu et développé à deux avec mon associé, le projet a été testé en charge puis lancé
+          en juin 2026. Le serveur et le site sont actuellement en maintenance, en attendant une
+          réouverture.
         </p>
 
-        <h3 class="text-2xl font-semibold mb-4">
-          Héberger un serveur Rust performant et stable
-        </h3>
-        <ul class="text-lg leading-relaxed space-y-2 mb-10">
-          <li>• Avec la mise en place d’une machine dédiée pour l’hébergement.</li>
-          <li>• Une installation, configuration et optimisation de fichiers serveur.</li>
-          <li>• Administration à distance via WinSCP, utilisant les fonctionnalités SFTP pour un transfert sécurisé et une gestion efficace des fichiers.</li>
-          <li>• Déploiement de plugins serveur sur mesure (Carbon, en C#) pour faire remonter en direct l’état des parties — joueurs connectés, playstreak, file d’attente — vers le dashboard.</li>
-          <li>• Gestion des mises à jour et maintien en conditions opérationnelles pour assurer une expérience sans interruption.</li>
-        </ul>
+        <!-- key figures -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="rounded-box bg-base-100/40 p-4">
+            <p class="text-4xl font-serif font-light">~100</p>
+            <p class="text-sm opacity-80">joueurs au lancement</p>
+          </div>
+          <div class="rounded-box bg-base-100/40 p-4">
+            <p class="text-4xl font-serif font-light">300+</p>
+            <p class="text-sm opacity-80">membres Discord</p>
+          </div>
+          <div class="rounded-box bg-base-100/40 p-4">
+            <p class="text-4xl font-serif font-light">7</p>
+            <p class="text-sm opacity-80">conteneurs Docker</p>
+          </div>
+          <div class="rounded-box bg-base-100/40 p-4">
+            <p class="text-4xl font-serif font-light">4</p>
+            <p class="text-sm opacity-80">contrôles CI par PR</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MON RÔLE -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
 
         <h3 class="text-2xl font-semibold mb-4">
-          Développer un site web
-        </h3>
-        <ul class="text-lg leading-relaxed space-y-2 mb-10">
-          <li>• Présentation du serveur, de ses règles et de ses fonctionnalités.</li>
-          <li>• Mise en avant de l’identité visuelle et de l’expérience utilisateur (UX/UI).</li>
-          <li>• API HTTP en Fastify, dashboard rendu côté serveur en EJS, données persistées via Prisma sur PostgreSQL.</li>
-          <li>• Intégration d’une boutique en ligne (paiements via Tebex) pour l’achat de contenus cosmétiques, permettant aux joueurs de personnaliser leur expérience.</li>
-        </ul>
-
-        <h3 class="text-2xl font-semibold mb-4">
-          Créer et animer une communauté
+          Mon rôle dans le projet
         </h3>
         <ul class="text-lg leading-relaxed space-y-2">
-          <li>• Mise en place d’un serveur Discord structuré avec plus de 230 membres.</li>
-          <li>• Organisation des rôles et permissions pour garantir une bonne modération.</li>
-          <li>• Animation et interaction avec la communauté pour préparer le lancement officiel et encourager la fidélisation.</li>
+          <li>• J’ai mis en place la <strong class="font-semibold">première version de l’hébergement</strong> : installation du serveur via SteamCMD, administration à distance en SFTP avec WinSCP, configuration de Carbon et des permissions (détaillé page suivante).</li>
+          <li>• Mon associé a ensuite fait évoluer cette base vers une infrastructure conteneurisée (panel Pelican, Docker Compose) pour le lancement.</li>
+          <li>• J’ai participé à la conception et au développement du dashboard web et des bots Discord.</li>
+          <li>• On anime ensemble la communauté Discord et le serveur de jeu.</li>
         </ul>
 
       </div>
     </div>
   </section>
 
+  <!-- ARCHITECTURE -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
 
+        <h3 class="text-2xl font-semibold mb-6">
+          Comment les briques communiquent
+        </h3>
+
+        <div class="flex flex-col md:flex-row items-stretch justify-center gap-3 font-mono text-sm mb-8">
+          <div class="rounded-box bg-base-100/40 p-4 md:w-1/4">
+            <p class="font-semibold text-primary mb-1">Serveur de jeu</p>
+            <p class="opacity-80">Plugins Carbon (C#) : présence, file d’attente, signalements, Hardcore</p>
+          </div>
+          <p class="self-center text-2xl text-primary rotate-90 md:rotate-0" aria-hidden="true">→</p>
+          <div class="rounded-box bg-base-100/40 p-4 md:w-1/4">
+            <p class="font-semibold text-primary mb-1">API Fastify</p>
+            <p class="opacity-80">Vérifie la clé d’API, valide les données, enregistre</p>
+          </div>
+          <p class="self-center text-2xl text-primary rotate-90 md:rotate-0" aria-hidden="true">→</p>
+          <div class="rounded-box bg-base-100/40 p-4 md:w-1/4">
+            <p class="font-semibold text-primary mb-1">PostgreSQL + Redis</p>
+            <p class="opacity-80">Données via Prisma, file de tâches BullMQ</p>
+          </div>
+          <p class="self-center text-2xl text-primary rotate-90 md:rotate-0" aria-hidden="true">→</p>
+          <div class="rounded-box bg-base-100/40 p-4 md:w-1/4">
+            <p class="font-semibold text-primary mb-1">Effets</p>
+            <p class="opacity-80">Rôles et messages Discord, commandes au serveur via Pelican</p>
+          </div>
+        </div>
+
+        <p class="text-lg leading-relaxed">
+          Les plugins du jeu ne touchent jamais la base de données directement : ils envoient leurs
+          informations à l’API, qui est la seule source de vérité. Elle enregistre, puis déclenche
+          les effets en arrière-plan (rôles Discord via une file d’attente, notifications, commandes
+          envoyées au serveur de jeu), sans jamais bloquer la requête du plugin.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <h3 class="text-2xl font-semibold mb-6">
+          Technologies utilisées
+        </h3>
+        <div class="flex flex-wrap justify-center gap-2">
+          <span class="badge badge-outline">Node.js / TypeScript</span>
+          <span class="badge badge-outline">Fastify</span>
+          <span class="badge badge-outline">EJS</span>
+          <span class="badge badge-outline">Prisma</span>
+          <span class="badge badge-outline">PostgreSQL 17</span>
+          <span class="badge badge-outline">Redis + BullMQ</span>
+          <span class="badge badge-outline">OAuth2 Discord / Steam</span>
+          <span class="badge badge-outline">Carbon (C#)</span>
+          <span class="badge badge-outline">Pelican / Wings</span>
+          <span class="badge badge-outline">Docker Compose</span>
+          <span class="badge badge-outline">Nginx</span>
+          <span class="badge badge-outline">Cloudflare</span>
+          <span class="badge badge-outline">GitHub Actions</span>
+          <span class="badge badge-outline">Tebex</span>
+          <span class="badge badge-outline">WinSCP / SFTP</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BESOINS -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal reveal-top">
+      <div class="card-body p-10 text-center">
+
+        <p class="text-lg leading-relaxed mb-10">
+          Le projet répond à trois besoins :
+        </p>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Héberger un serveur Rust performant et stable
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• D’abord une machine dédiée administrée à la main (SteamCMD, WinSCP, SFTP), puis des serveurs de jeu conteneurisés pilotés par le panel Pelican.</li>
+          <li>• Un serveur de production et un serveur de test (staging) pour valider les changements avant de les déployer.</li>
+          <li>• Des plugins serveur sur mesure (Carbon, en C#) qui font remonter en direct l’état des parties — joueurs connectés, playstreak, file d’attente — vers l’API.</li>
+          <li>• Des wipes et redémarrages entièrement automatisés.</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Développer une plateforme web
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2 mb-10">
+          <li>• Présentation du serveur, de ses règles et de ses fonctionnalités, et un dashboard personnel pour chaque joueur.</li>
+          <li>• API HTTP en Fastify, pages rendues côté serveur en EJS, données persistées via Prisma sur PostgreSQL.</li>
+          <li>• Connexion avec Discord et liaison du compte Steam.</li>
+          <li>• Boutique en ligne (paiements via Tebex) avec attribution automatique des avantages VIP.</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Créer et animer une communauté
+        </h3>
+        <ul class="text-lg leading-relaxed space-y-2">
+          <li>• Un serveur Discord structuré avec plus de 300 membres.</li>
+          <li>• Des rôles synchronisés automatiquement avec le statut de chaque joueur (VIP, streak).</li>
+          <li>• Des votes de cartes, des annonces de wipe et des événements comme la Hardcore Finale pour encourager la fidélisation.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
 
   <!-- PAGINATION -->
   <section class="px-8 pb-24 max-w-5xl mx-auto relative z-10 flex justify-end">

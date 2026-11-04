@@ -191,18 +191,43 @@
     return;
   }
 
+  // Home page intro (html.intro, see index.html): wait for the background to
+  // settle, then zoom the cards already in view in one after another.
+  const intro = document.documentElement.classList.contains("intro");
+  let firstBatch = intro;
+
   // Toggle (don't unobserve) so each section zooms in every time it
   // re-enters the viewport while scrolling up or down.
   const io = new IntersectionObserver(
     (entries) => {
+      let i = 0;
       entries.forEach((entry) => {
+        if (firstBatch && entry.isIntersecting) {
+          entry.target.style.transitionDelay = `${0.12 + i++ * 0.12}s`;
+        }
         entry.target.classList.toggle("is-visible", entry.isIntersecting);
       });
+      if (firstBatch) {
+        firstBatch = false;
+        // drop the stagger once it has played, so later scroll reveals
+        // fall back to their normal delay
+        setTimeout(() => els.forEach((el) => (el.style.transitionDelay = "")), 2000);
+      }
     },
     { threshold: 0.15 }
   );
 
-  els.forEach((el) => io.observe(el));
+  const start = () => els.forEach((el) => io.observe(el));
+  if (intro) {
+    try {
+      sessionStorage.setItem("introSeen", "1");
+    } catch (e) {
+      /* storage blocked: the intro just plays again next time */
+    }
+    setTimeout(start, 1700);
+  } else {
+    start();
+  }
 })();
 
 // Two-slide project card: "voir la suite →" slides to the next project, "← retour" back.

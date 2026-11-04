@@ -230,8 +230,9 @@
   }
 })();
 
-// Two-slide project card: "voir la suite →" slides to the next project, "← retour" back.
-// The hidden slide is made inert so keyboard focus never lands on it.
+// Project slider: "voir la suite →" slides to the next project, "← retour" back,
+// and the dots under it jump straight to one (one dot per slide).
+// Hidden slides are made inert so keyboard focus never lands on them.
 (function () {
   const slider = document.querySelector("[data-slider]");
   if (!slider) return;
@@ -240,16 +241,36 @@
   const slides = slider.querySelectorAll("[data-slide]");
   const next = slider.querySelector("[data-slider-next]");
   const prev = slider.querySelector("[data-slider-prev]");
+  const dotsHost = slider.querySelector("[data-slider-dots]");
+  let current = 0;
 
-  const show = (i) => {
+  const dots = [...slides].map((_, n) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Projet ${n + 1} sur ${slides.length}`);
+    dot.addEventListener("click", () => show(n));
+    dotsHost?.append(dot);
+    return dot;
+  });
+
+  function show(i) {
+    current = i;
     track.style.transform = `translateX(-${i * 100}%)`;
     slides.forEach((s, n) => (s.inert = n !== i));
     next.hidden = i === slides.length - 1;
     prev.hidden = i === 0;
-  };
+    dots.forEach((dot, n) => {
+      const active = n === i;
+      dot.className = active
+        ? "h-2 w-6 rounded-full bg-primary transition-all duration-300 cursor-pointer"
+        : "h-2 w-2 rounded-full bg-base-content/30 hover:bg-base-content/60 transition-all duration-300 cursor-pointer";
+      if (active) dot.setAttribute("aria-current", "true");
+      else dot.removeAttribute("aria-current");
+    });
+  }
 
-  next.addEventListener("click", () => show(1));
-  prev.addEventListener("click", () => show(0));
+  next.addEventListener("click", () => show(current + 1));
+  prev.addEventListener("click", () => show(current - 1));
   show(0);
 })();
 

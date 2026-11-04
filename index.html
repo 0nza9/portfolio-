@@ -7,7 +7,7 @@
 
   <meta name="description" content="Portfolio de Nathan, étudiant en BTS SIO — développement front & back, administration serveur et réseau." />
   <meta property="og:title" content="Portfolio – Onza" />
-  <meta property="og:description" content="Développeur junior front & back, admin serveur et réseau — étudiant en BTS SIO." />
+  <meta property="og:description" content="Développeur front & back, admin serveur et réseau — étudiant en BTS SIO." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="data:," />
 
@@ -80,7 +80,7 @@
               Salut, moi c’est <span class="text-primary">Nathan</span>&nbsp;!
             </h1>
             <p class="text-lg mb-4">
-              Développeur junior front &amp; back
+              Développeur front &amp; back
             </p>
             <div class="flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2 font-mono text-sm">
               <a href="#projects" class="link link-hover text-primary">→ mes projets</a>
@@ -105,7 +105,8 @@
       </div>
 
       <!-- projects: two slides (featured project, then the next one in progress) -->
-      <div id="projects" class="relative reveal overflow-hidden rounded-box" data-slider>
+      <div id="projects" class="reveal flex flex-col gap-3" data-slider>
+      <div class="relative overflow-hidden rounded-box">
         <div class="flex transition-transform duration-500 ease-out" data-slider-track>
 
           <a href="src/html/project.html" class="card glass group sm:flex-row overflow-hidden w-full shrink-0" data-slide data-hover-video data-video-id="K-fvgsGB9QI">
@@ -139,7 +140,7 @@
             <figure class="sm:w-2/5 shrink-0 aspect-480/207 sm:aspect-auto bg-linear-to-br from-[#3A435E] to-[#313E50] relative overflow-hidden flex items-center justify-center p-6">
               <!-- blurred banner + slate tint, so the image reads as texture behind the logo;
                    scaled up so the blurred edges stay outside the frame -->
-              <img src="src/img/touchdesignerbanner.jpg" alt="" aria-hidden="true" loading="lazy"
+              <img src="src/img/touchdesigner-banner-tigres.jpg" alt="" aria-hidden="true" loading="lazy"
                 class="absolute inset-0 w-full h-full object-cover blur-[0.5px] scale-110" />
               <div class="absolute inset-0 bg-linear-to-br from-[#3A435E]/60 to-[#313E50]/75"></div>
               <div class="relative bg-white rounded-xl px-6 py-4 shadow-lg transition-opacity duration-500 group-hover:opacity-0">
@@ -178,6 +179,10 @@
                  hover:bg-base-100/40 transition cursor-pointer">
           ← retour
         </button>
+      </div>
+
+        <!-- one dot per project, built by main.js; the active one stretches into a bar -->
+        <div class="flex justify-center gap-2" data-slider-dots></div>
       </div>
 
     </div>

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sound React – Démonstration – Onza</title>
+  <title>Sound React – Dans le détail – Onza</title>
 
-  <meta name="description" content="Démonstration vidéo des trois scripts Python du projet Sound React, lancés un par un dans TouchDesigner — portfolio de Nathan (BTS SIO)." />
-  <meta property="og:title" content="Sound React – Démonstration – Onza" />
+  <meta name="description" content="Sound React dans le détail : lien entre le son et l'image, schéma du réseau TouchDesigner, limites et pistes — portfolio de Nathan (BTS SIO)." />
+  <meta property="og:title" content="Sound React – Dans le détail – Onza" />
   <meta property="og:type" content="article" />
   <link rel="icon" href="data:," />
 
@@ -36,21 +36,139 @@
     <a href="sound-react.html" class="link link-hover text-lg">← Retour à la page précédente</a>
   </section>
 
-  <!-- INTRO -->
-  <section class="px-8 pb-6 max-w-5xl mx-auto relative z-10">
-    <div class="card glass reveal reveal-top">
-      <div class="card-body p-10">
-        <p class="font-mono text-xs uppercase tracking-widest text-primary mb-2">Démonstration</p>
-        <h2 class="text-4xl font-light leading-tight mb-6">
-          Lancement des trois scripts, en direct
-        </h2>
-        <p class="text-lg leading-relaxed">
-          Dans cette vidéo, je pars d'un projet TouchDesigner vide et je lance
-          <code class="font-mono text-base">audio_setup.py</code>,
-          <code class="font-mono text-base">pop_setup.py</code> puis
-          <code class="font-mono text-base">save_settings.py</code> un par un dans le Textport,
-          en commentant à la voix ce que chaque script construit dans le réseau d'opérateurs.
+  <!-- TITRE -->
+  <section class="px-8 pb-6 max-w-5xl mx-auto relative z-10 text-center">
+    <p class="font-mono text-xs uppercase tracking-widest text-primary mb-2">Sound React · suite</p>
+    <h2 class="text-3xl font-light">Le projet dans le détail</h2>
+  </section>
+
+  <!-- SAME CARD TEMPLATE AS PAGE 1: video on one side, text on the other, alternating.
+       Page 1 ends with the video on the left, so this page starts on the right. -->
+
+  <!-- comment le son pilote l'image : texte à gauche, vidéo à droite -->
+  <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal sm:flex-row-reverse items-center gap-6 p-6">
+      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl">
+        <!-- silent particle loop, so it can play on its own -->
+        <video autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover">
+          <source src="../img/touchdesigner-demo.mp4" type="video/mp4" />
+          Votre navigateur ne prend pas en charge la lecture vidéo.
+        </video>
+      </figure>
+      <div class="flex-1 min-w-0">
+        <h3 class="text-2xl font-semibold mb-3">Comment le son pilote l'image</h3>
+        <p class="text-sm font-mono uppercase tracking-wide text-primary mb-3">
+          Trois lignes en haut de pop_setup.py
         </p>
+        <p class="text-lg leading-relaxed mb-4">
+          Tout le lien entre la musique et le visuel tient en trois constantes. Chacune branche
+          une valeur de l'analyse audio sur un paramètre des particules :
+        </p>
+        <div class="mockup-code text-xs overflow-x-auto mb-4">
+          <pre data-prefix=""><code>MAP_LOW   = "op('speed1')['mid']*0.5"   # noise2</code></pre>
+          <pre data-prefix=""><code>MAP_FMSD  = "op('speed1')['fmsd']"      # noise1</code></pre>
+          <pre data-prefix=""><code>MAP_SNARE = "op('null1')['snare']*0.5"  # math1</code></pre>
+        </div>
+        <p class="text-lg leading-relaxed mb-4">
+          Les deux bruits déforment le nuage, l'un en grand, l'autre en détail, et
+          <code class="font-mono text-base">math1</code> dose le mélange des deux. La source de la
+          valeur change tout :
+        </p>
+        <ul class="text-lg leading-relaxed space-y-2">
+          <li>• <code class="font-mono text-base">null1</code> donne la valeur brute, entre 0 et 1 : elle monte et redescend avec la musique.</li>
+          <li>• <code class="font-mono text-base">speed1</code> en donne le cumul : elle ne fait qu'augmenter, pour un mouvement qui ne se répète jamais.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- un problème rencontré : vidéo à gauche, texte à droite -->
+  <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal sm:flex-row items-center gap-6 p-6">
+      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl">
+        <video controls preload="metadata" poster="../img/sound-react-pop-setup-poster.jpg" class="w-full h-full object-cover">
+          <source src="../img/sound-react-pop-setup.mp4" type="video/mp4" />
+          Votre navigateur ne prend pas en charge la lecture vidéo.
+        </video>
+      </figure>
+      <div class="flex-1 min-w-0">
+        <h3 class="text-2xl font-semibold mb-3">Un problème rencontré</h3>
+        <p class="text-sm font-mono uppercase tracking-wide text-primary mb-3">
+          Quand le cumul vide le nuage
+        </p>
+        <p class="text-lg leading-relaxed">
+          Utiliser <code class="font-mono text-base">speed1</code> pour le dosage entre les deux
+          bruits pose problème : comme la valeur ne fait qu'augmenter, les particules finissent
+          par être projetées trop loin et supprimées, et le nuage se vide au fil de la musique.
+          Le dosage passe donc par <code class="font-mono text-base">null1</code>, qui reste entre
+          0 et 1. Chaque source a son rôle : le cumul pour le mouvement, la valeur brute pour les
+          dosages.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- comment le signal circule : texte à gauche, vidéo à droite, schéma en pleine largeur dessous
+       (il est trop large pour la colonne de texte) -->
+  <section class="px-8 pb-10 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal gap-6 p-6">
+      <div class="flex flex-col sm:flex-row-reverse items-center gap-6">
+        <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl">
+          <video controls preload="metadata" poster="../img/sound-react-audio-setup-poster.jpg" class="w-full h-full object-cover">
+            <source src="../img/sound-react-audio-setup.mp4" type="video/mp4" />
+            Votre navigateur ne prend pas en charge la lecture vidéo.
+          </video>
+        </figure>
+        <div class="flex-1 min-w-0">
+          <h3 class="text-2xl font-semibold mb-3">Comment le signal circule</h3>
+          <p class="text-sm font-mono uppercase tracking-wide text-primary mb-3">
+            Du fichier audio à la fenêtre de rendu
+          </p>
+          <p class="text-lg leading-relaxed">
+            Deux « feedback » à ne pas confondre : <code class="font-mono text-base">feedback1</code>
+            et <code class="font-mono text-base">endfeedback</code> forment la boucle qui fait vivre
+            les particules d'une image à l'autre, tandis que le TOP
+            <code class="font-mono text-base">feedback</code> est un effet de traînée appliqué à
+            l'image finale. La touche <kbd class="kbd kbd-sm">1</kbd> relance la simulation.
+          </p>
+        </div>
+      </div>
+      <div class="mockup-code text-sm overflow-x-auto">
+        <pre data-prefix=""><code>audiofilein1 ──┬── audiodevout1                  (pour entendre le son)</code></pre>
+        <pre data-prefix=""><code>               ├── null2 ─────────────────┐      (signal audio brut)</code></pre>
+        <pre data-prefix=""><code>               └── audioAnalysis ── null1 ─┼── speed1</code></pre>
+        <pre data-prefix=""><code>                                           │</code></pre>
+        <pre data-prefix=""><code>  chopto1 ◄────────────────────────────────┘     (le son devient des points)</code></pre>
+        <pre data-prefix=""><code>     └── particle1 ── random1 ── null3 ──┬── feedback1 ──┐</code></pre>
+        <pre data-prefix=""><code>                                         └── merge1 ◄────┘</code></pre>
+        <pre data-prefix=""><code>             merge1 ── mathmix1 ── mathmix2 ── noise2 ──┬── noise1 ──┐</code></pre>
+        <pre data-prefix=""><code>                                                        └── math1 ───┴── mathmix3</code></pre>
+        <pre data-prefix=""><code>             mathmix3 ── twist1 ── delete1 ── endfeedback ──► retour vers feedback1</code></pre>
+        <pre data-prefix=""><code>                                        └── geo1 ── render1</code></pre>
+        <pre data-prefix=""><code>             render1 ── feedback ── bloom ── rgbkey1 ── null4 ── window1</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- limites et pistes : vidéo à gauche, texte à droite -->
+  <section class="px-8 pb-12 max-w-5xl mx-auto relative z-10">
+    <div class="card glass reveal sm:flex-row items-center gap-6 p-6">
+      <figure class="w-full sm:w-2/5 shrink-0 aspect-video overflow-hidden rounded-xl">
+        <video controls preload="metadata" poster="../img/sound-react-showcase-poster.jpg" class="w-full h-full object-cover">
+          <source src="../img/sound-react-showcase.mp4" type="video/mp4" />
+          Votre navigateur ne prend pas en charge la lecture vidéo.
+        </video>
+      </figure>
+      <div class="flex-1 min-w-0">
+        <h3 class="text-2xl font-semibold mb-3">Limites et pistes</h3>
+        <p class="text-sm font-mono uppercase tracking-wide text-primary mb-3">
+          Ce qui reste à faire
+        </p>
+        <ul class="text-lg leading-relaxed space-y-2">
+          <li>• <strong>Couleur et taille fixes :</strong> toute la réaction à la musique passe par le mouvement et la forme. Les faire réagir est la prochaine étape.</li>
+          <li>• <strong>Du son en direct :</strong> remplacer <code class="font-mono text-base">audiofilein1</code> par une entrée audio (Audio Device In) suffit pour réagir à un instrument branché, sans toucher au reste. VB-Cable permet aussi de capter le son de l'ordinateur.</li>
+          <li>• <strong>Rien d'autre à installer que TouchDesigner :</strong> les scripts retrouvent seuls les composants de la Palette qu'ils utilisent, sans chemin à renseigner.</li>
+        </ul>
       </div>
     </div>
   </section>

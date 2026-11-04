@@ -76,32 +76,16 @@
 
         <h3 class="text-2xl font-semibold mb-4">C'est quoi, TouchDesigner ?</h3>
         <p class="text-lg leading-relaxed mb-4">
-          TouchDesigner est un environnement de programmation visuelle par nœuds, pensé pour
-          créer des expériences multimédias en temps réel. Plutôt que d'écrire du code qui
-          s'exécute de haut en bas, on relie entre eux des « opérateurs » : chacun traite un
-          flux particulier — vidéo, audio, géométrie 3D, données — et le réseau obtenu réagit
-          en direct à ses entrées (son, capteurs, caméras, MIDI...). C'est un outil très
-          utilisé pour les visuels génératifs, les installations interactives, le VJing et les
-          scénographies live, car il s'appuie sur le GPU pour un rendu en temps réel.
-        </p>
-        <p class="text-lg leading-relaxed mb-4">
-          Les opérateurs sont classés par famille : les <strong>CHOP</strong> pour les données
-          qui varient dans le temps (son, mouvement, chiffres), les <strong>TOP</strong> pour
-          l'image en 2D, les <strong>SOP</strong> pour la géométrie 3D, les
-          <strong>DAT</strong> pour le texte, les tableaux et les scripts, et les
-          <strong>COMP</strong>, des conteneurs qui regroupent tout, y compris la logique
-          Python.
+          TouchDesigner est un outil de programmation visuelle pour créer des visuels en temps
+          réel sur GPU. On y relie des « opérateurs », chacun spécialisé : les
+          <strong>CHOP</strong> pour le son et les données, les <strong>SOP</strong> pour la
+          géométrie 3D, les <strong>TOP</strong> pour l'image, les <strong>DAT</strong> pour le
+          texte et les scripts.
         </p>
         <p class="text-lg leading-relaxed mb-10">
-          Fait notable pour un développeur : chaque opérateur expose nativement sa propre
-          classe Python, avec sa documentation dédiée sur le wiki officiel (docs.derivative.ca)
-          — pas de plugin ni de wrapper tiers à installer. Lire ou écrire un paramètre, créer,
-          connecter ou supprimer un opérateur, réagir à un événement : tout passe par les mêmes
-          objets Python documentés, du premier au dernier nœud du réseau. C'est cette cohérence
-          qui rend un patch reproductible comme du vrai code plutôt que comme un fichier binaire
-          figé — et c'est exactement ce qui m'a permis de construire Sound React sans jamais
-          sauvegarder de fichier <code class="font-mono text-base">.toe</code> : le réseau
-          entier tient dans des scripts versionnés sur Git.
+          Pour un développeur, son atout est que tout le réseau se pilote en Python : créer,
+          connecter ou régler un opérateur se fait par du code. C'est ce qui permet à Sound React
+          de tenir entièrement dans des scripts versionnés sur Git.
         </p>
 
         <h3 class="text-2xl font-semibold mb-4">Le projet</h3>
@@ -181,10 +165,8 @@
           Ensuite, je construis le visuel : le signal audio brut devient une ligne de points,
           qui sert de source à un système de particules tournant en boucle sur le GPU.
           J'applique deux bruits et une torsion pour déformer le nuage, le tout piloté en
-          direct par les valeurs issues de l'analyse. C'est l'ensemble de l'écosystème visuel
-          du projet : chaque opérateur important est réglable, que ce soit pour modifier le
-          comportement des particules ou la palette de couleurs du rendu — je le détaillerai
-          prochainement.
+          direct par les valeurs issues de l'analyse. C'est dans ce script que se fait le
+          lien entre le son et l'image, détaillé page suivante.
         </p>
       </div>
     </div>
@@ -214,23 +196,6 @@
           actuels et les réécrit directement dans les fichiers Python. Je repars ainsi
           exactement des mêmes réglages à la prochaine reconstruction.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMMENT LE SIGNAL CIRCULE -->
-  <section class="px-8 pb-24 max-w-5xl mx-auto relative z-10">
-    <div class="card glass reveal reveal-top">
-      <div class="card-body p-10">
-        <h3 class="text-2xl font-semibold mb-4">Comment le signal circule</h3>
-        <div class="mockup-code text-sm">
-          <pre data-prefix=""><code>audiofilein1 ──┬── audiodevout1          (écoute du son)</code></pre>
-          <pre data-prefix=""><code>             ├── null2 ──────────────┐  (signal audio brut)</code></pre>
-          <pre data-prefix=""><code>             └── audioAnalysis ── null1 ─┼── speed1</code></pre>
-          <pre data-prefix=""><code>                                          │</code></pre>
-          <pre data-prefix=""><code>chopto1 ◄─────────────────────────────────┘  (le son devient des points)</code></pre>
-          <pre data-prefix=""><code>  └── particle1 ── random1 ── null3 ── feedback1 ── rendu &amp; effets</code></pre>
-        </div>
       </div>
     </div>
   </section>

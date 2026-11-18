@@ -248,6 +248,24 @@
    article cards, dressed up like little browser windows.
    ------------------------------------------------------------------------- */
 @layer components {
+  /* skills card: each logo sits on a small frosted tile */
+  .skill-logos .tooltip {
+    display: inline-flex;
+    padding: 0.45rem;
+    border-radius: 0.6rem;
+    background: color-mix(in oklab, var(--color-base-100) 45%, transparent);
+    border: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .skill-logos .tooltip:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--color-primary) 60%, transparent);
+  }
+  .skill-logos img {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
   .hn-marquee {
     overflow: hidden;
     mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);

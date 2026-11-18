@@ -93,7 +93,7 @@
       <!-- quick intro -->
       <div class="card glass reveal">
         <div class="card-body p-6">
-          <p class="font-mono text-xs uppercase tracking-widest text-primary mb-1">En bref</p>
+          <h2 class="text-3xl md:text-4xl font-light leading-tight mb-3">En <span class="text-primary">bref</span></h2>
           <p class="text-lg leading-relaxed mb-3">
             Au fil de mes études et en autodidacte, j’ai construit une base polyvalente :
             développement web et applicatif, administration de serveurs, automatisation et réseau.
@@ -106,7 +106,11 @@
       </div>
 
       <!-- projects: two slides (featured project, then the next one in progress) -->
-      <div id="projects" class="reveal flex flex-col gap-3" data-slider>
+      <div id="projects" class="reveal flex flex-col gap-3 scroll-mt-6" data-slider>
+      <div class="flex items-end justify-between gap-4 px-1">
+        <h2 class="text-3xl md:text-4xl font-light leading-tight drop-shadow-lg">Mes <span class="text-primary">projets</span></h2>
+        <p class="font-mono text-xs uppercase tracking-widest text-primary drop-shadow-lg pb-1">2 réalisations</p>
+      </div>
       <div class="relative overflow-hidden rounded-box">
         <div class="flex transition-transform duration-500 ease-out" data-slider-track>
 
@@ -237,15 +241,32 @@
         <div class="card-body p-6 gap-3">
           <p class="font-mono text-xs uppercase tracking-widest text-primary">Avec quoi je travaille principalement</p>
           <!-- only what the projects on this site actually use -->
-          <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
-            <dt class="font-mono text-xs uppercase tracking-wider opacity-70 pt-0.5">Web</dt>
-            <dd>HTML, CSS, JavaScript, TypeScript, Tailwind</dd>
-            <dt class="font-mono text-xs uppercase tracking-wider opacity-70 pt-0.5">Back</dt>
-            <dd>Node.js, Python, PostgreSQL / Prisma</dd>
-            <dt class="font-mono text-xs uppercase tracking-wider opacity-70 pt-0.5">Serveur</dt>
-            <dd>Linux, SSH / SFTP</dd>
-            <dt class="font-mono text-xs uppercase tracking-wider opacity-70 pt-0.5">Outils</dt>
-            <dd>Git</dd>
+          <!-- Devicon logos, self-hosted in src/img/skills (dark ones recolored for ardoise) -->
+          <dl class="skill-logos grid grid-cols-[auto_1fr] items-center gap-x-4 gap-y-3 text-sm">
+            <dt class="font-mono text-xs uppercase tracking-wider opacity-70">Web</dt>
+            <dd class="flex flex-wrap gap-2">
+              <span class="tooltip" data-tip="HTML"><img src="src/img/skills/html5.svg" alt="HTML" /></span>
+              <span class="tooltip" data-tip="CSS"><img src="src/img/skills/css3.svg" alt="CSS" /></span>
+              <span class="tooltip" data-tip="JavaScript"><img src="src/img/skills/javascript.svg" alt="JavaScript" /></span>
+              <span class="tooltip" data-tip="TypeScript"><img src="src/img/skills/typescript.svg" alt="TypeScript" /></span>
+              <span class="tooltip" data-tip="Tailwind CSS"><img src="src/img/skills/tailwindcss.svg" alt="Tailwind CSS" /></span>
+            </dd>
+            <dt class="font-mono text-xs uppercase tracking-wider opacity-70">Back</dt>
+            <dd class="flex flex-wrap gap-2">
+              <span class="tooltip" data-tip="Node.js"><img src="src/img/skills/nodejs.svg" alt="Node.js" /></span>
+              <span class="tooltip" data-tip="Python"><img src="src/img/skills/python.svg" alt="Python" /></span>
+              <span class="tooltip" data-tip="PostgreSQL"><img src="src/img/skills/postgresql.svg" alt="PostgreSQL" /></span>
+              <span class="tooltip" data-tip="Prisma"><img src="src/img/skills/prisma.svg" alt="Prisma" /></span>
+            </dd>
+            <dt class="font-mono text-xs uppercase tracking-wider opacity-70">Serveur</dt>
+            <dd class="flex flex-wrap gap-2">
+              <span class="tooltip" data-tip="Linux"><img src="src/img/skills/linux.svg" alt="Linux" /></span>
+              <span class="tooltip" data-tip="SSH / SFTP"><img src="src/img/skills/ssh.svg" alt="SSH / SFTP" /></span>
+            </dd>
+            <dt class="font-mono text-xs uppercase tracking-wider opacity-70">Outils</dt>
+            <dd class="flex flex-wrap gap-2">
+              <span class="tooltip" data-tip="Git"><img src="src/img/skills/git.svg" alt="Git" /></span>
+            </dd>
           </dl>
           <p class="text-sm opacity-80 italic">
             Pour le reste, j’apprends ce que le sujet demande : TouchDesigner pour Sound React, par exemple.

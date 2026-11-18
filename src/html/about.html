@@ -96,25 +96,41 @@
 
         <div class="min-w-0">
           <h2 class="text-4xl font-light mb-4">
-            Salut, moi c’est <span class="font-hand text-5xl text-primary">Nathan&nbsp;!</span>
+            Le <span class="font-hand text-5xl text-primary">fil rouge</span>
           </h2>
           <p class="text-lg leading-relaxed mb-3">
-            J’ai développé au fil de mes études et en autodidacte une base de compétences dans plusieurs
-            domaines : développement web et application, administration de serveurs, automatisation de
-            tâches et gestion réseau.
+            Je suis en BTS SIO, option SLAM. Ce que je sais faire vient en bonne partie de là,
+            et du reste de ce que j’ai construit à côté, sur mon temps libre.
           </p>
           <p class="text-lg leading-relaxed mb-3">
-            Ces expériences m’ont permis d’aborder les différents aspects du métier de développeur sous
-            différents angles et de comprendre l’importance d’une approche polyvalente.
+            Mes projets partent presque toujours d’un sujet qui m’intéresse en dehors du code :
+            une communauté de joueurs, de la musique. Le code vient ensuite, parce qu’il faut
+            bien construire la chose. C’est aussi ce qui me fait rester dessus assez longtemps
+            pour aller au bout.
+          </p>
+          <p class="text-lg leading-relaxed mb-3">
+            Pour le serveur Rust, ça a voulu dire l’héberger et le configurer, lui faire un site,
+            des bots Discord, puis automatiser les wipes pour ne plus les faire à la main. Pour
+            Sound React, apprendre TouchDesigner et Python. À chaque fois, c’est le sujet qui a
+            fixé ce que j’avais à apprendre, et pas l’inverse.
+          </p>
+          <p class="text-lg leading-relaxed mb-3">
+            En chemin, j’ai pris l’habitude de soigner ce qui ne se voit pas : des tests, des
+            vérifications automatiques à chaque modification, un déploiement reproductible.
+            Sur un projet qu’on garde plusieurs mois, c’est la différence entre continuer
+            à avancer et passer son temps à réparer.
           </p>
           <p class="text-lg leading-relaxed">
-            Je continue aujourd’hui d’élargir mes connaissances, autant dans le cadre de ma formation qu’en
-            autodidacte, en approfondissant les notions qui me semblent essentielles pour mon avenir de
-            développeur dans un marché qui se renouvelle constamment, mais aussi celles qui stimulent ma
-            curiosité dans mes hobbies personnels et le lien que je peux faire avec ceux-là.
+            En m’en occupant seul de bout en bout, j’ai vu comment les parties s’articulent :
+            le serveur, la base, le back, l’interface. C’est ce que j’aimerais continuer en
+            alternance, dans une équipe cette fois, et sur des projets plus gros que les miens.
           </p>
         </div>
       </div>
+
+      <p class="mt-8 text-center text-sm opacity-60 font-mono hidden lg:block">
+        (les photos se déplacent à la souris)
+      </p>
     </div>
 
     <!-- contact -->
@@ -125,8 +141,7 @@
         <p class="font-mono text-primary select-all mb-4">nathanenguehard@gmail.com</p>
         <div class="flex flex-wrap items-center gap-3">
           <a href="mailto:nathanenguehard@gmail.com" class="btn btn-outline btn-neutral">Me contacter</a>
-          <!-- TODO: déposez votre CV dans src/cv/CV-Nathan.pdf -->
-          <a href="../cv/CV-Nathan.pdf" download class="btn btn-primary">Télécharger mon CV</a>
+          <a href="../cv/CV-Nathan.pdf" download="CV-Nathan-Enguehard.pdf" class="btn btn-primary">Télécharger mon CV</a>
         </div>
       </div>
     </div>
@@ -158,6 +173,15 @@
         </div>
       </div>
     </div>
+
+    <!-- lien vers le code source de ce site -->
+    <a href="https://github.com/0nza9/portfolio-" target="_blank" rel="noopener"
+      class="link link-hover font-mono text-xs opacity-60 hover:opacity-100 transition-opacity flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true">
+        <path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56 0-.28-.01-1.02-.02-2-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.21.08 1.85 1.21 1.85 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.29-5.47-1.29-5.47-5.75 0-1.27.47-2.31 1.24-3.12-.12-.29-.54-1.46.12-3.05 0 0 1.01-.31 3.3 1.19a11.5 11.5 0 0 1 6 0c2.28-1.5 3.29-1.19 3.29-1.19.66 1.59.24 2.76.12 3.05.77.81 1.24 1.85 1.24 3.12 0 4.47-2.81 5.45-5.49 5.74.43.36.81 1.08.81 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.21.68.83.56C20.57 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/>
+      </svg>
+      Code source de ce site
+    </a>
   </footer>
 
   <script src="../js/main.js"></script>

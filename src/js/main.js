@@ -1,47 +1,63 @@
-// Footer "Tech talk" widget: pulls the current top Hacker News stories
-// client-side via its public API (no key needed). Swap target if HN feels
-// too generic later — e.g. a dev.to feed for a specific tag — just change
-// the endpoints/mapping below, the markup (data-hn-widget/data-hn-list) and
-// the rest of the page can stay the same.
+// Footer "Tech talk" widget: the latest French tech/dev news from a few RSS
+// feeds (Korben, Journal du hacker, Developpez.com, Next, LinuxFr.org).
+// A static site can't read other sites' RSS from the browser (CORS), so a
+// GitHub Action (.github/workflows/feeds.yml → scripts/fetch-feeds.mjs)
+// fetches them every 4 hours and commits src/data/feeds.js, which sets
+// window.TECH_TALK_FEEDS. It's loaded as a <script> rather than fetched as
+// JSON so it also works when a page is opened straight from disk (file://),
+// where fetch() of local files is blocked. To change the sources, edit the
+// FEEDS list in scripts/fetch-feeds.mjs; nothing here needs to change.
 (function () {
   const widgets = document.querySelectorAll("[data-hn-widget]");
   if (!widgets.length) return;
 
-  const STORY_COUNT = 6;
+  // feeds.js sits at src/data/, next to src/js/: resolve it from this
+  // script's own URL so it works from index.html and from src/html/ pages.
+  const self =
+    document.currentScript ||
+    Array.from(document.scripts).find((s) => /\/main\.js(\?|$)/.test(s.src));
+  if (!self) return;
+
+  const tracks = () =>
+    Array.from(widgets)
+      .map((w) => w.querySelector("[data-hn-list]"))
+      .filter(Boolean);
 
   const renderError = () => {
-    widgets.forEach((w) => {
-      const track = w.querySelector("[data-hn-list]");
-      if (!track) return;
+    tracks().forEach((track) => {
       track.textContent = "";
       track.style.animation = "none"; // nothing to loop
       const card = document.createElement("div");
       card.className = "hn-card";
       const bar = document.createElement("div");
       bar.className = "hn-card-bar";
-      bar.innerHTML = '<span class="opacity-60 text-xs">Hacker News indisponible</span>';
+      const msg = document.createElement("span");
+      msg.className = "opacity-60 text-xs";
+      msg.textContent = "Actus indisponibles";
+      bar.appendChild(msg);
       card.appendChild(bar);
       track.appendChild(card);
     });
   };
 
-  // One mini "browser window" card per story: favicon + domain in the title
-  // bar, the headline as the body. Built with DOM nodes (not innerHTML) —
-  // titles are arbitrary user-submitted text from HN, so they only ever go
-  // through textContent.
-  const buildCard = (story) => {
-    const href = /^https?:\/\//.test(story.url)
-      ? story.url
-      : `https://news.ycombinator.com/item?id=${story.id}`;
-    let hostname = "news.ycombinator.com";
-    try {
-      hostname = new URL(href).hostname;
-    } catch (e) {
-      /* keep the HN fallback hostname */
-    }
+  // "il y a 3 heures", "hier", "il y a 2 jours"…
+  const rtf = new Intl.RelativeTimeFormat("fr", { numeric: "auto" });
+  const ago = (iso) => {
+    const seconds = (new Date(iso).getTime() - Date.now()) / 1000;
+    if (!Number.isFinite(seconds)) return "";
+    const abs = Math.abs(seconds);
+    if (abs < 3600) return rtf.format(Math.round(seconds / 60), "minute");
+    if (abs < 86400) return rtf.format(Math.round(seconds / 3600), "hour");
+    return rtf.format(Math.round(seconds / 86400), "day");
+  };
 
+  // One mini "browser window" card per article: favicon + domain in the title
+  // bar, the headline as the body. Built with DOM nodes (not innerHTML):
+  // titles come from third-party feeds, so they only ever go through
+  // textContent.
+  const buildCard = (item) => {
     const card = document.createElement("a");
-    card.href = href;
+    card.href = item.link;
     card.target = "_blank";
     card.rel = "noopener";
     card.className = "hn-card";
@@ -51,7 +67,7 @@
 
     const favicon = document.createElement("img");
     favicon.className = "hn-card-favicon";
-    favicon.src = `https://www.google.com/s2/favicons?sz=32&domain=${hostname}`;
+    favicon.src = `https://www.google.com/s2/favicons?sz=32&domain=${encodeURIComponent(item.site)}`;
     favicon.alt = "";
     favicon.loading = "lazy";
     favicon.onerror = () => favicon.remove();
@@ -59,7 +75,7 @@
 
     const domain = document.createElement("span");
     domain.className = "hn-card-domain";
-    domain.textContent = hostname.replace(/^www\./, "");
+    domain.textContent = item.site;
     bar.appendChild(domain);
 
     const body = document.createElement("div");
@@ -67,48 +83,43 @@
 
     const title = document.createElement("p");
     title.className = "hn-card-title";
-    title.textContent = story.title;
+    title.textContent = item.title;
     body.appendChild(title);
 
-    const score = document.createElement("p");
-    score.className = "hn-card-score";
-    score.textContent = `▲ ${story.score} pts`;
-    body.appendChild(score);
+    const meta = document.createElement("p");
+    meta.className = "hn-card-score";
+    meta.textContent = [item.source, ago(item.date)].filter(Boolean).join(" · ");
+    body.appendChild(meta);
 
     card.appendChild(bar);
     card.appendChild(body);
     return card;
   };
 
-  fetch("https://hacker-news.firebaseio.com/v0/topstories.json")
-    .then((r) => r.json())
-    .then((ids) =>
-      Promise.all(
-        ids
-          .slice(0, STORY_COUNT)
-          .map((id) =>
-            fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then((r) =>
-              r.json()
-            )
-          )
-      )
-    )
-    .then((stories) => {
-      const valid = stories.filter(Boolean);
-      if (!valid.length) throw new Error("no stories");
+  const render = () => {
+    const data = window.TECH_TALK_FEEDS;
+    const items = (data && Array.isArray(data.items) ? data.items : []).filter(
+      (i) => i && i.title && /^https?:\/\//.test(i.link)
+    );
+    if (!items.length) return renderError();
 
-      widgets.forEach((w) => {
-        const track = w.querySelector("[data-hn-list]");
-        if (!track) return;
-        track.textContent = "";
-        // rendered twice back to back: a pure CSS animation (see
-        // input.css's .hn-marquee-track) slides the track from 0 to -50%,
-        // which is exactly one full set — so it loops with no visible seam
-        // and no JS has to touch scroll position at all.
-        valid.concat(valid).forEach((story) => track.appendChild(buildCard(story)));
-      });
-    })
-    .catch(renderError);
+    tracks().forEach((track) => {
+      track.textContent = "";
+      // rendered twice back to back: a pure CSS animation (see
+      // input.css's .hn-marquee-track) slides the track from 0 to -50%,
+      // which is exactly one full set — so it loops with no visible seam
+      // and no JS has to touch scroll position at all.
+      items.concat(items).forEach((item) => track.appendChild(buildCard(item)));
+    });
+  };
+
+  const script = document.createElement("script");
+  // ?h= changes every hour, so a browser never keeps serving a stale copy
+  // for long after the Action has pushed fresh articles.
+  script.src = `${new URL("../data/feeds.js", self.src).href}?h=${Math.floor(Date.now() / 3.6e6)}`;
+  script.onload = render;
+  script.onerror = renderError;
+  document.head.appendChild(script);
 })();
 
 // Video "sound warning" gate ([data-video-gate]): the poster frame shows

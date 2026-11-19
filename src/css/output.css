@@ -2714,7 +2714,7 @@
     display: flex;
     width: max-content;
     gap: 1rem;
-    animation: hn-scroll 36s linear infinite;
+    animation: hn-scroll 72s linear infinite;
   }
   @media (prefers-reduced-motion: reduce) {
     .hn-marquee-track {

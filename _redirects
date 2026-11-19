@@ -1,0 +1,17 @@
+# Netlify: the pages used to live in src/html/ — keep old links working.
+/src/html/about.html          /about                     301
+/src/html/about               /about                     301
+/src/html/project.html        /rustianlife               301
+/src/html/project             /rustianlife               301
+/src/html/project2.html       /rustianlife-serveur       301
+/src/html/project2            /rustianlife-serveur       301
+/src/html/project3.html       /rustianlife-plateforme    301
+/src/html/project3            /rustianlife-plateforme    301
+/src/html/project4.html       /rustianlife-wipes         301
+/src/html/project4            /rustianlife-wipes         301
+/src/html/project5.html       /rustianlife-bilan         301
+/src/html/project5            /rustianlife-bilan         301
+/src/html/sound-react.html    /sound-react               301
+/src/html/sound-react         /sound-react               301
+/src/html/sound-react-2.html  /sound-react-detail        301
+/src/html/sound-react-2       /sound-react-detail        301

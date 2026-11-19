@@ -14,11 +14,13 @@ All site content is in **French**; keep new copy in French with proper typograph
 
 ## Pages
 - `index.html` – home "dashboard": hero, "En bref", project slider (2 slides), sidebar (statut + CV, Discord live widget, skills), footer "Tech talk" RSS marquee.
-- `src/html/about.html` – "Mon tableau": draggable sticky notes + polaroid board (desktop only), `#contact`.
+All pages sit at the repo root so Netlify serves them at clean URLs (`/about`, `/rustianlife`…).
+- `about.html` – "Mon tableau": draggable sticky notes + polaroid board (desktop only), `#contact`.
 - RustianLife project (featured, Rust game server + Node.js/Prisma dashboard + Discord bots, 300+ member community), 5 pages linked by a sub-nav:
-  `project.html` (vue d’ensemble) → `project2.html` (serveur & infra) → `project3.html` (plateforme & bots) → `project4.html` (wipes automatisés) → `project5.html` (bilan).
-- Sound React (TouchDesigner GPU audio-reactive particles, built by Python scripts): `sound-react.html` → `sound-react-2.html` (dans le détail).
-- Sub-pages use relative paths (`../../index.html`, `../img/...`, `../css/output.css`, `../js/main.js`).
+  `rustianlife.html` (vue d’ensemble) → `rustianlife-serveur.html` (serveur & infra) → `rustianlife-plateforme.html` (plateforme & bots) → `rustianlife-wipes.html` (wipes automatisés) → `rustianlife-bilan.html` (bilan).
+- Sound React (TouchDesigner GPU audio-reactive particles, built by Python scripts): `sound-react.html` → `sound-react-detail.html` (dans le détail).
+- Every page uses the same relative paths (`src/img/...`, `src/css/output.css`, `src/js/main.js`) and links to others by file name (`about.html`), so `file://` still works.
+- `_redirects` (Netlify) 301s the old `src/html/*` URLs to the new ones. Keep pages at the root: moving one into a folder changes its relative paths.
 
 ## Design system
 - Active theme on every page: `data-theme="ardoise"` (dark slate: base #313E50 / #3A435E / #455561, text #E6E8EE, primary #8EAAE3). In ardoise, bold text is auto-colored primary.
@@ -29,6 +31,7 @@ All site content is in **French**; keep new copy in French with proper typograph
 - Mobile overrides (≤640px) live at the end of `input.css`, outside `@layer`.
 
 ## main.js behaviours (data attributes)
+- Clean URLs (http/https only): rewrites internal `*.html` links to `/about`-style, strips `.html` / `index` and `#anchor` from the address bar via `history.replaceState`, and handles same-page `#` links by scrolling without changing the URL.
 - `.reveal` – zoom-in on scroll (toggles each time); `html.intro` – first-visit-per-session intro on home.
 - `[data-slider]` – home project slider with dots.
 - `[data-hover-video]` + `data-video-id` (YouTube) or `data-video-src` (local mp4) – hover preview.

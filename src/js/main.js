@@ -1,3 +1,50 @@
+// Clean addresses on the live site. Every page sits at the root (about.html,
+// rustianlife.html…) and Netlify serves it without the extension (/about), so
+// here we make the address bar match: "/" instead of /index.html, /about
+// instead of /about.html, and no #anchor left behind after jumping to a section.
+// Links in the HTML keep their .html names so the site still works when opened
+// straight from disk (file://), where none of this runs.
+(function () {
+  if (!/^https?:$/.test(location.protocol)) return;
+
+  const clean = (path) =>
+    path.replace(/\/index(\.html)?$/, "/").replace(/\.html$/, "");
+
+  // internal links point at the clean address (no redirect, clean hover preview)
+  document.querySelectorAll('a[href]').forEach((a) => {
+    const url = new URL(a.href, location.href);
+    if (url.origin !== location.origin || !/\.html$/.test(url.pathname)) return;
+    a.href = clean(url.pathname) + url.search + url.hash;
+  });
+
+  // arriving with a .html path or a #section: tidy the bar, then show the section
+  const id = decodeURIComponent(location.hash.slice(1));
+  const tidy = clean(location.pathname) + location.search;
+  if (id || tidy !== location.pathname + location.search) {
+    history.replaceState(history.state, "", tidy);
+  }
+  const target = id && document.getElementById(id);
+  if (target) {
+    target.scrollIntoView();
+    // images above it may still be loading and push it down: aim again once loaded
+    if (document.readyState !== "complete") {
+      addEventListener("load", () => target.scrollIntoView(), { once: true });
+    }
+  }
+
+  // same-page #links: scroll there without putting the #anchor in the bar
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest('a[href*="#"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const url = new URL(a.href, location.href);
+    if (url.origin !== location.origin || clean(url.pathname) !== clean(location.pathname)) return;
+    const el = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+    if (!el) return;
+    e.preventDefault();
+    el.scrollIntoView();
+  });
+})();
+
 // Footer "Tech talk" widget: the latest French tech/dev news from a few RSS
 // feeds (Korben, Journal du hacker, Developpez.com, Next, LinuxFr.org).
 // A static site can't read other sites' RSS from the browser (CORS), so a
@@ -12,7 +59,7 @@
   if (!widgets.length) return;
 
   // feeds.js sits at src/data/, next to src/js/: resolve it from this
-  // script's own URL so it works from index.html and from src/html/ pages.
+  // script's own URL so it doesn't depend on where the page sits.
   const self =
     document.currentScript ||
     Array.from(document.scripts).find((s) => /\/main\.js(\?|$)/.test(s.src));

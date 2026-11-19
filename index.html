@@ -9,7 +9,14 @@
   <meta property="og:title" content="Portfolio – Onza" />
   <meta property="og:description" content="Développeur front & back, admin serveur et réseau — étudiant en BTS SIO." />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:," />
+  <link rel="icon" href="src/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="src/img/apple-touch-icon.png" />
+  <meta property="og:image" content="https://enguehardnathan.netlify.app/src/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Portfolio de Nathan : développeur front &amp; back, BTS SIO SLAM, recherche une alternance." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#313E50" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -133,7 +140,18 @@
               <div class="absolute inset-0 opacity-0 transition-opacity duration-500 pointer-events-none" data-hover-video-frame></div>
             </figure>
             <div class="card-body p-6 pb-16 sm:pb-6">
-              <p class="font-mono text-xs uppercase tracking-widest text-primary">Projet phare</p>
+              <!-- label on the left, tech stack on the top-right of the card -->
+              <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                <p class="font-mono text-xs uppercase tracking-widest text-primary">Projet phare</p>
+                <span class="tech-chips">
+                  <span class="tooltip tooltip-bottom" data-tip="Node.js"><img src="src/img/skills/nodejs.svg" alt="Node.js" /></span>
+                  <span class="tooltip tooltip-bottom" data-tip="Fastify"><img src="src/img/skills/fastify.svg" alt="Fastify" /></span>
+                  <span class="tooltip tooltip-bottom" data-tip="Prisma"><img src="src/img/skills/prisma.svg" alt="Prisma" /></span>
+                  <span class="tooltip tooltip-bottom" data-tip="PostgreSQL"><img src="src/img/skills/postgresql.svg" alt="PostgreSQL" /></span>
+                  <span class="tooltip tooltip-bottom" data-tip="Docker"><img src="src/img/skills/docker.svg" alt="Docker" /></span>
+                  <span class="tooltip tooltip-left" data-tip="Discord API"><img src="src/img/skills/discord.svg" alt="Discord API" /></span>
+                </span>
+              </div>
               <h2 class="card-title text-2xl font-normal">Rust : serveur, site &amp; Discord</h2>
               <p>
                 Hébergement d’un serveur de jeu moddé, dashboard web Node.js / Prisma et bots Discord
@@ -161,7 +179,15 @@
               <div class="absolute inset-0 opacity-0 transition-opacity duration-500 pointer-events-none" data-hover-video-frame></div>
             </figure>
             <div class="card-body p-6 pb-16 sm:pb-6">
-              <p class="font-mono text-xs uppercase tracking-widest text-primary">Projet perso</p>
+              <!-- label on the left, tech stack on the top-right of the card
+                   (TouchDesigner has no square logo, hence the "TD" text chip) -->
+              <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                <p class="font-mono text-xs uppercase tracking-widest text-primary">Projet perso</p>
+                <span class="tech-chips">
+                  <span class="tooltip tooltip-bottom" data-tip="TouchDesigner"><abbr title="TouchDesigner" class="tech-chip-text">TD</abbr></span>
+                  <span class="tooltip tooltip-left" data-tip="Python"><img src="src/img/skills/python.svg" alt="Python" /></span>
+                </span>
+              </div>
               <h2 class="card-title text-2xl font-normal">Sound React — particules audio-réactives</h2>
               <p>
                 Visuel de particules sur GPU dans TouchDesigner, entièrement construit par des scripts

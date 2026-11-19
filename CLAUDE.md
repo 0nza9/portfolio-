@@ -24,6 +24,11 @@ All pages sit at the repo root so Netlify serves them at clean URLs (`/about`, `
 - Every page uses the same relative paths (`src/img/...`, `src/css/output.css`, `src/js/main.js`) and links to others by file name (`about.html`), so `file://` still works.
 - `_redirects` (Netlify) 301s the old `src/html/*` URLs to the new ones. Keep pages at the root: moving one into a folder changes its relative paths.
 
+## Head / sharing
+- Every page: `src/img/favicon.svg` ("N" monogram drawn as shapes, ardoise colors), `src/img/apple-touch-icon.png` (180×180), `theme-color` #313E50.
+- Link preview: `og:image` = absolute URL `https://enguehardnathan.netlify.app/src/img/og-image.png` (1200×630) + `twitter:card` summary_large_image.
+  The PNG is rendered from `scripts/og-image.html` with headless Edge (command in that file's header comment). Update it when the status changes (e.g. alternance trouvée).
+
 ## Design system
 - Active theme on every page: `data-theme="ardoise"` (dark slate: base #313E50 / #3A435E / #455561, text #E6E8EE, primary #8EAAE3). In ardoise, bold text is auto-colored primary.
 - Alternate theme `boheme` (light cream + "Ember" palette: #220901, #621708, #941B0C, #BC3908, #F6AA1C) still defined in `input.css`.

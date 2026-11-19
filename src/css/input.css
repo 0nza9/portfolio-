@@ -295,6 +295,40 @@
     border-style: dashed;
   }
 
+  /* project cards: tech logos on the top-right of the card body, next to the
+     "Projet phare" label. The last chip's tooltip opens to the left
+     (tooltip-left), or the card's overflow would cut it at the edge. */
+  .tech-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .tech-chips .tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    background: color-mix(in oklab, var(--color-base-100) 45%, transparent);
+    border: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent);
+  }
+  .tech-chips img {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+  .tech-chip-text {
+    display: block;
+    width: 1.15rem;
+    height: 1.15rem;
+    line-height: 1.15rem;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
   /* skills card: each logo sits on a small frosted tile */
   .skill-logos .tooltip {
     display: inline-flex;

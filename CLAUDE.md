@@ -16,6 +16,8 @@ All site content is in **French**; keep new copy in French with proper typograph
 - `index.html` – home "dashboard": hero, "En bref", project slider (2 slides), sidebar (statut + CV, Discord live widget, skills), footer "Tech talk" RSS marquee.
 All pages sit at the repo root so Netlify serves them at clean URLs (`/about`, `/rustianlife`…).
 - `about.html` – "Mon tableau": draggable sticky notes + polaroid board (desktop only), `#contact`.
+- `parcours.html` – "Mon parcours": vertical timeline (`.parcours` in `input.css`; `li.is-current` = filled dot, dashed line to `li.is-next`). Université Gustave Eiffel, licence informatique-mathématiques 2023–2025 (L1–L2) → BTS SIO SLAM 2025–2027 (2e année) → objectif licence/bachelor puis master en alternance.
+- Header nav (index, about, parcours only): Accueil · À propos · Parcours; the active tab gets `bg-base-100/30 border-b-2 border-b-accent rounded-b-none` + `aria-current="page"`.
 - RustianLife project (featured, Rust game server + Node.js/Prisma dashboard + Discord bots, 300+ member community), 5 pages linked by a sub-nav:
   `rustianlife.html` (vue d’ensemble) → `rustianlife-serveur.html` (serveur & infra) → `rustianlife-plateforme.html` (plateforme & bots) → `rustianlife-wipes.html` (wipes automatisés) → `rustianlife-bilan.html` (bilan).
 - Sound React (TouchDesigner GPU audio-reactive particles, built by Python scripts): `sound-react.html` → `sound-react-detail.html` (dans le détail).
@@ -31,7 +33,7 @@ All pages sit at the repo root so Netlify serves them at clean URLs (`/about`, `
 - Mobile overrides (≤640px) live at the end of `input.css`, outside `@layer`.
 
 ## main.js behaviours (data attributes)
-- Clean URLs (http/https only): rewrites internal `*.html` links to `/about`-style, strips `.html` / `index` and `#anchor` from the address bar via `history.replaceState`, and handles same-page `#` links by scrolling without changing the URL.
+- Clean URLs (http/https only): strips `#anchor` from the address bar via `history.replaceState` and handles same-page `#` links by scrolling without changing the URL. Strips `.html` / `index` only on non-local hosts: VS Code Live Server can't serve `/about`, so never rewrite links in JS. On Netlify, its Pretty URLs processing already rewrites `about.html` links to `/about` server-side.
 - `.reveal` – zoom-in on scroll (toggles each time); `html.intro` – first-visit-per-session intro on home.
 - `[data-slider]` – home project slider with dots.
 - `[data-hover-video]` + `data-video-id` (YouTube) or `data-video-src` (local mp4) – hover preview.

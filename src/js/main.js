@@ -1,21 +1,21 @@
-// Clean addresses on the live site. Every page sits at the root (about.html,
-// rustianlife.html…) and Netlify serves it without the extension (/about), so
-// here we make the address bar match: "/" instead of /index.html, /about
-// instead of /about.html, and no #anchor left behind after jumping to a section.
-// Links in the HTML keep their .html names so the site still works when opened
-// straight from disk (file://), where none of this runs.
+// Clean addresses. Every page sits at the root (about.html, rustianlife.html…).
+// On Netlify, pages are served without the extension (/about) and Netlify
+// itself rewrites the links in the HTML to match, so nothing to do for links.
+// Here we only tidy the address bar: no #anchor left behind after jumping to a
+// section, and (on the live site only) "/" instead of /index.html, /about
+// instead of /about.html. Local servers such as VS Code Live Server can't serve
+// /about, so the .html is left alone there. Links in the HTML keep their .html
+// names so the site also works when opened straight from disk (file://).
 (function () {
   if (!/^https?:$/.test(location.protocol)) return;
 
+  const local = /^(localhost|127\.\d+\.\d+\.\d+|\[::1\]|0\.0\.0\.0)$/.test(location.hostname);
   const clean = (path) =>
-    path.replace(/\/index(\.html)?$/, "/").replace(/\.html$/, "");
-
-  // internal links point at the clean address (no redirect, clean hover preview)
-  document.querySelectorAll('a[href]').forEach((a) => {
-    const url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || !/\.html$/.test(url.pathname)) return;
-    a.href = clean(url.pathname) + url.search + url.hash;
-  });
+    local ? path : path.replace(/\/index(\.html)?$/, "/").replace(/\.html$/, "");
+  // for comparing two addresses of the same page, whatever the server does
+  const samePage = (a, b) =>
+    a.replace(/\/index(\.html)?$/, "/").replace(/\.html$/, "") ===
+    b.replace(/\/index(\.html)?$/, "/").replace(/\.html$/, "");
 
   // arriving with a .html path or a #section: tidy the bar, then show the section
   const id = decodeURIComponent(location.hash.slice(1));
@@ -37,7 +37,7 @@
     const a = e.target.closest && e.target.closest('a[href*="#"]');
     if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || clean(url.pathname) !== clean(location.pathname)) return;
+    if (url.origin !== location.origin || !samePage(url.pathname, location.pathname)) return;
     const el = document.getElementById(decodeURIComponent(url.hash.slice(1)));
     if (!el) return;
     e.preventDefault();

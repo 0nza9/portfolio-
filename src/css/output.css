@@ -35,6 +35,7 @@
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
+    --tracking-normal: 0em;
     --tracking-wide: 0.025em;
     --tracking-wider: 0.05em;
     --tracking-widest: 0.1em;
@@ -1041,6 +1042,69 @@
       }
     }
   }
+  .timeline {
+    @layer daisyui.l1.l2.l3 {
+      position: relative;
+      display: flex;
+      > li {
+        position: relative;
+        display: grid;
+        flex-shrink: 0;
+        align-items: center;
+        grid-template-rows: var(--timeline-row-start, minmax(0, 1fr)) auto var( --timeline-row-end, minmax(0, 1fr) );
+        grid-template-columns: var(--timeline-col-start, minmax(0, 1fr)) auto var( --timeline-col-end, minmax(0, 1fr) );
+        > hr {
+          border: none;
+          width: 100%;
+          &:first-child {
+            grid-column-start: 1;
+            grid-row-start: 2;
+          }
+          &:last-child {
+            grid-column-start: 3;
+            grid-column-end: none;
+            grid-row-start: 2;
+            grid-row-end: auto;
+          }
+          @media print {
+            border: 0.1px solid var(--color-base-300);
+          }
+        }
+      }
+      :where(hr) {
+        height: calc(0.25rem * 1);
+        background-color: var(--color-base-300);
+      }
+      &:has(.timeline-middle hr) {
+        &:first-child {
+          border-start-start-radius: 0;
+          border-end-start-radius: 0;
+          border-start-end-radius: var(--radius-selector);
+          border-end-end-radius: var(--radius-selector);
+        }
+        &:last-child {
+          border-start-start-radius: var(--radius-selector);
+          border-end-start-radius: var(--radius-selector);
+          border-start-end-radius: 0;
+          border-end-end-radius: 0;
+        }
+      }
+      &:not(:has(.timeline-middle)) {
+        :first-child hr:last-child {
+          border-start-start-radius: var(--radius-selector);
+          border-end-start-radius: var(--radius-selector);
+          border-start-end-radius: 0;
+          border-end-end-radius: 0;
+        }
+        :last-child hr:first-child {
+          border-start-start-radius: 0;
+          border-end-start-radius: 0;
+          border-start-end-radius: var(--radius-selector);
+          border-end-end-radius: var(--radius-selector);
+        }
+      }
+    }
+  }
   .collapse-title {
     @layer daisyui.l1.l2.l3 {
       grid-column-start: 1;
@@ -1375,8 +1439,14 @@
       }
     }
   }
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
   }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
@@ -2109,6 +2179,12 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
+  .badge-sm {
+    @layer daisyui.l1.l2 {
+      --size: calc(var(--size-selector, 0.25rem) * 5);
+      font-size: 0.75rem;
+    }
+  }
   .badge-xs {
     @layer daisyui.l1.l2 {
       --size: calc(var(--size-selector, 0.25rem) * 4);
@@ -2140,6 +2216,10 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .tracking-normal {
+    --tw-tracking: var(--tracking-normal);
+    letter-spacing: var(--tracking-normal);
   }
   .tracking-wide {
     --tw-tracking: var(--tracking-wide);
@@ -2177,6 +2257,9 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .normal-case {
+    text-transform: none;
   }
   .uppercase {
     text-transform: uppercase;
@@ -2335,6 +2418,12 @@
       --size: calc(var(--size-field, 0.25rem) * 8);
     }
   }
+  .badge-primary {
+    @layer daisyui.l1.l2 {
+      --badge-color: var(--color-primary);
+      --badge-fg: var(--color-primary-content);
+    }
+  }
   .btn-neutral {
     @layer daisyui.l1.l2.l3 {
       --btn-color: var(--color-neutral);
@@ -2447,6 +2536,16 @@
       flex-direction: row-reverse;
     }
   }
+  .sm\:items-center {
+    @media (width >= 40rem) {
+      align-items: center;
+    }
+  }
+  .sm\:justify-between {
+    @media (width >= 40rem) {
+      justify-content: space-between;
+    }
+  }
   .sm\:justify-start {
     @media (width >= 40rem) {
       justify-content: flex-start;
@@ -2490,6 +2589,12 @@
   .md\:items-start {
     @media (width >= 48rem) {
       align-items: flex-start;
+    }
+  }
+  .md\:text-3xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
     }
   }
   .md\:text-4xl {
@@ -2680,6 +2785,56 @@
   }
 }
 @layer components {
+  .parcours {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-left: 0.5rem;
+    padding-left: 2.25rem;
+  }
+  .parcours > li {
+    position: relative;
+  }
+  .parcours > li:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: -2.25rem;
+    top: 0.65rem;
+    bottom: -3.65rem;
+    translate: -50% 0;
+    border-left: 2px solid var(--color-base-content);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-left: 2px solid color-mix(in oklab, var(--color-base-content) 18%, transparent);
+    }
+  }
+  .parcours > li.is-current::before {
+    border-left: 2px dashed var(--color-primary);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-left: 2px dashed color-mix(in oklab, var(--color-primary) 55%, transparent);
+    }
+  }
+  .parcours-dot {
+    position: absolute;
+    z-index: 1;
+    left: -2.25rem;
+    top: 0.2rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    translate: -50% 0;
+    border-radius: 9999px;
+    background: var(--color-base-100);
+    border: 2px solid var(--color-primary);
+  }
+  .parcours > li.is-current .parcours-dot {
+    background: var(--color-primary);
+    box-shadow: 0 0 0 6px var(--color-primary);
+    @supports (color: color-mix(in lab, red, red)) {
+      box-shadow: 0 0 0 6px color-mix(in oklab, var(--color-primary) 25%, transparent);
+    }
+  }
+  .parcours > li.is-next .parcours-dot {
+    border-style: dashed;
+  }
   .skill-logos .tooltip {
     display: inline-flex;
     padding: 0.45rem;

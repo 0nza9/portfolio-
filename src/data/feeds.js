@@ -1,90 +1,90 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-19T07:30:26.009Z",
+  "updated": "2026-11-19T17:24:38.333Z",
   "items": [
     {
-      "title": "nginx2root - Votre nginx est-il vraiment exposé ?",
-      "link": "https://korben.info/nginx2root-faille-http2.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
-      "source": "Korben",
-      "site": "korben.info",
-      "date": "2026-11-19T06:57:06.000Z"
-    },
-    {
-      "title": "De sérieux ratés pour Muse, qui hallucine et prend des libertés avec les autorisations",
-      "link": "https://next.ink/268379/de-serieux-rates-pour-muse-qui-hallucine-et-prend-des-libertes-avec-les-autorisations/",
+      "title": "Cyberattaque à la Commission européenne : une plateforme agentique de pentest mise en cause",
+      "link": "https://next.ink/268532/cyberattaque-a-la-commission-europeenne-une-plateforme-agentique-de-pentest-mise-en-cause/",
       "source": "Next",
       "site": "next.ink",
-      "date": "2026-11-19T06:41:53.000Z"
+      "date": "2026-11-19T16:06:59.000Z"
     },
     {
-      "title": "OVHcloud : infrastructure IA et modèles souverains avec Qwant, Shadow et Staan",
-      "link": "https://next.ink/268119/ovhcloud-des-modeles-et-une-infrastructure-ia-souverains-avec-qwant-shadow-et-staan/",
+      "title": "Des personnes âgées achètent des Tesla et s'abandonnent au FSD pour couvrir leurs trajets. « C'est un problème », selon des observateurs d'avis que ces séniors se mettent en danger en s'appuyant sur ce système",
+      "link": "https://embarque.developpez.com/actu/389296/Des-personnes-agees-achetent-des-Tesla-et-s-abandonnent-au-FSD-pour-couvrir-leurs-trajets-C-est-un-probleme-selon-des-observateurs-d-avis-que-ces-seniors-se-mettent-en-danger-en-s-appuyant-sur-ce-systeme/",
+      "source": "Developpez.com",
+      "site": "embarque.developpez.com",
+      "date": "2026-11-19T16:02:00.000Z"
+    },
+    {
+      "title": "☕️ Flock : élections, piège à désinformations",
+      "link": "https://next.ink/brief-article/flock-elections-piege-a-desinformations/",
       "source": "Next",
       "site": "next.ink",
-      "date": "2026-11-19T06:00:00.000Z"
+      "date": "2026-11-19T15:49:55.000Z"
     },
     {
-      "title": "Ubuntu - Les futurs correctifs seront écrits par une IA",
-      "link": "https://korben.info/canonical-surge-agents-correctifs-ubuntu.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
-      "source": "Korben",
-      "site": "korben.info",
-      "date": "2026-11-19T05:56:20.000Z"
-    },
-    {
-      "title": "Le conseil d'administration de Nvidia rejette à l'unanimité le retour de Jensen Huang au poste de PDG, bien que ce dernier ait laissé entendre qu'il serait « honoré » de revenir",
-      "link": "https://hardware.developpez.com/actu/389262/Le-conseil-d-administration-de-Nvidia-rejette-a-l-unanimite-le-retour-de-Jensen-Huang-au-poste-de-PDG-bien-que-ce-dernier-ait-laisse-entendre-qu-il-serait-honore-de-revenir/",
-      "source": "Developpez.com",
-      "site": "hardware.developpez.com",
-      "date": "2026-11-18T18:06:00.000Z"
-    },
-    {
-      "title": "La succession à la tête de Nvidia est peut-être intervenue trop tôt : la fille de Jensen Huang montait en puissance et la famille exerce une emprise solide sur la firme, un dilemme pour la nouvelle PDG",
-      "link": "https://hardware.developpez.com/actu/389263/La-succession-a-la-tete-de-Nvidia-est-peut-etre-intervenue-trop-tot-la-fille-de-Jensen-Huang-montait-en-puissance-et-la-famille-exerce-une-emprise-solide-sur-la-firme-un-dilemme-pour-la-nouvelle-PDG/",
-      "source": "Developpez.com",
-      "site": "hardware.developpez.com",
-      "date": "2026-11-18T18:01:00.000Z"
-    },
-    {
-      "title": "Des centaines de sites web majeurs diffusent un puissant « cocktail » de logiciels malveillants à des visiteurs qui ne se doutent de rien, dont des malwares destinées au vol de cryptomonnaies",
-      "link": "https://securite.developpez.com/actu/389256/Des-centaines-de-sites-web-majeurs-diffusent-un-puissant-cocktail-de-logiciels-malveillants-a-des-visiteurs-qui-ne-se-doutent-de-rien-dont-des-malwares-destinees-au-vol-de-cryptomonnaies/",
-      "source": "Developpez.com",
-      "site": "securite.developpez.com",
-      "date": "2026-11-18T17:26:00.000Z"
-    },
-    {
-      "title": "☕️ Chargemap signale un vol de données suite à une attaque informatique",
-      "link": "https://next.ink/brief-article/chargemap-signale-un-vol-de-donnees-suite-a-une-attaque-informatique/",
+      "title": "Pour une conseillère de la CJUE, Facebook n’est plus gratuit car on paie avec ses données",
+      "link": "https://next.ink/268491/pour-une-conseillere-de-la-cjue-facebook-nest-plus-gratuit-car-on-paie-avec-ses-donnees/",
       "source": "Next",
       "site": "next.ink",
-      "date": "2026-11-18T16:54:01.000Z"
+      "date": "2026-11-19T14:55:28.000Z"
     },
     {
-      "title": "SkillEvaluator - Vos skills IA ont peut-être un YAML pété ?",
-      "link": "https://korben.info/skillevaluator-nvidia-skills-agents.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "title": "L'introduction en bourse d'Anthropic lève plus de 81 milliards $ pour une valorisation de 1 500 milliards $, la plus grande IPO jamais enregistrée, dépassant celle de SpaceX, à 83 $ par action",
+      "link": "https://intelligence-artificielle.developpez.com/actu/389294/L-introduction-en-bourse-d-Anthropic-leve-plus-de-81-milliards-pour-une-valorisation-de-1-500-milliards-la-plus-grande-IPO-jamais-enregistree-depassant-celle-de-SpaceX-a-83-par-action/",
+      "source": "Developpez.com",
+      "site": "intelligence-artificielle.developpez.com",
+      "date": "2026-11-19T14:36:00.000Z"
+    },
+    {
+      "title": "Test des devolo BE9300 et BE6500, le mesh WiFi 7 que j'installe chez tous mes potes",
+      "link": "https://korben.info/test-des-devolo-be9300-et-be6500-le-mesh-wifi-7-que-jinstalle-chez-tous-mes-potes.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
       "source": "Korben",
       "site": "korben.info",
-      "date": "2026-11-18T15:10:16.000Z"
+      "date": "2026-11-19T14:26:40.000Z"
     },
     {
-      "title": "Chaque Euro : rendre les finances publiques vérifiables avec DuckDB",
-      "link": "https://linuxfr.org/news/chaque-euro-rendre-les-finances-publiques-verifiables-avec-duckdb",
+      "title": "Le framework Python officiel de Microsoft pour les agents IA a été détourné pour diffuser des logiciels malveillants, conçus pour exfiltrer des identifiants sensibles et des variables d'environnement",
+      "link": "https://microsoft.developpez.com/actu/389288/Le-framework-Python-officiel-de-Microsoft-pour-les-agents-IA-a-ete-detourne-pour-diffuser-des-logiciels-malveillants-concus-pour-exfiltrer-des-identifiants-sensibles-et-des-variables-d-environnement/",
+      "source": "Developpez.com",
+      "site": "microsoft.developpez.com",
+      "date": "2026-11-19T13:13:00.000Z"
+    },
+    {
+      "title": "CPU Ex0253 L'erreur est dans le processeur, première partie",
+      "link": "https://cpu.pm/post/2026/11/19/Ex0253-L-erreur-est-dans-le-processeur%2C-premi%C3%A8re-partie",
+      "source": "Journal du hacker",
+      "site": "cpu.pm",
+      "date": "2026-11-19T13:10:44.000Z"
+    },
+    {
+      "title": "Actualité Cybersécurité de la semaine du 16/11/2026",
+      "link": "https://newsletter.erreur403.fr/p/erreur-403-102-ce-n-est-pas-une-cyberattaque",
+      "source": "Journal du hacker",
+      "site": "newsletter.erreur403.fr",
+      "date": "2026-11-19T11:50:19.000Z"
+    },
+    {
+      "title": "Nouvelles de Haiku - Automne 2026",
+      "link": "https://linuxfr.org/news/nouvelles-de-haiku-automne-2026",
       "source": "LinuxFr.org",
       "site": "linuxfr.org",
-      "date": "2026-11-17T17:57:26.000Z"
+      "date": "2026-11-19T10:42:17.000Z"
     },
     {
-      "title": "Art algorithmique en France : une quarantaine d'artistes à connaître",
-      "link": "https://art.camilleroux.com/fr/textes/art-generatif-en-france/",
-      "source": "Journal du hacker",
-      "site": "art.camilleroux.com",
-      "date": "2026-11-17T17:36:18.000Z"
+      "title": "Quelqu'un vit peut-être votre vie en ce moment. Comment ne plus perdre votre identité ? #sponso",
+      "link": "https://korben.info/comment-ne-plus-perdre-votre-identite.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "source": "Korben",
+      "site": "korben.info",
+      "date": "2026-11-19T10:21:33.000Z"
     },
     {
-      "title": "Face au web artificialisé, Framasoft veut Réensauvager Internet 🌿",
-      "link": "https://framablog.org/2026/11/17/face-au-web-artificialise-framasoft-veut-reensauvager-internet/",
-      "source": "Journal du hacker",
-      "site": "framablog.org",
-      "date": "2026-11-17T13:54:32.000Z"
+      "title": "Unreal Tournament 2004 est de retour !",
+      "link": "https://korben.info/unreal-tournament-2004-navigateur.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "source": "Korben",
+      "site": "korben.info",
+      "date": "2026-11-19T08:47:16.000Z"
     }
   ]
 };

@@ -1,7 +1,35 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-18T20:36:32.817Z",
+  "updated": "2026-11-19T07:30:26.009Z",
   "items": [
+    {
+      "title": "nginx2root - Votre nginx est-il vraiment exposé ?",
+      "link": "https://korben.info/nginx2root-faille-http2.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "source": "Korben",
+      "site": "korben.info",
+      "date": "2026-11-19T06:57:06.000Z"
+    },
+    {
+      "title": "De sérieux ratés pour Muse, qui hallucine et prend des libertés avec les autorisations",
+      "link": "https://next.ink/268379/de-serieux-rates-pour-muse-qui-hallucine-et-prend-des-libertes-avec-les-autorisations/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-19T06:41:53.000Z"
+    },
+    {
+      "title": "OVHcloud : infrastructure IA et modèles souverains avec Qwant, Shadow et Staan",
+      "link": "https://next.ink/268119/ovhcloud-des-modeles-et-une-infrastructure-ia-souverains-avec-qwant-shadow-et-staan/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-19T06:00:00.000Z"
+    },
+    {
+      "title": "Ubuntu - Les futurs correctifs seront écrits par une IA",
+      "link": "https://korben.info/canonical-surge-agents-correctifs-ubuntu.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "source": "Korben",
+      "site": "korben.info",
+      "date": "2026-11-19T05:56:20.000Z"
+    },
     {
       "title": "Le conseil d'administration de Nvidia rejette à l'unanimité le retour de Jensen Huang au poste de PDG, bien que ce dernier ait laissé entendre qu'il serait « honoré » de revenir",
       "link": "https://hardware.developpez.com/actu/389262/Le-conseil-d-administration-de-Nvidia-rejette-a-l-unanimite-le-retour-de-Jensen-Huang-au-poste-de-PDG-bien-que-ce-dernier-ait-laisse-entendre-qu-il-serait-honore-de-revenir/",
@@ -31,32 +59,11 @@ window.TECH_TALK_FEEDS = {
       "date": "2026-11-18T16:54:01.000Z"
     },
     {
-      "title": "À cause d’un bug, les pilotes AMD et NVIDIA écrivent constamment sur le disque",
-      "link": "https://next.ink/268322/a-cause-dun-bug-les-pilotes-amd-et-nvidia-ecrivent-constamment-sur-le-disque/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-18T16:47:00.000Z"
-    },
-    {
-      "title": "☕️ Les entreprises US utilisant l’IA chinoise pourraient être obligées de le déclarer",
-      "link": "https://next.ink/brief-article/les-entreprises-us-utilisant-lia-chinoise-pourraient-etre-obligees-de-le-declarer/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-18T16:30:24.000Z"
-    },
-    {
       "title": "SkillEvaluator - Vos skills IA ont peut-être un YAML pété ?",
       "link": "https://korben.info/skillevaluator-nvidia-skills-agents.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
       "source": "Korben",
       "site": "korben.info",
       "date": "2026-11-18T15:10:16.000Z"
-    },
-    {
-      "title": "Nextcloud Office - La suite libre qui se passe du cloud",
-      "link": "https://korben.info/nextcloud-office-desktop.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
-      "source": "Korben",
-      "site": "korben.info",
-      "date": "2026-11-18T14:50:03.000Z"
     },
     {
       "title": "Chaque Euro : rendre les finances publiques vérifiables avec DuckDB",
@@ -78,13 +85,6 @@ window.TECH_TALK_FEEDS = {
       "source": "Journal du hacker",
       "site": "framablog.org",
       "date": "2026-11-17T13:54:32.000Z"
-    },
-    {
-      "title": "PHP2Shell : ce qui s'est passé dans PHP à l'automne 2026 et ce qu'il reste à faire",
-      "link": "https://jatniel.dev/fr/bytes/php2shell-ce-qui-sest-passe-dans-php-a-lautomne-2026-et-ce-quil-reste-a-faire",
-      "source": "Journal du hacker",
-      "site": "jatniel.dev",
-      "date": "2026-11-17T09:48:11.000Z"
     }
   ]
 };

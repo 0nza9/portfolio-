@@ -1,20 +1,41 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-19T17:24:38.333Z",
+  "updated": "2026-11-20T01:47:51.460Z",
   "items": [
+    {
+      "title": "JetBrains présente les améliorations qu'apportent Rider 2026.3, l'EDI pour le développement .NET, pour le développement de jeux vidéo, plugins Lua et Verse et amélioration du débogage C++",
+      "link": "https://jetbrains.developpez.com/actu/389299/JetBrains-presente-les-ameliorations-qu-apportent-Rider-2026-3-l-EDI-pour-le-developpement-NET-pour-le-developpement-de-jeux-video-plugins-Lua-et-Verse-et-amelioration-du-debogage-Cplusplus/",
+      "source": "Developpez.com",
+      "site": "jetbrains.developpez.com",
+      "date": "2026-11-19T23:58:00.000Z"
+    },
+    {
+      "title": "Gemini 4 Neon est le modèle d'IA le plus puissant de Google : il surpasse Opus 5.5 et GPT-6.2, tout en offrant un léger gain d'intelligence par rapport à Gemini 4 Carbon, avec un coût par tâche réduit de 17 %",
+      "link": "https://intelligence-artificielle.developpez.com/actu/389301/Gemini-4-Neon-est-le-modele-d-IA-le-plus-puissant-de-Google-il-surpasse-Opus-5-5-et-GPT-6-2-tout-en-offrant-un-leger-gain-d-intelligence-par-rapport-a-Gemini-4-Carbon-avec-un-cout-par-tache-reduit-de-17-pourcent/",
+      "source": "Developpez.com",
+      "site": "intelligence-artificielle.developpez.com",
+      "date": "2026-11-19T23:56:00.000Z"
+    },
+    {
+      "title": "L'IA à l'origine des pannes technologiques mondiales : selon un haut responsable américain et plusieurs PDG, les pannes auraient été causées par des corrections de failles de sécurité détectées par l'IA",
+      "link": "https://intelligence-artificielle.developpez.com/actu/389270/L-IA-a-l-origine-des-pannes-technologiques-mondiales-selon-un-haut-responsable-americain-et-plusieurs-PDG-les-pannes-auraient-ete-causees-par-des-corrections-de-failles-de-securite-detectees-par-l-IA/",
+      "source": "Developpez.com",
+      "site": "intelligence-artificielle.developpez.com",
+      "date": "2026-11-19T23:16:00.000Z"
+    },
+    {
+      "title": "Windows 11 va bientôt noter le niveau de sécurité de votre PC",
+      "link": "https://korben.info/windows-baseline-protection.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "source": "Korben",
+      "site": "korben.info",
+      "date": "2026-11-19T17:08:25.000Z"
+    },
     {
       "title": "Cyberattaque à la Commission européenne : une plateforme agentique de pentest mise en cause",
       "link": "https://next.ink/268532/cyberattaque-a-la-commission-europeenne-une-plateforme-agentique-de-pentest-mise-en-cause/",
       "source": "Next",
       "site": "next.ink",
       "date": "2026-11-19T16:06:59.000Z"
-    },
-    {
-      "title": "Des personnes âgées achètent des Tesla et s'abandonnent au FSD pour couvrir leurs trajets. « C'est un problème », selon des observateurs d'avis que ces séniors se mettent en danger en s'appuyant sur ce système",
-      "link": "https://embarque.developpez.com/actu/389296/Des-personnes-agees-achetent-des-Tesla-et-s-abandonnent-au-FSD-pour-couvrir-leurs-trajets-C-est-un-probleme-selon-des-observateurs-d-avis-que-ces-seniors-se-mettent-en-danger-en-s-appuyant-sur-ce-systeme/",
-      "source": "Developpez.com",
-      "site": "embarque.developpez.com",
-      "date": "2026-11-19T16:02:00.000Z"
     },
     {
       "title": "☕️ Flock : élections, piège à désinformations",
@@ -31,25 +52,11 @@ window.TECH_TALK_FEEDS = {
       "date": "2026-11-19T14:55:28.000Z"
     },
     {
-      "title": "L'introduction en bourse d'Anthropic lève plus de 81 milliards $ pour une valorisation de 1 500 milliards $, la plus grande IPO jamais enregistrée, dépassant celle de SpaceX, à 83 $ par action",
-      "link": "https://intelligence-artificielle.developpez.com/actu/389294/L-introduction-en-bourse-d-Anthropic-leve-plus-de-81-milliards-pour-une-valorisation-de-1-500-milliards-la-plus-grande-IPO-jamais-enregistree-depassant-celle-de-SpaceX-a-83-par-action/",
-      "source": "Developpez.com",
-      "site": "intelligence-artificielle.developpez.com",
-      "date": "2026-11-19T14:36:00.000Z"
-    },
-    {
       "title": "Test des devolo BE9300 et BE6500, le mesh WiFi 7 que j'installe chez tous mes potes",
       "link": "https://korben.info/test-des-devolo-be9300-et-be6500-le-mesh-wifi-7-que-jinstalle-chez-tous-mes-potes.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
       "source": "Korben",
       "site": "korben.info",
       "date": "2026-11-19T14:26:40.000Z"
-    },
-    {
-      "title": "Le framework Python officiel de Microsoft pour les agents IA a été détourné pour diffuser des logiciels malveillants, conçus pour exfiltrer des identifiants sensibles et des variables d'environnement",
-      "link": "https://microsoft.developpez.com/actu/389288/Le-framework-Python-officiel-de-Microsoft-pour-les-agents-IA-a-ete-detourne-pour-diffuser-des-logiciels-malveillants-concus-pour-exfiltrer-des-identifiants-sensibles-et-des-variables-d-environnement/",
-      "source": "Developpez.com",
-      "site": "microsoft.developpez.com",
-      "date": "2026-11-19T13:13:00.000Z"
     },
     {
       "title": "CPU Ex0253 L'erreur est dans le processeur, première partie",
@@ -78,13 +85,6 @@ window.TECH_TALK_FEEDS = {
       "source": "Korben",
       "site": "korben.info",
       "date": "2026-11-19T10:21:33.000Z"
-    },
-    {
-      "title": "Unreal Tournament 2004 est de retour !",
-      "link": "https://korben.info/unreal-tournament-2004-navigateur.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
-      "source": "Korben",
-      "site": "korben.info",
-      "date": "2026-11-19T08:47:16.000Z"
     }
   ]
 };

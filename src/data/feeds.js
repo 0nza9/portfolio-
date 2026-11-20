@@ -1,90 +1,90 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-20T01:47:51.460Z",
+  "updated": "2026-11-20T12:57:58.268Z",
   "items": [
     {
-      "title": "JetBrains présente les améliorations qu'apportent Rider 2026.3, l'EDI pour le développement .NET, pour le développement de jeux vidéo, plugins Lua et Verse et amélioration du débogage C++",
-      "link": "https://jetbrains.developpez.com/actu/389299/JetBrains-presente-les-ameliorations-qu-apportent-Rider-2026-3-l-EDI-pour-le-developpement-NET-pour-le-developpement-de-jeux-video-plugins-Lua-et-Verse-et-amelioration-du-debogage-Cplusplus/",
+      "title": "Madison, la fille de Jensen Huang, aurait harcelé et insulté des employés, poussant certains cadres talentueux à quitter le fabricant de puces : « elle incarnait les yeux et les oreilles de son père »",
+      "link": "https://hardware.developpez.com/actu/389335/Madison-la-fille-de-Jensen-Huang-aurait-harcele-et-insulte-des-employes-poussant-certains-cadres-talentueux-a-quitter-le-fabricant-de-puces-elle-incarnait-les-yeux-et-les-oreilles-de-son-pere/",
       "source": "Developpez.com",
-      "site": "jetbrains.developpez.com",
-      "date": "2026-11-19T23:58:00.000Z"
+      "site": "hardware.developpez.com",
+      "date": "2026-11-20T12:24:00.000Z"
     },
     {
-      "title": "Gemini 4 Neon est le modèle d'IA le plus puissant de Google : il surpasse Opus 5.5 et GPT-6.2, tout en offrant un léger gain d'intelligence par rapport à Gemini 4 Carbon, avec un coût par tâche réduit de 17 %",
-      "link": "https://intelligence-artificielle.developpez.com/actu/389301/Gemini-4-Neon-est-le-modele-d-IA-le-plus-puissant-de-Google-il-surpasse-Opus-5-5-et-GPT-6-2-tout-en-offrant-un-leger-gain-d-intelligence-par-rapport-a-Gemini-4-Carbon-avec-un-cout-par-tache-reduit-de-17-pourcent/",
-      "source": "Developpez.com",
-      "site": "intelligence-artificielle.developpez.com",
-      "date": "2026-11-19T23:56:00.000Z"
-    },
-    {
-      "title": "L'IA à l'origine des pannes technologiques mondiales : selon un haut responsable américain et plusieurs PDG, les pannes auraient été causées par des corrections de failles de sécurité détectées par l'IA",
-      "link": "https://intelligence-artificielle.developpez.com/actu/389270/L-IA-a-l-origine-des-pannes-technologiques-mondiales-selon-un-haut-responsable-americain-et-plusieurs-PDG-les-pannes-auraient-ete-causees-par-des-corrections-de-failles-de-securite-detectees-par-l-IA/",
+      "title": "Uber, DoorDash et Airbnb affirment que presque personne n'utilise les agents d'IA, d'après leurs résultats financiers du 3e trimestre. Les chiffres questionnent la pertinence de l'utilisation de ces outils",
+      "link": "https://intelligence-artificielle.developpez.com/actu/389332/Uber-DoorDash-et-Airbnb-affirment-que-presque-personne-n-utilise-les-agents-d-IA-d-apres-leurs-resultats-financiers-du-3e-trimestre-Les-chiffres-questionnent-la-pertinence-de-l-utilisation-de-ces-outils/",
       "source": "Developpez.com",
       "site": "intelligence-artificielle.developpez.com",
-      "date": "2026-11-19T23:16:00.000Z"
+      "date": "2026-11-20T12:14:00.000Z"
     },
     {
-      "title": "Windows 11 va bientôt noter le niveau de sécurité de votre PC",
-      "link": "https://korben.info/windows-baseline-protection.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "title": "Microsoft aurait dû détecter le bug logiciel qui a mis Outlook hors service et mettre en place des mesures de sécurité pour limiter les perturbations, selon Satya Nadella, PDG de Microsoft",
+      "link": "https://microsoft.developpez.com/actu/389313/Microsoft-aurait-du-detecter-le-bug-logiciel-qui-a-mis-Outlook-hors-service-et-mettre-en-place-des-mesures-de-securite-pour-limiter-les-perturbations-selon-Satya-Nadella-PDG-de-Microsoft/",
+      "source": "Developpez.com",
+      "site": "microsoft.developpez.com",
+      "date": "2026-11-20T11:51:00.000Z"
+    },
+    {
+      "title": "Ce que la future « Baseline protection » de Windows 11 signifie pour les applications",
+      "link": "https://next.ink/268739/ce-que-la-future-baseline-protection-de-windows-11-signifie-pour-les-applications/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-20T10:37:00.000Z"
+    },
+    {
+      "title": "Signal bloque les captures pour tenir Gemini et Siri à distance",
+      "link": "https://korben.info/signal-bloque-captures-ecran-ia.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
       "source": "Korben",
       "site": "korben.info",
-      "date": "2026-11-19T17:08:25.000Z"
+      "date": "2026-11-20T10:36:02.000Z"
     },
     {
-      "title": "Cyberattaque à la Commission européenne : une plateforme agentique de pentest mise en cause",
-      "link": "https://next.ink/268532/cyberattaque-a-la-commission-europeenne-une-plateforme-agentique-de-pentest-mise-en-cause/",
+      "title": "[Màj] IA et droit d’auteur : le texte de Laure Darcos encore repoussé à l’Assemblée",
+      "link": "https://next.ink/266327/ia-et-droit-dauteur-mistral-et-les-industriels-du-numerique-accentuent-le-lobbying/",
       "source": "Next",
       "site": "next.ink",
-      "date": "2026-11-19T16:06:59.000Z"
+      "date": "2026-11-20T10:12:00.000Z"
     },
     {
-      "title": "☕️ Flock : élections, piège à désinformations",
-      "link": "https://next.ink/brief-article/flock-elections-piege-a-desinformations/",
+      "title": "Le défenseur des droits se penche sur ceux des enfants à l’ère du numérique",
+      "link": "https://next.ink/268546/le-defenseur-des-droits-se-penche-sur-ceux-des-enfants-a-lere-du-numerique/",
       "source": "Next",
       "site": "next.ink",
-      "date": "2026-11-19T15:49:55.000Z"
+      "date": "2026-11-20T09:52:25.000Z"
     },
     {
-      "title": "Pour une conseillère de la CJUE, Facebook n’est plus gratuit car on paie avec ses données",
-      "link": "https://next.ink/268491/pour-une-conseillere-de-la-cjue-facebook-nest-plus-gratuit-car-on-paie-avec-ses-donnees/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-19T14:55:28.000Z"
-    },
-    {
-      "title": "Test des devolo BE9300 et BE6500, le mesh WiFi 7 que j'installe chez tous mes potes",
-      "link": "https://korben.info/test-des-devolo-be9300-et-be6500-le-mesh-wifi-7-que-jinstalle-chez-tous-mes-potes.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "title": "Black Friday pCloud - Plans à vie, Photos AI, Docs et NAS #sponso",
+      "link": "https://korben.info/pcloud-black-friday-2026.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
       "source": "Korben",
       "site": "korben.info",
-      "date": "2026-11-19T14:26:40.000Z"
+      "date": "2026-11-20T09:09:51.000Z"
     },
     {
-      "title": "CPU Ex0253 L'erreur est dans le processeur, première partie",
-      "link": "https://cpu.pm/post/2026/11/19/Ex0253-L-erreur-est-dans-le-processeur%2C-premi%C3%A8re-partie",
+      "title": "Youtubeurs engagés - L'Arcom impose un temps de parole",
+      "link": "https://korben.info/arcom-pluralisme-createurs-presidentielle.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "source": "Korben",
+      "site": "korben.info",
+      "date": "2026-11-20T08:56:52.000Z"
+    },
+    {
+      "title": "Veille 83 - 33 actus qu’il ne fallait pas rater cette semaine",
+      "link": "https://www.camilleroux.com/olala-mini-ovh-nabaztag-kitesurf-veille-83/",
       "source": "Journal du hacker",
-      "site": "cpu.pm",
-      "date": "2026-11-19T13:10:44.000Z"
+      "site": "camilleroux.com",
+      "date": "2026-11-20T08:49:57.000Z"
     },
     {
-      "title": "Actualité Cybersécurité de la semaine du 16/11/2026",
-      "link": "https://newsletter.erreur403.fr/p/erreur-403-102-ce-n-est-pas-une-cyberattaque",
-      "source": "Journal du hacker",
-      "site": "newsletter.erreur403.fr",
-      "date": "2026-11-19T11:50:19.000Z"
-    },
-    {
-      "title": "Nouvelles de Haiku - Automne 2026",
-      "link": "https://linuxfr.org/news/nouvelles-de-haiku-automne-2026",
+      "title": "Un Nabaztag, une médecin et une IA : histoire d’une résurrection",
+      "link": "https://linuxfr.org/news/un-nabaztag-une-medecin-et-une-ia-histoire-d-une-resurrection",
       "source": "LinuxFr.org",
       "site": "linuxfr.org",
-      "date": "2026-11-19T10:42:17.000Z"
+      "date": "2026-11-20T08:27:21.000Z"
     },
     {
-      "title": "Quelqu'un vit peut-être votre vie en ce moment. Comment ne plus perdre votre identité ? #sponso",
-      "link": "https://korben.info/comment-ne-plus-perdre-votre-identite.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
-      "source": "Korben",
-      "site": "korben.info",
-      "date": "2026-11-19T10:21:33.000Z"
+      "title": "Les mots sont de moi, mais pas de mes doigts ·",
+      "link": "https://cedric.dkmp.be/je-n-ecris-plus.html",
+      "source": "Journal du hacker",
+      "site": "cedric.dkmp.be",
+      "date": "2026-11-19T23:21:59.000Z"
     }
   ]
 };

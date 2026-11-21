@@ -1,7 +1,28 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-21T16:11:55.639Z",
+  "updated": "2026-11-21T21:40:41.952Z",
   "items": [
+    {
+      "title": "Apple - Londres ne peut plus cacher son injonction sur iCloud",
+      "link": "https://korben.info/apple-porte-derobee-icloud-royaume-uni.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "source": "Korben",
+      "site": "korben.info",
+      "date": "2026-11-21T19:40:41.000Z"
+    },
+    {
+      "title": "Windows NT 4.0 sur un Raspberry Pi, c'est inutile donc indispensable",
+      "link": "https://korben.info/pint-windows-nt-raspberry-pi.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "source": "Korben",
+      "site": "korben.info",
+      "date": "2026-11-21T18:34:10.000Z"
+    },
+    {
+      "title": "Plex lâche TheTVDB",
+      "link": "https://korben.info/plex-abandonne-thetvdb.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "source": "Korben",
+      "site": "korben.info",
+      "date": "2026-11-21T18:19:38.000Z"
+    },
     {
       "title": "Flock : le nouveau monde immonde inonde",
       "link": "https://next.ink/268952/flock-le-nouveau-monde-immonde-inonde/",
@@ -43,27 +64,6 @@ window.TECH_TALK_FEEDS = {
       "source": "Developpez.com",
       "site": "java.developpez.com",
       "date": "2026-11-20T15:16:00.000Z"
-    },
-    {
-      "title": "ARTEX, l'IA de piratage open source qui a figé la Commission européenne",
-      "link": "https://korben.info/artex-lia-de-piratage-open-source-qui-a-fige-la-commission-europeenne.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
-      "source": "Korben",
-      "site": "korben.info",
-      "date": "2026-11-20T14:50:58.000Z"
-    },
-    {
-      "title": "Signal bloque les captures pour tenir Gemini et Siri à distance",
-      "link": "https://korben.info/signal-bloque-captures-ecran-ia.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
-      "source": "Korben",
-      "site": "korben.info",
-      "date": "2026-11-20T10:36:02.000Z"
-    },
-    {
-      "title": "Black Friday pCloud - Plans à vie, Photos AI, Docs et NAS #sponso",
-      "link": "https://korben.info/pcloud-black-friday-2026.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
-      "source": "Korben",
-      "site": "korben.info",
-      "date": "2026-11-20T09:09:51.000Z"
     },
     {
       "title": "Veille 83 - 33 actus qu’il ne fallait pas rater cette semaine",

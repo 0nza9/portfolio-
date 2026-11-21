@@ -1,7 +1,14 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-20T22:42:18.718Z",
+  "updated": "2026-11-21T07:14:37.156Z",
   "items": [
+    {
+      "title": "Google vient de lancer « Gemini Tasks », un agent IA autonome fonctionnant en arrière-plan et alimenté par Gemini 4 Hydrogen, permettant d'effectuer des tâches de la vie quotidienne, gratuitement",
+      "link": "https://intelligence-artificielle.developpez.com/actu/389341/Google-vient-de-lancer-Gemini-Tasks-un-agent-IA-autonome-fonctionnant-en-arriere-plan-et-alimente-par-Gemini-4-Hydrogen-permettant-d-effectuer-des-taches-de-la-vie-quotidienne-gratuitement/",
+      "source": "Developpez.com",
+      "site": "intelligence-artificielle.developpez.com",
+      "date": "2026-11-20T22:46:00.000Z"
+    },
     {
       "title": "Présidentielle 2027 : l’Arcom s’impose auprès des créateurs de contenus et influenceurs",
       "link": "https://next.ink/268809/presidentielle-2027-larcom-simpose-aupres-des-createurs-de-contenus-et-influenceurs/",
@@ -17,6 +24,13 @@ window.TECH_TALK_FEEDS = {
       "date": "2026-11-20T15:42:12.000Z"
     },
     {
+      "title": "Java frappé par une faille de sécurité majeure, la vulnérabilité critique « Java4Shell », notée 9,2/10, expose de nombreuses applications Java à l'exécution de code à distance",
+      "link": "https://java.developpez.com/actu/389338/Java-frappe-par-une-faille-de-securite-majeure-la-vulnerabilite-critique-Java4Shell-notee-9-2-10-expose-de-nombreuses-applications-Java-a-l-execution-de-code-a-distance/",
+      "source": "Developpez.com",
+      "site": "java.developpez.com",
+      "date": "2026-11-20T15:16:00.000Z"
+    },
+    {
       "title": "ARTEX, l'IA de piratage open source qui a figé la Commission européenne",
       "link": "https://korben.info/artex-lia-de-piratage-open-source-qui-a-fige-la-commission-europeenne.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
       "source": "Korben",
@@ -29,6 +43,13 @@ window.TECH_TALK_FEEDS = {
       "source": "Next",
       "site": "next.ink",
       "date": "2026-11-20T14:48:44.000Z"
+    },
+    {
+      "title": "Madison, la fille de Jensen Huang, aurait harcelé et insulté des employés, poussant certains cadres talentueux à quitter le fabricant de puces : « elle incarnait les yeux et les oreilles de son père »",
+      "link": "https://hardware.developpez.com/actu/389335/Madison-la-fille-de-Jensen-Huang-aurait-harcele-et-insulte-des-employes-poussant-certains-cadres-talentueux-a-quitter-le-fabricant-de-puces-elle-incarnait-les-yeux-et-les-oreilles-de-son-pere/",
+      "source": "Developpez.com",
+      "site": "hardware.developpez.com",
+      "date": "2026-11-20T12:24:00.000Z"
     },
     {
       "title": "Signal bloque les captures pour tenir Gemini et Siri à distance",
@@ -64,27 +85,6 @@ window.TECH_TALK_FEEDS = {
       "source": "Journal du hacker",
       "site": "cedric.dkmp.be",
       "date": "2026-11-19T23:21:59.000Z"
-    },
-    {
-      "title": "Java4Shell, deux jours de panne Microsoft - QDNLD #192",
-      "link": "https://quoi-de-neuf-les-devs.happyto.dev/p/java4shell-microsoft-fugaku-qdnld-192",
-      "source": "Journal du hacker",
-      "site": "quoi-de-neuf-les-devs.happyto.dev",
-      "date": "2026-11-19T21:11:02.000Z"
-    },
-    {
-      "title": "Nouvelles de Haiku - Automne 2026",
-      "link": "https://linuxfr.org/news/nouvelles-de-haiku-automne-2026",
-      "source": "LinuxFr.org",
-      "site": "linuxfr.org",
-      "date": "2026-11-19T10:42:17.000Z"
-    },
-    {
-      "title": "Chaque Euro : rendre les finances publiques vérifiables avec DuckDB",
-      "link": "https://linuxfr.org/news/chaque-euro-rendre-les-finances-publiques-verifiables-avec-duckdb",
-      "source": "LinuxFr.org",
-      "site": "linuxfr.org",
-      "date": "2026-11-17T17:57:26.000Z"
     }
   ]
 };

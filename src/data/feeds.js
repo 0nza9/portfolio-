@@ -1,7 +1,21 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-21T07:14:37.156Z",
+  "updated": "2026-11-21T16:11:55.639Z",
   "items": [
+    {
+      "title": "Flock : le nouveau monde immonde inonde",
+      "link": "https://next.ink/268952/flock-le-nouveau-monde-immonde-inonde/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-21T12:37:00.000Z"
+    },
+    {
+      "title": "Un employé de Meta discutait avec Muse de la météo et des marées lorsque l'agent IA a évoqué 2 soldes bancaires: l'un de Capital One, un autre de Charles Schwab et a indiqué les montants au centime près",
+      "link": "https://intelligence-artificielle.developpez.com/actu/389344/Un-employe-de-Meta-discutait-avec-Muse-de-la-meteo-et-des-marees-lorsque-l-agent-IA-a-evoque-2-soldes-bancaires-l-un-de-Capital-One-un-autre-de-Charles-Schwab-et-a-indique-les-montants-au-centime-pres/",
+      "source": "Developpez.com",
+      "site": "intelligence-artificielle.developpez.com",
+      "date": "2026-11-21T11:59:00.000Z"
+    },
     {
       "title": "Google vient de lancer « Gemini Tasks », un agent IA autonome fonctionnant en arrière-plan et alimenté par Gemini 4 Hydrogen, permettant d'effectuer des tâches de la vie quotidienne, gratuitement",
       "link": "https://intelligence-artificielle.developpez.com/actu/389341/Google-vient-de-lancer-Gemini-Tasks-un-agent-IA-autonome-fonctionnant-en-arriere-plan-et-alimente-par-Gemini-4-Hydrogen-permettant-d-effectuer-des-taches-de-la-vie-quotidienne-gratuitement/",
@@ -36,20 +50,6 @@ window.TECH_TALK_FEEDS = {
       "source": "Korben",
       "site": "korben.info",
       "date": "2026-11-20T14:50:58.000Z"
-    },
-    {
-      "title": "PHP2Shell : les mises à jour avancent trop lentement",
-      "link": "https://next.ink/268806/php2shell-face-aux-risques-la-migration-avance-trop-doucement/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-20T14:48:44.000Z"
-    },
-    {
-      "title": "Madison, la fille de Jensen Huang, aurait harcelé et insulté des employés, poussant certains cadres talentueux à quitter le fabricant de puces : « elle incarnait les yeux et les oreilles de son père »",
-      "link": "https://hardware.developpez.com/actu/389335/Madison-la-fille-de-Jensen-Huang-aurait-harcele-et-insulte-des-employes-poussant-certains-cadres-talentueux-a-quitter-le-fabricant-de-puces-elle-incarnait-les-yeux-et-les-oreilles-de-son-pere/",
-      "source": "Developpez.com",
-      "site": "hardware.developpez.com",
-      "date": "2026-11-20T12:24:00.000Z"
     },
     {
       "title": "Signal bloque les captures pour tenir Gemini et Siri à distance",

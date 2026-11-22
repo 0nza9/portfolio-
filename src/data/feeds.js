@@ -1,7 +1,21 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-21T21:40:41.952Z",
+  "updated": "2026-11-22T16:19:13.443Z",
   "items": [
+    {
+      "title": "Gemini 4 Neon est le modèle d'IA le plus puissant : il surpasse ses rivaux Opus 5.5 et GPT-6.2 dans les tâches de codage et d'analyse, tout en offrant une exécution rapide et économe en tokens",
+      "link": "https://intelligence-artificielle.developpez.com/actu/389346/Gemini-4-Neon-est-le-modele-d-IA-le-plus-puissant-il-surpasse-ses-rivaux-Opus-5-5-et-GPT-6-2-dans-les-taches-de-codage-et-d-analyse-tout-en-offrant-une-execution-rapide-et-econome-en-tokens/",
+      "source": "Developpez.com",
+      "site": "intelligence-artificielle.developpez.com",
+      "date": "2026-11-22T14:08:00.000Z"
+    },
+    {
+      "title": "LuneOS en 2026",
+      "link": "https://linuxfr.org/news/luneos-en-2026",
+      "source": "LinuxFr.org",
+      "site": "linuxfr.org",
+      "date": "2026-11-22T14:03:55.000Z"
+    },
     {
       "title": "Apple - Londres ne peut plus cacher son injonction sur iCloud",
       "link": "https://korben.info/apple-porte-derobee-icloud-royaume-uni.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
@@ -22,6 +36,20 @@ window.TECH_TALK_FEEDS = {
       "source": "Korben",
       "site": "korben.info",
       "date": "2026-11-21T18:19:38.000Z"
+    },
+    {
+      "title": "Publication de la mise à jour de Debian 13.8",
+      "link": "https://www.debian.org/News/2026/20261121.fr",
+      "source": "Journal du hacker",
+      "site": "debian.org",
+      "date": "2026-11-21T16:07:43.000Z"
+    },
+    {
+      "title": "Entre nomophobie et Smombies : Pourquoi est-il possible de devenir dépendant des smartphones et comment limiter la casse ?",
+      "link": "https://tugaleres.com/2026/11/21/entre-nomophobie-et-smombies-pourquoi-est-il-possible-de-devenir-dependant-des-smartphones-et-comment-limiter-la-casse/",
+      "source": "Journal du hacker",
+      "site": "tugaleres.com",
+      "date": "2026-11-21T14:55:02.000Z"
     },
     {
       "title": "Flock : le nouveau monde immonde inonde",
@@ -57,34 +85,6 @@ window.TECH_TALK_FEEDS = {
       "source": "Next",
       "site": "next.ink",
       "date": "2026-11-20T15:42:12.000Z"
-    },
-    {
-      "title": "Java frappé par une faille de sécurité majeure, la vulnérabilité critique « Java4Shell », notée 9,2/10, expose de nombreuses applications Java à l'exécution de code à distance",
-      "link": "https://java.developpez.com/actu/389338/Java-frappe-par-une-faille-de-securite-majeure-la-vulnerabilite-critique-Java4Shell-notee-9-2-10-expose-de-nombreuses-applications-Java-a-l-execution-de-code-a-distance/",
-      "source": "Developpez.com",
-      "site": "java.developpez.com",
-      "date": "2026-11-20T15:16:00.000Z"
-    },
-    {
-      "title": "Veille 83 - 33 actus qu’il ne fallait pas rater cette semaine",
-      "link": "https://www.camilleroux.com/olala-mini-ovh-nabaztag-kitesurf-veille-83/",
-      "source": "Journal du hacker",
-      "site": "camilleroux.com",
-      "date": "2026-11-20T08:49:57.000Z"
-    },
-    {
-      "title": "Un Nabaztag, une médecin et une IA : histoire d’une résurrection",
-      "link": "https://linuxfr.org/news/un-nabaztag-une-medecin-et-une-ia-histoire-d-une-resurrection",
-      "source": "LinuxFr.org",
-      "site": "linuxfr.org",
-      "date": "2026-11-20T08:27:21.000Z"
-    },
-    {
-      "title": "Les mots sont de moi, mais pas de mes doigts ·",
-      "link": "https://cedric.dkmp.be/je-n-ecris-plus.html",
-      "source": "Journal du hacker",
-      "site": "cedric.dkmp.be",
-      "date": "2026-11-19T23:21:59.000Z"
     }
   ]
 };

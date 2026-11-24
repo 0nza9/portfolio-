@@ -1,13 +1,48 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-23T14:43:51.347Z",
+  "updated": "2026-11-24T02:55:26.576Z",
   "items": [
     {
-      "title": "NVIDIA réinstalle Jensen Huang à son poste de CEO !",
-      "link": "https://next.ink/269365/nvidia-reinstalle-jensen-huang-a-son-poste-de-ceo/",
+      "title": "Google signe un accord avec Blue Origin pour mettre en orbite des centres de données satellitaires, dans le cadre du « Project Suncatcher », pour faire fonctionner des systèmes d'IA dans l'espace",
+      "link": "https://cloud-computing.developpez.com/actu/389390/Google-signe-un-accord-avec-Blue-Origin-pour-mettre-en-orbite-des-centres-de-donnees-satellitaires-dans-le-cadre-du-Project-Suncatcher-pour-faire-fonctionner-des-systemes-d-IA-dans-l-espace/",
+      "source": "Developpez.com",
+      "site": "cloud-computing.developpez.com",
+      "date": "2026-11-24T01:22:00.000Z"
+    },
+    {
+      "title": "« Ce qui nous a frappés » : Satya Nadella révèle que VS Code a perdu de son importance en six mois en raison de l'essor fulgurant de Claude Code, certains développeurs ont même cessé de l'utiliser",
+      "link": "https://intelligence-artificielle.developpez.com/actu/389391/-Ce-qui-nous-a-frappes-Satya-Nadella-revele-que-VS-Code-a-perdu-de-son-importance-en-six-mois-en-raison-de-l-essor-fulgurant-de-Claude-Code-certains-developpeurs-ont-meme-cesse-de-l-utiliser/",
+      "source": "Developpez.com",
+      "site": "intelligence-artificielle.developpez.com",
+      "date": "2026-11-23T23:36:00.000Z"
+    },
+    {
+      "title": "La femme au cur du scandale impliquant Jensen Huang, PDG de Nvidia, était en contact avec la principale agence de renseignement chinoise, et l'associé d'Alice Huang travaillait pour cette même agence",
+      "link": "https://hardware.developpez.com/actu/389387/La-femme-au-coeur-du-scandale-impliquant-Jensen-Huang-PDG-de-Nvidia-etait-en-contact-avec-la-principale-agence-de-renseignement-chinoise-et-l-associe-d-Alice-Huang-travaillait-pour-cette-meme-agence/",
+      "source": "Developpez.com",
+      "site": "hardware.developpez.com",
+      "date": "2026-11-23T18:46:00.000Z"
+    },
+    {
+      "title": "DMA : la conformité de façade des géants du numérique épinglée par le BEUC",
+      "link": "https://next.ink/269443/dma-la-conformite-de-facade-des-geants-du-numerique-epinglee-par-le-beuc/",
       "source": "Next",
       "site": "next.ink",
-      "date": "2026-11-23T14:09:14.000Z"
+      "date": "2026-11-23T16:45:15.000Z"
+    },
+    {
+      "title": "Olala : on a disséqué le modèle d’OVH",
+      "link": "https://next.ink/268967/olala-on-a-disseque-le-modele-dovh-avec-trois-tetes-folles/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-23T16:07:00.000Z"
+    },
+    {
+      "title": "PowerShell 7 va intégrer Windows, les entreprises vont devoir vérifier sa compatibilité",
+      "link": "https://next.ink/269400/powershell-7-va-integrer-windows-les-entreprises-vont-devoir-verifier-sa-compatibilite/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-23T15:42:00.000Z"
     },
     {
       "title": "Ultrahuman Ring Pro - cette bague connectée a (presque) remplacé mon Apple Watch",
@@ -15,41 +50,6 @@ window.TECH_TALK_FEEDS = {
       "source": "Korben",
       "site": "korben.info",
       "date": "2026-11-23T13:51:39.000Z"
-    },
-    {
-      "title": "Hypothèse de Riemann : une preuve générée par IA est-elle utile aux mathématiciens ?",
-      "link": "https://next.ink/269118/hypothese-de-riemann-une-preuve-generee-par-ia-est-elle-utile-aux-mathematiciens/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-23T13:22:36.000Z"
-    },
-    {
-      "title": "Le système de gestion de base de données open source PostgreSQL 19 est disponible avec une base de données relationnelle dotée d'une gestion des tables repensée et offrant des performances accrues",
-      "link": "https://postgresql.developpez.com/actu/389354/Le-systeme-de-gestion-de-base-de-donnees-open-source-PostgreSQL-19-est-disponible-avec-une-base-de-donnees-relationnelle-dotee-d-une-gestion-des-tables-repensee-et-offrant-des-performances-accrues/",
-      "source": "Developpez.com",
-      "site": "postgresql.developpez.com",
-      "date": "2026-11-23T13:09:00.000Z"
-    },
-    {
-      "title": "Après la panne mondiale des services Microsoft 365 dont Outlook, Microsoft avoue dans son rapport final que certains e-mails n'ont jamais été remis, et que des fonctionnalités de sécurité ont été affectées",
-      "link": "https://microsoft.developpez.com/actu/389351/Apres-la-panne-mondiale-des-services-Microsoft-365-dont-Outlook-Microsoft-avoue-dans-son-rapport-final-que-certains-e-mails-n-ont-jamais-ete-remis-et-que-des-fonctionnalites-de-securite-ont-ete-affectees/",
-      "source": "Developpez.com",
-      "site": "microsoft.developpez.com",
-      "date": "2026-11-23T13:07:00.000Z"
-    },
-    {
-      "title": "Forrester Consulting révèle qu'IntelliJ IDEA, l'EDI JetBrains pour le développement en Java et Kotlin, a généré un retour sur investissement de 155 %, mettant en avant son approche ouverte de l'IA",
-      "link": "https://jetbrains.developpez.com/actu/389358/Forrester-Consulting-revele-qu-IntelliJ-IDEA-l-EDI-JetBrains-pour-le-developpement-en-Java-et-Kotlin-a-genere-un-retour-sur-investissement-de-155-pourcent-mettant-en-avant-son-approche-ouverte-de-l-IA/",
-      "source": "Developpez.com",
-      "site": "jetbrains.developpez.com",
-      "date": "2026-11-23T13:04:00.000Z"
-    },
-    {
-      "title": "☕️ CrowdStrike va racheter Zscaler pour 44 milliards de dollars",
-      "link": "https://next.ink/brief-article/crowdstrike-va-racheter-zscaler-pour-44-milliards-de-dollars/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-23T12:43:27.000Z"
     },
     {
       "title": "Spelunkr - La télé où l'on ne choisit plus ce qui passe",

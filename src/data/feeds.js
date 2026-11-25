@@ -1,13 +1,34 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-24T14:55:07.386Z",
+  "updated": "2026-11-25T00:48:27.801Z",
   "items": [
     {
-      "title": "☕️ Le lancement de tous les records pour GTA VI",
-      "link": "https://next.ink/brief-article/le-lancement-de-tous-les-records-pour-gta-vi/",
+      "title": "Python 3.15, mise à jour de Debian, et Japan Game Fest",
+      "link": "https://blog.flozz.fr/2026/11/24/journal-de-bord-12-python-315-mise-a-jour-de-debian-et-japan-game-fest/",
+      "source": "Journal du hacker",
+      "site": "blog.flozz.fr",
+      "date": "2026-11-24T17:32:12.000Z"
+    },
+    {
+      "title": "GTA VI démarre sur PC avant même l’annonce d’un portage officiel",
+      "link": "https://next.ink/269712/gta-vi-demarre-sur-pc-avant-meme-lannonce-dun-portage-officiel/",
       "source": "Next",
       "site": "next.ink",
-      "date": "2026-11-24T14:21:48.000Z"
+      "date": "2026-11-24T16:42:58.000Z"
+    },
+    {
+      "title": "☕️ Avec Claude Ship, Anthropic s’attaque à la correction automatique des pull requests",
+      "link": "https://next.ink/brief-article/avec-claude-ship-anthropic-sattaque-a-la-correction-automatique-des-pull-requests/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-24T16:21:00.000Z"
+    },
+    {
+      "title": "La Virginie et l’Oregon attaquent SpaceXSI pour la génération de contenus pédocriminels",
+      "link": "https://next.ink/269655/la-virginie-et-loregon-attaquent-spacexsi-pour-la-generation-de-contenus-pedocriminels/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-24T16:03:00.000Z"
     },
     {
       "title": "ARTEX : un framework de tests d'intrusion propulsé par l'IA détourné par des pirates pour cibler les entreprises et les infrastructures gouvernementales sensibles, l'outil est massivement partagé en ligne",
@@ -38,20 +59,6 @@ window.TECH_TALK_FEEDS = {
       "date": "2026-11-24T11:34:58.000Z"
     },
     {
-      "title": "Panne Microsoft : plus précis, le rapport final nie toute cyberattaque ou usage de l’IA",
-      "link": "https://next.ink/269535/panne-microsoft-plus-precis-le-rapport-final-nie-toute-cyberattaque-ou-usage-de-lia/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-24T10:55:24.000Z"
-    },
-    {
-      "title": "On a testé Free Traduction Live : des appels traduits en direct dans 10 langues",
-      "link": "https://next.ink/269559/on-a-teste-free-traduction-live-des-appels-traduits-en-direct-dans-10-langues/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-24T10:17:19.000Z"
-    },
-    {
       "title": "dumbtv - Le Fire TV sans pub ni mouchard (et sans root)",
       "link": "https://korben.info/dumbtv.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
       "source": "Korben",
@@ -78,13 +85,6 @@ window.TECH_TALK_FEEDS = {
       "source": "Korben",
       "site": "korben.info",
       "date": "2026-11-24T08:12:14.000Z"
-    },
-    {
-      "title": "Notre agent LLM est privé de Web : retour d'expérience sur 30 000 communes passées au crible",
-      "link": "https://locaclear.fr/coulisses/agent-llm-prive-de-web/",
-      "source": "Journal du hacker",
-      "site": "locaclear.fr",
-      "date": "2026-11-23T22:15:59.000Z"
     }
   ]
 };

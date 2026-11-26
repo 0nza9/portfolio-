@@ -1,41 +1,55 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-25T14:28:34.974Z",
+  "updated": "2026-11-26T00:25:06.428Z",
   "items": [
     {
-      "title": "☕️ La panne de Microsoft a déclenché un « code rouge » en interne",
-      "link": "https://next.ink/brief-article/la-panne-de-microsoft-a-declenche-un-code-rouge-en-interne/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-25T14:27:56.000Z"
+      "title": "Des portages non officiels font tourner GTA 6 sur Windows 11. Take-Two a riposté avec un avis DMCA qui a contraint GitHub à supprimer plus de 3 000 dépôts GTA 6 pour PC, suscitant la colère des joueurs",
+      "link": "https://jeux.developpez.com/actu/389495/Des-portages-non-officiels-font-tourner-GTA-6-sur-Windows-11-Take-Two-a-riposte-avec-un-avis-DMCA-qui-a-contraint-GitHub-a-supprimer-plus-de-3-000-depots-GTA-6-pour-PC-suscitant-la-colere-des-joueurs/",
+      "source": "Developpez.com",
+      "site": "jeux.developpez.com",
+      "date": "2026-11-25T19:47:00.000Z"
     },
     {
-      "title": "☕️ Bruxelles pourrait sanctionner quatre géants du porno pour avoir mal protégé les mineurs",
-      "link": "https://next.ink/brief-article/bruxelles-pourrait-sanctionner-quatre-geants-du-porno-pour-avoir-mal-protege-les-mineurs/",
+      "title": "Dernière ligne droite pour La Presse Libre à 4 euros en plus de votre abo Next",
+      "link": "https://next.ink/270008/derniere-ligne-droite-pour-la-presse-libre-a-4-euros-en-plus-de-votre-abo-next/",
       "source": "Next",
       "site": "next.ink",
-      "date": "2026-11-25T14:03:40.000Z"
+      "date": "2026-11-25T16:39:00.000Z"
     },
     {
-      "title": "L'action d'Anthropic chute d'environ 13 % à 76 $, sous son prix d'introduction en bourse de 83 $, tandis que son PDG, Dario Amodei, a déjà vendu pour 280 millions $ d'actions",
-      "link": "https://intelligence-artificielle.developpez.com/actu/389446/L-action-d-Anthropic-chute-d-environ-13-pourcent-a-76-sous-son-prix-d-introduction-en-bourse-de-83-tandis-que-son-PDG-Dario-Amodei-a-deja-vendu-pour-280-millions-d-actions/",
+      "title": "Huawei : HarmonyOS dépasse les 100 millions d’appareils et devance iOS en Chine",
+      "link": "https://next.ink/270049/huawei-harmonyos-depasse-les-100-millions-dappareils-et-devance-ios-en-chine/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-25T16:21:00.000Z"
+    },
+    {
+      "title": "« Une hiérarchie inutile » : Jensen Huang affirme que Nvidia n'a pas besoin d'un plan de succession, arguant que la structure organisationnelle horizontale du fabricant de puces rend une telle mesure superflue",
+      "link": "https://hardware.developpez.com/actu/389491/-Une-hierarchie-inutile-Jensen-Huang-affirme-que-Nvidia-n-a-pas-besoin-d-un-plan-de-succession-arguant-que-la-structure-organisationnelle-horizontale-du-fabricant-de-puces-rend-une-telle-mesure-superflue/",
+      "source": "Developpez.com",
+      "site": "hardware.developpez.com",
+      "date": "2026-11-25T15:52:00.000Z"
+    },
+    {
+      "title": "« Eau chaude, GPU froids » : OVH ne veut plus consommer d’eau dans ses datacenters",
+      "link": "https://next.ink/269774/eau-chaude-gpu-froids-ovh-ne-veut-plus-consommer-deau-dans-ses-datacenters/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-25T15:48:53.000Z"
+    },
+    {
+      "title": "Un physicien du MIT affirme que des employés d'Anthropic évoquent le renversement du gouvernement américain et la domination du monde, un avenir où l'IA échapperait au contrôle démocratique",
+      "link": "https://intelligence-artificielle.developpez.com/actu/389482/Un-physicien-du-MIT-affirme-que-des-employes-d-Anthropic-evoquent-le-renversement-du-gouvernement-americain-et-la-domination-du-monde-un-avenir-ou-l-IA-echapperait-au-controle-democratique/",
       "source": "Developpez.com",
       "site": "intelligence-artificielle.developpez.com",
-      "date": "2026-11-25T13:07:00.000Z"
+      "date": "2026-11-25T14:58:00.000Z"
     },
     {
-      "title": "Microsoft publie la mise à jour de novembre de Visual Studio 2026, qui offre des flux de travail plus rapides, une gestion plus structurée des révisions des pull requests et un Copilot Chat amélioré",
-      "link": "https://visualstudio.developpez.com/actu/389454/Microsoft-publie-la-mise-a-jour-de-novembre-de-Visual-Studio-2026-qui-offre-des-flux-de-travail-plus-rapides-une-gestion-plus-structuree-des-revisions-des-pull-requests-et-un-Copilot-Chat-ameliore/",
-      "source": "Developpez.com",
-      "site": "visualstudio.developpez.com",
-      "date": "2026-11-25T13:06:00.000Z"
-    },
-    {
-      "title": "Les centres de données seraient à l'origine de centaines de décès prématurés, leur consommation d'énergie à base de gaz détériorant la qualité de l'air, avec 650 décès estimés aux USA en 2023",
-      "link": "https://cloud-computing.developpez.com/actu/389447/Les-centres-de-donnees-seraient-a-l-origine-de-centaines-de-deces-prematures-leur-consommation-d-energie-a-base-de-gaz-deteriorant-la-qualite-de-l-air-avec-650-deces-estimes-aux-USA-en-2023/",
-      "source": "Developpez.com",
-      "site": "cloud-computing.developpez.com",
-      "date": "2026-11-25T13:05:00.000Z"
+      "title": "Test du mini PC VZMORE iX9 Max sous Ubuntu Server",
+      "link": "https://korben.info/test-du-mini-pc-vzmore-ix9-max-sous-ubuntu-server.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "source": "Korben",
+      "site": "korben.info",
+      "date": "2026-11-25T14:12:02.000Z"
     },
     {
       "title": "Coretilus",
@@ -43,13 +57,6 @@ window.TECH_TALK_FEEDS = {
       "source": "LinuxFr.org",
       "site": "linuxfr.org",
       "date": "2026-11-25T11:37:48.000Z"
-    },
-    {
-      "title": "GrapheneOS accuse Google de vouloir sa disparition",
-      "link": "https://next.ink/269832/grapheneos-accuse-directement-google-de-vouloir-sa-disparition/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-25T11:02:55.000Z"
     },
     {
       "title": "LinuxPDF - Quand Linux se lance dans un PDF",
@@ -64,13 +71,6 @@ window.TECH_TALK_FEEDS = {
       "source": "Korben",
       "site": "korben.info",
       "date": "2026-11-25T08:42:17.000Z"
-    },
-    {
-      "title": "Ubuntu - Le nouveau lanceur sera boosté à l'IA",
-      "link": "https://korben.info/ubuntu-lanceur-ia-local.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
-      "source": "Korben",
-      "site": "korben.info",
-      "date": "2026-11-25T06:42:17.000Z"
     },
     {
       "title": "Python 3.15, mise à jour de Debian, et Japan Game Fest",

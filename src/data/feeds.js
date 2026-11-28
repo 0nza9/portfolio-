@@ -1,27 +1,55 @@
 // Généré automatiquement par scripts/fetch-feeds.mjs, ne pas modifier à la main.
 window.TECH_TALK_FEEDS = {
-  "updated": "2026-11-27T13:55:28.189Z",
+  "updated": "2026-11-28T00:04:24.078Z",
   "items": [
     {
-      "title": "Anthropic Claude permet désormais d'installer un artefact comme une véritable application sur Mac ou Windows, sans écrire de code, avec sa propre icône et sa propre fenêtre",
-      "link": "https://intelligence-artificielle.developpez.com/actu/389539/Anthropic-Claude-permet-desormais-d-installer-un-artefact-comme-une-veritable-application-sur-Mac-ou-Windows-sans-ecrire-de-code-avec-sa-propre-icone-et-sa-propre-fenetre/",
+      "title": "La tarification par surveillance exploite l'IA et les données personnelles pour majorer les prix selon le profil. Elle expose certains consommateurs à des prix inéquitables, voire discriminatoires",
+      "link": "https://web.developpez.com/actu/389564/La-tarification-par-surveillance-exploite-l-IA-et-les-donnees-personnelles-pour-majorer-les-prix-selon-le-profil-Elle-expose-certains-consommateurs-a-des-prix-inequitables-voire-discriminatoires/",
       "source": "Developpez.com",
-      "site": "intelligence-artificielle.developpez.com",
-      "date": "2026-11-27T13:08:00.000Z"
+      "site": "web.developpez.com",
+      "date": "2026-11-27T18:59:00.000Z"
     },
     {
-      "title": "« Non, je ne pense pas que nous devrions abandonner le libre arbitre humain aux systèmes d'IA, et il est absurde de suggérer le contraire », écrit Dario Amodei, PDG d'Anthropic",
-      "link": "https://intelligence-artificielle.developpez.com/actu/389541/-Non-je-ne-pense-pas-que-nous-devrions-abandonner-le-libre-arbitre-humain-aux-systemes-d-IA-et-il-est-absurde-de-suggerer-le-contraire-ecrit-Dario-Amodei-PDG-d-Anthropic/",
-      "source": "Developpez.com",
-      "site": "intelligence-artificielle.developpez.com",
-      "date": "2026-11-27T13:06:00.000Z"
+      "title": "NVIDIA accepte de verser 290 millions de dollars pour solder le litige sur le minage",
+      "link": "https://next.ink/270694/nvidia-accepte-de-verser-290-millions-de-dollars-pour-solder-le-litige-sur-le-minage/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-27T16:30:37.000Z"
     },
     {
-      "title": "Google souhaite créer une chaîne de télévision générée par IA dont vous seriez la vedette, avec des publicités, basée sur vos données personnelles collectées par l'entreprise",
-      "link": "https://intelligence-artificielle.developpez.com/actu/389540/Google-souhaite-creer-une-chaine-de-television-generee-par-IA-dont-vous-seriez-la-vedette-avec-des-publicites-basee-sur-vos-donnees-personnelles-collectees-par-l-entreprise/",
+      "title": "Oui, on peut faire tourner macOS sur une base Linux",
+      "link": "https://next.ink/270674/oui-on-peut-faire-tourner-macos-sur-une-base-linux/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-27T15:51:00.000Z"
+    },
+    {
+      "title": "☕️ Le New York Times interdit Photoshop 2027 à ses photographes à cause de l’IA",
+      "link": "https://next.ink/brief-article/le-new-york-times-interdit-photoshop-2027-a-ses-photographes-a-cause-de-lia/",
+      "source": "Next",
+      "site": "next.ink",
+      "date": "2026-11-27T15:19:00.000Z"
+    },
+    {
+      "title": "« Pas de GPS, pas de Starlink, pas de problème » : un lycéen ukrainien conçoit un pilote automatique de drone basé sur l'IA fonctionnant sans signaux satellites, et remporte un prix présidentiel",
+      "link": "https://embarque.developpez.com/actu/389560/-Pas-de-GPS-pas-de-Starlink-pas-de-probleme-un-lyceen-ukrainien-concoit-un-pilote-automatique-de-drone-base-sur-l-IA-fonctionnant-sans-signaux-satellites-et-remporte-un-prix-presidentiel/",
       "source": "Developpez.com",
-      "site": "intelligence-artificielle.developpez.com",
-      "date": "2026-11-27T13:05:00.000Z"
+      "site": "embarque.developpez.com",
+      "date": "2026-11-27T15:12:00.000Z"
+    },
+    {
+      "title": "« Ce n'est pas un signe de recul » : le vote historique sur la syndicalisation chez Rockstar a échoué, avec 75 % de votes contre, mais les organisateurs vont « continuer à se battre »",
+      "link": "https://jeux.developpez.com/actu/389558/-Ce-n-est-pas-un-signe-de-recul-le-vote-historique-sur-la-syndicalisation-chez-Rockstar-a-echoue-avec-75-pourcent-de-votes-contre-mais-les-organisateurs-vont-continuer-a-se-battre/",
+      "source": "Developpez.com",
+      "site": "jeux.developpez.com",
+      "date": "2026-11-27T13:53:00.000Z"
+    },
+    {
+      "title": "Mini-Kit - Pour faire un bilan de santé de votre Windows",
+      "link": "https://korben.info/mini-kit-diagnostic-rapide-pc-windows.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
+      "source": "Korben",
+      "site": "korben.info",
+      "date": "2026-11-27T13:49:54.000Z"
     },
     {
       "title": "Obsidian Skills - Laissez votre agent IA ranger vos notes",
@@ -38,39 +66,11 @@ window.TECH_TALK_FEEDS = {
       "date": "2026-11-27T12:31:07.000Z"
     },
     {
-      "title": "AliasVault - Des alias mail qui ne quittent jamais votre coffre-fort",
-      "link": "https://korben.info/aliasvault-mots-de-passe-alias-email.html?utm_source=rss&utm_medium=feed&utm_campaign=flux-principal",
-      "source": "Korben",
-      "site": "korben.info",
-      "date": "2026-11-27T11:54:38.000Z"
-    },
-    {
       "title": "Veille 84 - 40 actus qu'il ne fallait pas rater cette semaine",
       "link": "https://www.camilleroux.com/claude-code-dbdelve-rustrak-veille-84/",
       "source": "Journal du hacker",
       "site": "camilleroux.com",
       "date": "2026-11-27T11:13:23.000Z"
-    },
-    {
-      "title": "Olala ! On a testé des IA génératives sur CPU, avec 5 machines et plus de 1 000 prompts",
-      "link": "https://next.ink/268574/olala-on-a-teste-des-ia-generatives-sur-cpu-avec-5-machines-et-plus-de-1-000-prompts/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-27T10:34:49.000Z"
-    },
-    {
-      "title": "#Nextquick : comment fonctionnent les IA génératives, en 5 minutes",
-      "link": "https://next.ink/270502/nextquick-comment-fonctionnent-les-ia-generatives-en-5-minutes/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-27T09:20:03.000Z"
-    },
-    {
-      "title": "La faille NFS2ROOT permet de prendre le contrôle de NAS et nœuds Kubernetes",
-      "link": "https://next.ink/270556/la-faille-nfs2root-permet-de-prendre-le-controle-de-nas-et-noeuds-kubernetes/",
-      "source": "Next",
-      "site": "next.ink",
-      "date": "2026-11-27T08:44:42.000Z"
     },
     {
       "title": "La domotique, c'est quoi : protocoles, cloud ou local, et premiers pas",
